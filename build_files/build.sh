@@ -9,16 +9,25 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
+dnf5 -y copr enable abn/throttled
+dnf5 -y copr enable sneexy/python-validity
+
+dnf5 -y config-manager addrepo --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+dnf5 -y install terra-release
+dnf5 -y install niri noctalia-shell
+dnf5 -y install fprintd-clients fprintd-clients-pam open-fprintd python3-validity
+
+dnf5 -y remove thermald tuned tuned-ppd
+dnf5 -y install tlp tlp-rdw zcfan
+dnf5 -y install throttled
+
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
-dnf5 config-manager addrepo --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-dnf5 install -y terra-release
-dnf5 install -y niri noctalia-shell
+dnf5 -y copr disable abn/throttled
+dnf5 -y copr disable sneexy/python-validity
 
-#### Example for enabling a System Unit File
+systemctl enable tlp.service
+systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
-# systemctl enable podman.socket
+cat << EOF > /usr/lib/bootc/kargs.d/99-thinkpad-fan-control.toml
+kargs = ["thinkpad_acpi.fan_control=1"]
+EOF
