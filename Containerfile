@@ -37,4 +37,4 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     
 ### LINTING
 ## Verify final image and contents are correct.
-RUN bootc container lint
+RUN rm -rf /boot /run/dnf /run/selinux-policy /var/cache /var/lib /var/log && mkdir /boot && bootc container lint
