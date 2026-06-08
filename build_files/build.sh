@@ -32,7 +32,8 @@ rpm -ivh --noscripts --nodeps /ctx/kernel-rpms/*.rpm
 
 kver="$(cd /usr/lib/modules && echo *)"
 depmod -a "${kver}"
-printf 'export DRACUT_NO_XATTR=1\nreproducible=yes\nadd_dracutmodules+=" bootc ostree "' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-bluefin-cachyos-kernel.conf
+printf 'export DRACUT_NO_XATTR=1\nreproducible=yes\nadd_dracutmodules+=" bootc ostree "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-bluefin-cachyos-kernel.conf
+printf 'force_drivers+=" i915 "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-early-kms.conf
 dracut -vf "/usr/lib/modules/${kver}/initramfs.img" "${kver}"
 
 setsebool -P domain_kernel_load_modules on
