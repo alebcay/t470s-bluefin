@@ -22,13 +22,13 @@ dnf5 -y install fprintd-clients fprintd-clients-pam open-fprintd python3-validit
 # Erase stock kernel from base image, then install the pre-built cachyos
 # kernel RPM (built in the build_kernel CI job).
 export DRACUT_NO_XATTR=1
-_oldkver="$(rpm -q --queryformat "%{VERSION}-%{RELEASE}.%{ARCH}" kernel-core 2>/dev/null || true)"
-if [ -n "$_oldkver" ]; then
-  rpm --erase kernel kernel-core kernel-modules --nodeps
-  rm -rf "/lib/modules/${_oldkver}"
-fi
+# _oldkver="$(rpm -q --queryformat "%{VERSION}-%{RELEASE}.%{ARCH}" kernel-core 2>/dev/null || true)"
+# if [ -n "$_oldkver" ]; then
+#   rpm --erase kernel kernel-core kernel-modules --nodeps
+#   rm -rf "/lib/modules/${_oldkver}"
+# fi
 
-rpm -ivh --noscripts --nodeps /ctx/kernel-rpms/*.rpm
+# rpm -ivh --noscripts --nodeps /ctx/kernel-rpms/*.rpm
 
 kver="$(cd /usr/lib/modules && echo *)"
 depmod -a "${kver}"
@@ -36,7 +36,7 @@ printf 'export DRACUT_NO_XATTR=1\nreproducible=yes\nadd_dracutmodules+=" bootc o
 printf 'force_drivers+=" i915 "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-early-kms.conf
 printf 'options i915 enable_guc=2\noptions i915 enable_psr=1\noptions i915 enable_rc6=7\n' | tee /usr/lib/modprobe.d/t470s-i915.conf
 dracut -vf "/usr/lib/modules/${kver}/initramfs.img" "${kver}"
-dnf5 -y install scx-scheds scx-tools
+# dnf5 -y install scx-scheds scx-tools
 setsebool -P domain_kernel_load_modules on
 
 dnf5 -y remove thermald tuned tuned-ppd
