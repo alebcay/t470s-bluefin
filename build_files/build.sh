@@ -16,7 +16,7 @@ dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y config-manager addrepo --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
 dnf5 -y install terra-release
 # dnf5 -y install niri noctalia-shell
-dnf5 -y install niri noctalia-git
+dnf5 -y install niri noctalia-git wl-mirror
 dnf5 -y install fprintd-clients fprintd-clients-pam open-fprintd python3-validity
 
 # Erase stock kernel from base image, then install the pre-built cachyos
