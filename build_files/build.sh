@@ -2,12 +2,8 @@
 
 set -ouex pipefail
 
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+# SOURCE_DATE_EPOCH is provided via the --env flag in the Containerfile build.
+# RPM 6.0.1 uses it automatically for deterministic INSTALLTIME/INSTALLTID.
 
 dnf5 -y copr enable abn/throttled
 dnf5 -y copr enable sneexy/python-validity
@@ -15,7 +11,6 @@ dnf5 -y copr enable lionheartp/Hyprland
 
 dnf5 -y config-manager addrepo --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
 dnf5 -y install terra-release
-# dnf5 -y install niri noctalia-shell
 dnf5 -y install niri noctalia-git wl-mirror
 dnf5 -y install fprintd-clients fprintd-clients-pam open-fprintd python3-validity
 
@@ -56,5 +51,8 @@ systemctl mask systemd-rfkill.service systemd-rfkill.socket
 cat << EOF > /usr/lib/bootc/kargs.d/99-thinkpad-fan-control.toml
 kargs = ["thinkpad_acpi.fan_control=1"]
 EOF
+
+# Regenerate fontconfig cache deterministically
+fc-cache -rs
 
 dnf5 clean all

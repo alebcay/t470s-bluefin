@@ -29,12 +29,12 @@ FROM ghcr.io/ublue-os/bluefin:stable
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
+ARG BUILD_SOURCE_DATE_EPOCH
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh
-    
-### LINTING
-## Verify final image and contents are correct.
-RUN rm -rf /boot /run/dnf /run/selinux-policy /var/cache /var/lib /var/log && mkdir /boot && bootc container lint
+    SOURCE_DATE_EPOCH=$BUILD_SOURCE_DATE_EPOCH /ctx/build.sh && \
+    rm -rf /run/dnf /run/selinux-policy /var/lib && \
+    find /var/cache /var/log -mindepth 1 -delete && \
+    bootc container lint --fatal-warnings
