@@ -88,6 +88,15 @@ jobs:
           sep-tags: " "
           sep-annotations: " "
 
+      - name: Restore RPM cache
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        with:
+          path: /tmp/rpm-cache
+          key: rpm-${{ hashFiles('build_files/packages.manifest.yaml') }}
+
+      - name: Ensure RPM cache directory exists
+        run: mkdir -p /tmp/rpm-cache
+
       - name: Build Image
         id: build_image
         uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2.13
@@ -103,6 +112,14 @@ jobs:
           extra-args: |
             --timestamp ${{ env.SOURCE_DATE_EPOCH }}
             --build-arg BUILD_SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
+            --volume /tmp/rpm-cache:/rpm-cache
+
+      - name: Save RPM cache
+        uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
+        if: github.event_name != 'pull_request'
+        with:
+          path: /tmp/rpm-cache
+          key: rpm-${{ hashFiles('build_files/packages.manifest.yaml') }}
 
       - name: Rechunk Image
         id: rechunk_image

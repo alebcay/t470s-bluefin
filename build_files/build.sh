@@ -17,14 +17,17 @@ dnf5 -y install dnf5-plugin-manifest libpkgmanifest createrepo_c
 # Remove packages from base image that conflict with our replacements
 dnf5 -y remove thermald tuned tuned-ppd
 
-# Use lockfile-based package management.
-# If a pre-generated lockfile (packages.manifest.yaml) exists, use it for the download.
-# Otherwise, resolve from the input file first.
-if [ -f /ctx/packages.manifest.yaml ]; then
-  dnf5 manifest download --manifest /ctx/packages.manifest.yaml
+# Use lockfile-based package management with download cache.
+CACHE_DIR=/rpm-cache
+if [ -d "$CACHE_DIR" ] && [ -n "$(ls -A "$CACHE_DIR" 2>/dev/null)" ]; then
+  echo "RPM cache hit — using cached downloads"
+  mkdir -p packages.manifest
+  cp -a "$CACHE_DIR"/* packages.manifest/
 else
-  dnf5 manifest resolve --input /ctx/rpms.in.yaml
-  dnf5 manifest download
+  echo "RPM cache miss — downloading from repos"
+  dnf5 manifest download --manifest /ctx/packages.manifest.yaml
+  mkdir -p "$CACHE_DIR"
+  cp -a packages.manifest/* "$CACHE_DIR"/
 fi
 
 # Create a local repo from downloaded RPMs and install our packages additively
