@@ -32,10 +32,12 @@ fi
 
 # Create a local repo from downloaded RPMs and install our packages additively
 createrepo_c packages.manifest/
-dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache \
-  niri noctalia-git wl-mirror wl-clipboard ghostty \
-  fprintd-clients fprintd-clients-pam open-fprintd python3-validity \
-  tlp tlp-rdw zcfan throttled
+PACKAGES=$(python3 -c "
+import yaml
+with open('/ctx/rpms.in.yaml') as f:
+    print(' '.join(yaml.safe_load(f)['packages']))
+")
+dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
 
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable abn/throttled
