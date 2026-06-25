@@ -44,6 +44,9 @@ dnf5 -y copr disable abn/throttled
 dnf5 -y copr disable sneexy/python-validity
 dnf5 -y copr disable lionheartp/Hyprland
 
+# Ensure initramfs includes bootc and ostree modules for proper root filesystem setup
+printf 'export DRACUT_NO_XATTR=1\nreproducible=yes\nadd_dracutmodules+=" bootc ostree "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-bootc-ostree.conf
+
 # Early KMS for i915
 printf 'force_drivers+=" i915 "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-early-kms.conf
 printf 'options i915 enable_guc=2\noptions i915 enable_psr=1\noptions i915 enable_rc6=7\n' | tee /usr/lib/modprobe.d/t470s-i915.conf
