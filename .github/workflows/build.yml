@@ -133,7 +133,6 @@ jobs:
             quay.io/coreos/chunkah:v0.6.0 \
             build \
             --verbose \
-            --compressed \
             --max-layers 128 \
             --prune /sysroot/ \
             --config /tmp/chunkah_config.json \
