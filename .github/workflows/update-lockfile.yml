@@ -75,6 +75,20 @@ jobs:
         with:
           persist-credentials: true
 
+      - name: Checkout PR branch if it exists
+        id: branch
+        run: |
+          BRANCH="automated/lockfile-update"
+          if git ls-remote --exit-code origin "$BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$BRANCH"
+            git checkout "$BRANCH"
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            git checkout -B "$BRANCH"
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
       - name: Download lockfile
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
@@ -93,8 +107,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          BRANCH="automated/lockfile-update"
-          git checkout -B "$BRANCH"
+          BRANCH="${{ steps.branch.outputs.branch }}"
           git add Containerfile build_files/packages.manifest.yaml
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: update base image and RPM lockfile"
