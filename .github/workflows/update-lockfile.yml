@@ -1,0 +1,110 @@
+---
+name: Update RPM Lockfile
+
+on:
+  schedule:
+    - cron: '32 14 * * *'  # Daily 14:32 UTC
+  workflow_dispatch:
+
+jobs:
+  resolve:
+    name: Regenerate lockfile
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Check for base image update
+        id: base
+        run: |
+          CURRENT_DIGEST=$(skopeo inspect docker://ghcr.io/ublue-os/bluefin:stable --format '{{.Digest}}')
+          PINNED_DIGEST=$(grep '^FROM ' Containerfile | grep -oP 'sha256:[a-f0-9]+')
+          echo "current=${CURRENT_DIGEST}"
+          echo "pinned=${PINNED_DIGEST}"
+          if [ "${CURRENT_DIGEST}" != "${PINNED_DIGEST}" ]; then
+            echo "Base image updated: ${PINNED_DIGEST} -> ${CURRENT_DIGEST}"
+            sed -i "s|ghcr.io/ublue-os/bluefin@${PINNED_DIGEST}|ghcr.io/ublue-os/bluefin@${CURRENT_DIGEST}|" Containerfile
+          fi
+          echo "digest=${CURRENT_DIGEST}" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve lockfile
+        run: |
+          podman run --rm \
+            -v "${{ github.workspace }}:/work:Z" \
+            -w /work \
+            "ghcr.io/ublue-os/bluefin@${{ steps.base.outputs.digest }}" \
+            bash -c '
+              dnf5 -y config-manager addrepo \
+                --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+              dnf5 -y install terra-release
+              dnf5 -y copr enable abn/throttled
+              dnf5 -y copr enable sneexy/python-validity
+              dnf5 -y copr enable lionheartp/Hyprland
+              dnf5 -y install dnf5-plugin-manifest libpkgmanifest
+              dnf5 manifest resolve --input build_files/rpms.in.yaml
+              cp packages.manifest.yaml build_files/packages.manifest.yaml
+            '
+
+      - name: Upload lockfile
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: lockfile
+          path: build_files/packages.manifest.yaml
+          retention-days: 1
+
+      - name: Upload Containerfile
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: containerfile
+          path: Containerfile
+          retention-days: 1
+
+  pull-request:
+    name: Create Pull Request
+    needs: resolve
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: true
+
+      - name: Download lockfile
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: lockfile
+          path: build_files/
+
+      - name: Download Containerfile
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: containerfile
+          path: ./
+
+      - name: Create or update Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="automated/lockfile-update"
+          git checkout -B "$BRANCH"
+          git add Containerfile build_files/packages.manifest.yaml
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update base image and RPM lockfile"
+          git push -u origin "$BRANCH" --force
+          PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+            gh pr create \
+              --title "chore: update base image and RPM lockfile" \
+              --body "Automated daily update of the RPM package lockfile from \`build_files/rpms.in.yaml\`." \
+              --base main
+          else
+            echo "PR #$PR_NUMBER already exists, updated with new lockfile"
+          fi

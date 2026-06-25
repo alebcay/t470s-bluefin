@@ -317,3 +317,24 @@ format:
     fi
     # Run shfmt on all Bash scripts
     /usr/bin/find . -iname "*.sh" -type f -exec shfmt --write "{}" ';'
+
+# Resolve RPM lockfile from rpms.in.yaml in a Bluefin container
+[group('Lockfile')]
+resolve-lockfile:
+    #!/usr/bin/bash
+    set -euo pipefail
+    podman run --rm \
+        -v "${PWD}:/work:Z" \
+        -w /work \
+        ghcr.io/ublue-os/bluefin:stable \
+        bash -c '
+            dnf5 -y config-manager addrepo \
+                --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+            dnf5 -y install terra-release
+            dnf5 -y copr enable abn/throttled
+            dnf5 -y copr enable sneexy/python-validity
+            dnf5 -y copr enable lionheartp/Hyprland
+            dnf5 -y install dnf5-plugin-manifest libpkgmanifest
+            dnf5 manifest resolve --input build_files/rpms.in.yaml
+            cp packages.manifest.yaml build_files/packages.manifest.yaml
+        '
