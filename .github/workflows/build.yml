@@ -26,109 +26,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # build_kernel:
-  #   name: Build kernel RPM
-  #   runs-on: ubuntu-24.04
-  #   container:
-  #     image: ghcr.io/ublue-os/bluefin:stable
-
-  #   permissions:
-  #     contents: read
-  #     actions: write
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-  #       with:
-  #         fetch-depth: 0
-  #         persist-credentials: false
-
-  #     - name: Check if build-kernel.sh changed
-  #       id: script_changed
-  #       shell: bash
-  #       env:
-  #         BEFORE: ${{ github.event.before }}
-  #         AFTER: ${{ github.event.after }}
-  #         GH_API_URL: ${{ github.api_url }}
-  #         GH_REPOSITORY: ${{ github.repository }}
-  #         GH_EVENT_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
-  #       run: |
-  #         changed=false
-  #         case "${{ github.event_name }}" in
-  #           push)
-  #             if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
-  #               if curl -sL \
-  #                 -H "Authorization: Bearer ${{ github.token }}" \
-  #                 -H "Accept: application/vnd.github+json" \
-  #                 "${GH_API_URL}/repos/${GH_REPOSITORY}/compare/${BEFORE}...${AFTER}" \
-  #                 | jq -e '.files | any(.filename == "build_files/build-kernel.sh")' >/dev/null; then
-  #                 changed=true
-  #               fi
-  #             fi
-  #             ;;
-  #           pull_request)
-  #             if curl -sL \
-  #               -H "Authorization: Bearer ${{ github.token }}" \
-  #               -H "Accept: application/vnd.github+json" \
-  #               "${GH_API_URL}/repos/${GH_REPOSITORY}/pulls/${GH_EVENT_PULL_REQUEST_NUMBER}/files" \
-  #               | jq -e 'any(.filename == "build_files/build-kernel.sh")' >/dev/null; then
-  #               changed=true
-  #             fi
-  #             ;;
-  #         esac
-  #         echo "changed=${changed}" >> "$GITHUB_OUTPUT"
-
-  #     - name: Query kernel version from COPR
-  #       id: kernel_ver
-  #       shell: bash
-  #       run: |
-  #         echo "version=$(./build_files/build-kernel.sh query-version)" >> "$GITHUB_OUTPUT"
-
-  #     - name: Restore cached kernel RPMs
-  #       id: cache_kernel
-  #       uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-  #       with:
-  #         path: /tmp/kernel-rpms
-  #         key: kernel-cachyos-lto-${{ steps.kernel_ver.outputs.version }}
-
-  #     - name: Build kernel RPM from source
-  #       if: steps.cache_kernel.outputs.cache-hit != 'true' || steps.script_changed.outputs.changed == 'true'
-  #       shell: bash
-  #       run: ./build_files/build-kernel.sh build
-
-  #     - name: Delete old kernel RPM cache before saving
-  #       if: (steps.cache_kernel.outputs.cache-hit != 'true' || steps.script_changed.outputs.changed == 'true') && github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-  #       shell: bash
-  #       env:
-  #         GH_API_URL: ${{ github.api_url }}
-  #         GH_REPOSITORY: ${{ github.repository }}
-  #         GH_TOKEN: ${{ github.token }}
-  #         KERNEL_VERSION: ${{ steps.kernel_ver.outputs.version }}
-  #       run: |
-  #         KEY="kernel-cachyos-lto-${KERNEL_VERSION}"
-  #         curl -sL \
-  #           -X DELETE \
-  #           -H "Authorization: Bearer ${GH_TOKEN}" \
-  #           -H "Accept: application/vnd.github+json" \
-  #           "${GH_API_URL}/repos/${GH_REPOSITORY}/actions/caches?key=${KEY}" 2>/dev/null || true
-
-  #     - name: Save kernel RPMs to cache
-  #       if: (steps.cache_kernel.outputs.cache-hit != 'true' || steps.script_changed.outputs.changed == 'true') && github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-  #       uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-  #       with:
-  #         path: /tmp/kernel-rpms
-  #         key: kernel-cachyos-lto-${{ steps.kernel_ver.outputs.version }}
-
-  #     - name: Upload kernel RPMs
-  #       uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-  #       with:
-  #         name: kernel-rpms
-  #         path: /tmp/kernel-rpms/
-
   build_push:
     name: Build and push image
     runs-on: ubuntu-latest
-    # needs: build_kernel
 
     permissions:
       contents: read
@@ -187,12 +87,6 @@ jobs:
             containers.bootc=1
           sep-tags: " "
           sep-annotations: " "
-
-      # - name: Download kernel RPMs
-      #   uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-      #   with:
-      #     name: kernel-rpms
-      #     path: build_files/kernel-rpms/
 
       - name: Build Image
         id: build_image

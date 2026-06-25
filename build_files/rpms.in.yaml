@@ -1,0 +1,32 @@
+contentOrigin:
+  repos:
+    - repoid: fedora
+      baseurl: https://mirrors.kernel.org/fedora/releases/$releasever/Everything/$basearch/os/
+    - repoid: updates
+      baseurl: https://mirrors.kernel.org/fedora/updates/$releasever/Everything/$basearch/os/
+    - repoid: updates-archive
+      baseurl: https://fedoraproject-updates-archive.fedoraproject.org/fedora/$releasever/$basearch/
+    - repoid: copr:copr.fedorainfracloud.org:abn:throttled
+      baseurl: https://copr-be.cloud.fedoraproject.org/results/abn/throttled/fedora-$releasever-$basearch/
+    - repoid: copr:copr.fedorainfracloud.org:sneexy:python-validity
+      baseurl: https://copr-be.cloud.fedoraproject.org/results/sneexy/python-validity/fedora-$releasever-$basearch/
+    - repoid: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
+      baseurl: https://copr-be.cloud.fedoraproject.org/results/lionheartp/Hyprland/fedora-$releasever-$basearch/
+    - repoid: terra
+      baseurl: https://repos.fyralabs.com/terra$releasever
+packages:
+  - niri
+  - noctalia-git
+  - wl-mirror
+  - wl-clipboard
+  - ghostty
+  - fprintd-clients
+  - fprintd-clients-pam
+  - open-fprintd
+  - python3-validity
+  - tlp
+  - tlp-rdw
+  - throttled
+  - zcfan
+arches:
+  - x86_64
