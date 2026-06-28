@@ -2921,10 +2921,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260623git.a5eeef1-1.fc44.x86_64.rpm
-        checksum: sha256:6de8ff674246f054ef3010fb481338f06261b20682a168563f9d008b4d4f71b7
-        size: 7488888
-        evr: 5.0.0^20260623git.a5eeef1-1.fc44
+        location: noctalia-git-0:5.0.0^20260628git.dfa00a4-1.fc44.x86_64.rpm
+        checksum: sha256:3490cafd161daf052295db5db1d5af0f229e1447e921d5b831222bc90a1d93dd
+        size: 7733852
+        evr: 5.0.0^20260628git.dfa00a4-1.fc44
       - name: noopenh264
         repo_id: fedora
         location: Packages/n/noopenh264-2.6.0-4.fc44.x86_64.rpm
