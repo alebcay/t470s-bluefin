@@ -17,6 +17,26 @@ dnf5 -y install dnf5-plugin-manifest libpkgmanifest createrepo_c
 # Remove packages from base image that conflict with our replacements
 dnf5 -y remove thermald tuned tuned-ppd
 
+# Strip GNOME desktop to the minimum — we use niri + Noctalia + greetd/noctalia-greeter
+dnf5 -y remove \
+  gdm gnome-shell gnome-session \
+  gnome-control-center gnome-software gnome-software-fedora-latex \
+  gnome-console gnome-terminal \
+  nautilus \
+  gnome-initial-setup gnome-tour gnome-user-docs \
+  gnome-logs gnome-calendar gnome-contacts gnome-maps gnome-weather \
+  gnome-clocks gnome-characters \
+  gnome-calculator gnome-font-viewer \
+  totem evince eog simple-scan baobab loupe snapshot epiphany \
+  gnome-connections \
+  gnome-shell-extension-apps-menu gnome-shell-extension-background-logo \
+  gnome-shell-extension-launch-new-instance gnome-shell-extension-places \
+  gnome-shell-extension-window-list gnome-shell-extension-workspace-indicator \
+  gnome-browser-connector orca \
+  tracker tracker-miners \
+  rygel sushi \
+  xdg-desktop-portal-gnome
+
 # Use lockfile-based package management with download cache.
 CACHE_DIR=/rpm-cache
 if [ -d "$CACHE_DIR" ] && [ -n "$(ls -A "$CACHE_DIR" 2>/dev/null)" ]; then
@@ -38,6 +58,43 @@ with open('/ctx/rpms.in.yaml') as f:
     print(' '.join(yaml.safe_load(f)['packages']))
 ")
 dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
+
+# Configure xdg-desktop-portal backends for niri
+mkdir -p /etc/xdg-desktop-portal
+cat > /etc/xdg-desktop-portal/niri-portals.conf << 'PORTCONF'
+[preferred]
+org.freedesktop.impl.portal.FileChooser=gtk
+org.freedesktop.impl.portal.ScreenCast=wlr
+org.freedesktop.impl.portal.Screenshot=wlr
+PORTCONF
+
+# Set up greetd + noctalia-greeter (replaces GDM as display manager)
+
+# Greeter runtime directory
+mkdir -p /var/lib/noctalia-greeter
+chmod 0755 /var/lib/noctalia-greeter
+
+# greetd config
+cat > /etc/greetd/config.toml << 'EOF'
+[terminal]
+vt = 1
+
+[default_session]
+command = "/usr/bin/noctalia-greeter-session"
+user = "greetd"
+EOF
+
+# Skeleton greeter preferences
+cat > /var/lib/noctalia-greeter/greeter.toml << 'EOF'
+# noctalia-greeter greeter.toml
+# [session] default/last, [user] default, [appearance] scheme/password_style
+# [output] name/layout/scale, [cursor] theme/size/path, [keyboard] layout/variant/options
+EOF
+chown -R greetd:greetd /var/lib/noctalia-greeter 2>/dev/null || true
+
+# Mask GDM and enable greetd as the display-manager
+systemctl mask gdm.service
+systemctl enable greetd.service
 
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable abn/throttled

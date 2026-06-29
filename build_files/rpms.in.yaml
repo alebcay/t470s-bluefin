@@ -17,9 +17,15 @@ contentOrigin:
 packages:
   - niri
   - noctalia-git
+  - noctalia-greeter
+  - greetd
+  - greetd-selinux
   - wl-mirror
-  - wl-clipboard
   - ghostty
+  - xdg-desktop-portal-gtk
+  - xdg-desktop-portal-wlr
+  - gvfs
+  - gvfs-mtp
   - fprintd-clients
   - fprintd-clients-pam
   - open-fprintd
@@ -28,5 +34,7 @@ packages:
   - tlp-rdw
   - throttled
   - zcfan
+  - fuse
+  - fuse-libs
 arches:
   - x86_64
