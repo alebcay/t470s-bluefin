@@ -326,7 +326,7 @@ resolve-lockfile:
     podman run --rm \
         -v "${PWD}:/work:Z" \
         -w /work \
-        ghcr.io/ublue-os/bluefin:stable \
+        ghcr.io/projectbluefin/bluefin:stable \
         bash -c '
             dnf5 -y config-manager addrepo \
                 --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo

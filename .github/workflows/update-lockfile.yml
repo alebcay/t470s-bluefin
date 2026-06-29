@@ -18,13 +18,13 @@ jobs:
       - name: Check for base image update
         id: base
         run: |
-          CURRENT_DIGEST=$(skopeo inspect docker://ghcr.io/ublue-os/bluefin:stable --format '{{.Digest}}')
+          CURRENT_DIGEST=$(skopeo inspect docker://ghcr.io/projectbluefin/bluefin:stable --format '{{.Digest}}')
           PINNED_DIGEST=$(grep '^FROM ' Containerfile | grep -oP 'sha256:[a-f0-9]+')
           echo "current=${CURRENT_DIGEST}"
           echo "pinned=${PINNED_DIGEST}"
           if [ "${CURRENT_DIGEST}" != "${PINNED_DIGEST}" ]; then
             echo "Base image updated: ${PINNED_DIGEST} -> ${CURRENT_DIGEST}"
-            sed -i "s|ghcr.io/ublue-os/bluefin@${PINNED_DIGEST}|ghcr.io/ublue-os/bluefin@${CURRENT_DIGEST}|" Containerfile
+            sed -i "s|ghcr.io/projectbluefin/bluefin@${PINNED_DIGEST}|ghcr.io/projectbluefin/bluefin@${CURRENT_DIGEST}|" Containerfile
           fi
           echo "digest=${CURRENT_DIGEST}" >> "$GITHUB_OUTPUT"
 
@@ -33,7 +33,7 @@ jobs:
           podman run --rm \
             -v "${{ github.workspace }}:/work:Z" \
             -w /work \
-            "ghcr.io/ublue-os/bluefin@${{ steps.base.outputs.digest }}" \
+            "ghcr.io/projectbluefin/bluefin@${{ steps.base.outputs.digest }}" \
             bash -c '
               dnf5 -y config-manager addrepo \
                 --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
