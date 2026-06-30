@@ -33,7 +33,7 @@ dnf5 -y remove \
   gnome-shell-extension-window-list gnome-shell-extension-workspace-indicator \
   gnome-browser-connector orca \
   tracker tracker-miners \
-  rygel sushi
+  rygel sushi ptyxis
 
 # Use lockfile-based package management with download cache.
 CACHE_DIR=/rpm-cache
