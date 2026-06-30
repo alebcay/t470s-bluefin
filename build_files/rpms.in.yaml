@@ -38,5 +38,6 @@ packages:
   - zcfan
   - fuse
   - fuse-libs
+  - google-noto-sans-cjk-fonts
 arches:
   - x86_64

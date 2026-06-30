@@ -134,6 +134,12 @@ data:
         checksum: sha256:1da1dedae72ffbab654de2f5fa465d07f334e3e1929bf5967e32c53ec4d96f66
         size: 18160
         evr: 20251201-2.fc44
+      - name: google-noto-sans-cjk-fonts
+        repo_id: fedora
+        location: Packages/g/google-noto-sans-cjk-fonts-2.004-11.fc44.noarch.rpm
+        checksum: sha256:c780b44ef558636c446b93a3643834c034cd201fd2de892bb94383ddaccc864d
+        size: 84383338
+        evr: 1:2.004-11.fc44
       - name: google-noto-sans-vf-fonts
         repo_id: fedora
         location: Packages/g/google-noto-sans-vf-fonts-20251201-2.fc44.noarch.rpm
