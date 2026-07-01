@@ -134,6 +134,12 @@ data:
         checksum: sha256:1da1dedae72ffbab654de2f5fa465d07f334e3e1929bf5967e32c53ec4d96f66
         size: 18160
         evr: 20251201-2.fc44
+      - name: google-noto-sans-cjk-fonts
+        repo_id: fedora
+        location: Packages/g/google-noto-sans-cjk-fonts-2.004-11.fc44.noarch.rpm
+        checksum: sha256:c780b44ef558636c446b93a3643834c034cd201fd2de892bb94383ddaccc864d
+        size: 84383338
+        evr: 1:2.004-11.fc44
       - name: google-noto-sans-vf-fonts
         repo_id: fedora
         location: Packages/g/google-noto-sans-vf-fonts-20251201-2.fc44.noarch.rpm
@@ -218,6 +224,12 @@ data:
         checksum: sha256:22566a6e6a66690a5606ff2ad2224cf34d19cef5708b3bcb15ead70a558aedfc
         size: 30898
         evr: 0.7-1.fc44
+      - name: osinfo-db
+        repo_id: fedora
+        location: Packages/o/osinfo-db-20251212-1.fc44.noarch.rpm
+        checksum: sha256:5984c48ed7b330ffc892f98b8f8e9ec7238cbcf5d3f78b0b94ff0ef195f3d620
+        size: 502835
+        evr: 20251212-1.fc44
       - name: pcre2-syntax
         repo_id: fedora
         location: Packages/p/pcre2-syntax-10.47-1.fc44.1.noarch.rpm
@@ -470,6 +482,12 @@ data:
         checksum: sha256:cb463d3b05340793b6c8457e0e2702e800a89ce1b39f08f7f52e23c6f07f4ea5
         size: 51539
         evr: 3.10-4.fc44
+      - name: poppler-data
+        repo_id: fedora
+        location: Packages/p/poppler-data-0.4.11-11.fc44.noarch.rpm
+        checksum: sha256:91b1ad27888f9aa52d4a8b89c628a3ac1e1a8067572966cac5644c0c7cd05264
+        size: 2061793
+        evr: 0.4.11-11.fc44
       - name: publicsuffix-list-dafsa
         repo_id: fedora
         location: Packages/p/publicsuffix-list-dafsa-20260116-1.fc44.noarch.rpm
@@ -512,6 +530,12 @@ data:
         checksum: sha256:1e65cb5599800e37480abf6a1ec2793e5199430c729f499d8b283e498cbc2a96
         size: 167522
         evr: 0.15-1.fc44
+      - name: samba-common
+        repo_id: updates-archive
+        location: samba-common-4.24.3-1.fc44.noarch.rpm
+        checksum: sha256:c5546f01e0584a041b4cce952723a726a4c81697696b0c92d15e8345cd4ef161
+        size: 189317
+        evr: 2:4.24.3-1.fc44
       - name: selinux-policy
         repo_id: updates-archive
         location: selinux-policy-44.3-1.fc44.noarch.rpm
@@ -609,6 +633,12 @@ data:
         checksum: sha256:07a13ef8a8b1b0285ab470ce8023f3ffee12015045ba22e252ab2196e594d3c6
         size: 895119
         evr: 1.1.0-3.fc44
+      - name: aribb24
+        repo_id: fedora
+        location: Packages/a/aribb24-1.0.3^20160216git5e9be27-5.fc44.x86_64.rpm
+        checksum: sha256:73e33dfa76f9cb0b49ff47340c219e76d5cb35d7274c71131f82cad5d3f88847
+        size: 41507
+        evr: 1.0.3^20160216git5e9be27-5.fc44
       - name: at-spi2-atk
         repo_id: updates-archive
         location: at-spi2-atk-2.60.4-1.fc44.x86_64.rpm
@@ -747,6 +777,18 @@ data:
         checksum: sha256:e930db6b5d255a3479126dd8361835cfef75f4ba675f99ce9490f9a49e1ae981
         size: 392343
         evr: 3.10-1.fc44
+      - name: cjson
+        repo_id: fedora
+        location: Packages/c/cjson-1.7.18-5.fc44.x86_64.rpm
+        checksum: sha256:475fd528b7b1fc2a8bf6a7ed53060b81e6bae22443ba9f946ee19273383d468f
+        size: 33500
+        evr: 1.7.18-5.fc44
+      - name: codec2
+        repo_id: fedora
+        location: Packages/c/codec2-1.2.0-9.fc44.x86_64.rpm
+        checksum: sha256:4a469d1410e6ca824fde815509a1d8ccb38054fdc224e3c7b084ffebfacd2ae4
+        size: 659756
+        evr: 1.2.0-9.fc44
       - name: colord-libs
         repo_id: fedora
         location: Packages/c/colord-libs-1.4.8-4.fc44.x86_64.rpm
@@ -849,6 +891,18 @@ data:
         checksum: sha256:ff692b9958e562eb41ff5e338bfc5ddf04075cfe3b7b5367008737aea80cd0e8
         size: 289773
         evr: 0.195-1.fc44
+      - name: exempi
+        repo_id: fedora
+        location: Packages/e/exempi-2.6.4-9.fc44.x86_64.rpm
+        checksum: sha256:215c52e5b51fb1118ca3e8575fb7e9d1055f1e5781646db10c4a9bb71868e78c
+        size: 625689
+        evr: 2.6.4-9.fc44
+      - name: exiv2-libs
+        repo_id: fedora
+        location: Packages/e/exiv2-libs-0.28.6-3.fc44.x86_64.rpm
+        checksum: sha256:1c7a233c9b31b5d3647b02dbfc9763eec6aef473cedd39acc957634bc3a52718
+        size: 960843
+        evr: 0.28.6-3.fc44
       - name: expat
         repo_id: updates-archive
         location: expat-2.8.1-1.fc44.x86_64.rpm
@@ -945,6 +999,12 @@ data:
         checksum: sha256:b236de21338ae23b4a5470a8e19068d10aaa3bde11435fdd9aa3d15dd0c9138b
         size: 104757
         evr: 3.18.2-1.fc44
+      - name: game-music-emu
+        repo_id: fedora
+        location: Packages/g/game-music-emu-0.6.4-3.fc44.x86_64.rpm
+        checksum: sha256:fec8d2478fa6397027fd92b8b091c98acf75e77a034edd1055836c4f6113f06a
+        size: 176375
+        evr: 0.6.4-3.fc44
       - name: gawk
         repo_id: fedora
         location: Packages/g/gawk-5.3.2-3.fc44.x86_64.rpm
@@ -987,6 +1047,12 @@ data:
         checksum: sha256:8e8ef4b52be62acc09bd0f812d737f814a08656704f5bd17fcf00fd074035ad6
         size: 17103489
         evr: 1.3.1-1.fc44
+      - name: giflib
+        repo_id: updates-archive
+        location: giflib-6.1.3-2.fc44.x86_64.rpm
+        checksum: sha256:040859f2882e55afa4e246adb9ed2b68e85eea8fa2ecbffe6b4d0cb406aaa1ac
+        size: 56991
+        evr: 6.1.3-2.fc44
       - name: glib-networking
         repo_id: fedora
         location: Packages/g/glib-networking-2.80.1-4.fc44.x86_64.rpm
@@ -1011,12 +1077,24 @@ data:
         checksum: sha256:fff5135266d359da50562c3e5feb235ab81177a3fdacdf9a7ddf7adaacee7f2b
         size: 380605
         evr: 2.43-6.fc44
+      - name: glibc-gconv-extra
+        repo_id: updates-archive
+        location: glibc-gconv-extra-2.43-6.fc44.x86_64.rpm
+        checksum: sha256:ab3ba8d51f4649cfc26bfa91614e93812c90d9a134767f335fc6c01638d4adf2
+        size: 1706561
+        evr: 2.43-6.fc44
       - name: glibc-minimal-langpack
         repo_id: updates-archive
         location: glibc-minimal-langpack-2.43-6.fc44.x86_64.rpm
         checksum: sha256:7579056b6318df21d684b54e2647b4fa6aa0f0e4a132094c3a446d003858c42d
         size: 83493
         evr: 2.43-6.fc44
+      - name: glycin-gtk4-libs
+        repo_id: fedora
+        location: Packages/g/glycin-gtk4-libs-2.1.1-1.fc44.x86_64.rpm
+        checksum: sha256:ee94207bfc77bdee0b32ec13e055f2271c9761851834d058fa2d761e7a9d7449
+        size: 152979
+        evr: 2.1.1-1.fc44
       - name: glycin-libs
         repo_id: fedora
         location: Packages/g/glycin-libs-2.1.1-1.fc44.x86_64.rpm
@@ -1035,6 +1113,24 @@ data:
         checksum: sha256:94b960c5eaba00c1cb56abdbed05bd348d1256360cf68fd9cd7a24b3232d6558
         size: 330200
         evr: 1:6.3.0-5.fc44
+      - name: gnome-autoar
+        repo_id: fedora
+        location: Packages/g/gnome-autoar-0.4.5-4.fc44.x86_64.rpm
+        checksum: sha256:55bac4a77e46e2d2861e73f412674a02929fe7cdcd6a4ad452c9ef12e9244e93
+        size: 58576
+        evr: 0.4.5-4.fc44
+      - name: gnome-desktop3
+        repo_id: fedora
+        location: Packages/g/gnome-desktop3-44.5-1.fc44.x86_64.rpm
+        checksum: sha256:a4270b51ac5e692f13b11f8f3c38bb4219a9156022a492596e0768dc9b9d0c4f
+        size: 679256
+        evr: 44.5-1.fc44
+      - name: gnome-desktop4
+        repo_id: fedora
+        location: Packages/g/gnome-desktop4-44.5-1.fc44.x86_64.rpm
+        checksum: sha256:12229ed6fff0b90d0e6ea522eeee93f654bfe12fbf65c231cd9abf241f057b46
+        size: 156939
+        evr: 44.5-1.fc44
       - name: gnupg2
         repo_id: updates-archive
         location: gnupg2-2.4.9-16.fc44.x86_64.rpm
@@ -1077,11 +1173,23 @@ data:
         checksum: sha256:3cd4e8a10a6ff6a9e3d2bac05f4cdc7573e7d94737f7070e5b1ab21a90d4857c
         size: 1495935
         evr: 3.8.13-1.fc44
+      - name: gobject-introspection
+        repo_id: fedora
+        location: Packages/g/gobject-introspection-1.86.0-3.fc44.x86_64.rpm
+        checksum: sha256:f3cdc954f82e83c4c6af310c9b6c702ff71910a4e590a6d2d82c56dd56f036d0
+        size: 125663
+        evr: 1.86.0-3.fc44
       - name: gpgme
         repo_id: updates-archive
         location: gpgme-2.0.1-4.fc44.x86_64.rpm
         checksum: sha256:a3a5bf7a7096859ffe7867c0b74dc86f8474ab4bb4c6234b330900f812297d09
         size: 237444
+        evr: 2.0.1-4.fc44
+      - name: gpgmepp
+        repo_id: updates-archive
+        location: gpgmepp-2.0.1-4.fc44.x86_64.rpm
+        checksum: sha256:60aa3e546647db718a604591e4ccad8e962a80c4a4d1b36774cf8f4ad91b7abe
+        size: 153042
         evr: 2.0.1-4.fc44
       - name: graphene
         repo_id: fedora
@@ -1233,11 +1341,23 @@ data:
         checksum: sha256:0c62804244f3176ea30499708eb36798af32a388652a8d18b6cdc18352c31228
         size: 711295
         evr: 1.3.0-2.fc44
+      - name: ilbc
+        repo_id: fedora
+        location: Packages/i/ilbc-3.0.4-19.fc44.x86_64.rpm
+        checksum: sha256:083395453a2de7b547dccd44dca570f927f292ab2117e0cdbe1faf611b0c888e
+        size: 58598
+        evr: 3.0.4-19.fc44
       - name: inih
         repo_id: fedora
         location: Packages/i/inih-62-2.fc44.x86_64.rpm
         checksum: sha256:15b71f61b82a37b78b2a328634d5a516b93f84a6c22288b464ece3143a9392ed
         size: 18694
+        evr: 62-2.fc44
+      - name: inih-cpp
+        repo_id: fedora
+        location: Packages/i/inih-cpp-62-2.fc44.x86_64.rpm
+        checksum: sha256:432b6bef07d874c85984f7a76bd85b29a6817fe308832e38f70e96b22c000c82
+        size: 25578
         evr: 62-2.fc44
       - name: innoextract
         repo_id: fedora
@@ -1251,6 +1371,12 @@ data:
         checksum: sha256:98c98440f39814159f49af2bde8aa7e1654df45015a0db5fbfb2180692e2e5e6
         size: 127472
         evr: 6.17-2.fc44
+      - name: jansson
+        repo_id: fedora
+        location: Packages/j/jansson-2.14-4.fc44.x86_64.rpm
+        checksum: sha256:950a7003c1246568c6d602b222188391b1d4f411638d3470179736195f3b04f9
+        size: 48245
+        evr: 2.14-4.fc44
       - name: jbigkit-libs
         repo_id: fedora
         location: Packages/j/jbigkit-libs-2.1-33.fc44.x86_64.rpm
@@ -1431,6 +1557,18 @@ data:
         checksum: sha256:e1acd54b88cc77febfda0d06809b089f5652edaa1b1726da615a0c28e5690944
         size: 1972738
         evr: 3.13.3-1.fc44
+      - name: libarchive
+        repo_id: updates-archive
+        location: libarchive-3.8.7-1.fc44.x86_64.rpm
+        checksum: sha256:284cd5415fcfbba93ea228160c59904cbec4e999b41e40399a9bb367c3a33bf0
+        size: 452979
+        evr: 3.8.7-1.fc44
+      - name: libaribcaption
+        repo_id: fedora
+        location: Packages/l/libaribcaption-1.1.1-4.fc44.x86_64.rpm
+        checksum: sha256:f3536757c8240c21d08302782f5b5e1f8fa3eb97a3c8bd223d2ca1024526e4e6
+        size: 120480
+        evr: 1.1.1-4.fc44
       - name: libassuan
         repo_id: fedora
         location: Packages/l/libassuan-2.5.7-5.fc44.x86_64.rpm
@@ -1455,6 +1593,24 @@ data:
         checksum: sha256:524d8916b69977f52dc74a447a1b3bca4f2e106ab8a59788e8953f33527ffb30
         size: 18359
         evr: 2.5.2-8.fc44
+      - name: libavcodec-free
+        repo_id: updates-archive
+        location: libavcodec-free-8.1.2-1.fc44.x86_64.rpm
+        checksum: sha256:89fedc93f5e7ad51993e4a651fa3831679ed2767ba7e520a6f176afa2c6b593a
+        size: 4718333
+        evr: 8.1.2-1.fc44
+      - name: libavformat-free
+        repo_id: updates-archive
+        location: libavformat-free-8.1.2-1.fc44.x86_64.rpm
+        checksum: sha256:c6859b866ff9ca0d8745d3bce03955dc20ea0e52f1a645e6347e9b3207016d57
+        size: 1306723
+        evr: 8.1.2-1.fc44
+      - name: libavutil-free
+        repo_id: updates-archive
+        location: libavutil-free-8.1.2-1.fc44.x86_64.rpm
+        checksum: sha256:319a3d869ff109a6283f22142bea3a4df4e3fb92c276a20442bbd833a741f551
+        size: 388973
+        evr: 8.1.2-1.fc44
       - name: libblkid
         repo_id: updates-archive
         location: libblkid-2.41.5-1.fc44.x86_64.rpm
@@ -1569,6 +1725,12 @@ data:
         checksum: sha256:51a08097f706acfa72c85e48cf1664d8f8f4e1235360d5f169eb7cf8625cbc2d
         size: 90734
         evr: 10.2+2.0.2-6.fc44
+      - name: libchromaprint
+        repo_id: fedora
+        location: Packages/l/libchromaprint-1.6.0-4.fc44.x86_64.rpm
+        checksum: sha256:4efd9190419a97b1964df80f4359e3db77e47c6d7c405e9ac39969907011d834
+        size: 45067
+        evr: 1.6.0-4.fc44
       - name: libcloudproviders
         repo_id: fedora
         location: Packages/l/libcloudproviders-0.4.0-1.fc44.x86_64.rpm
@@ -1581,6 +1743,12 @@ data:
         checksum: sha256:c163f4fce53aa42e032c04299cecf9cc57e69437515a095e667b5a91b7859878
         size: 27759
         evr: 1.47.3-4.fc44
+      - name: libcue
+        repo_id: fedora
+        location: Packages/l/libcue-2.3.0-14.fc44.x86_64.rpm
+        checksum: sha256:12d6a2723a8fa2e9fa47474b52295b5955d5f944cd2dcabd2a7ec3d0dbc51b0b
+        size: 36246
+        evr: 2.3.0-14.fc44
       - name: libcurl
         repo_id: updates-archive
         location: libcurl-8.18.0-6.fc44.x86_64.rpm
@@ -1617,6 +1785,18 @@ data:
         checksum: sha256:edd4ba5100079961bb7f9ebcb3efda75dac38f7be79f73e55839c699e236e997
         size: 170660
         evr: 2.4.134-1.fc44
+      - name: libdvdnav
+        repo_id: fedora
+        location: Packages/l/libdvdnav-7.0.0-1.fc44.x86_64.rpm
+        checksum: sha256:9c0868fe417ff0243d775e616a2f75fcbaa8c50b944e899c51d21d47c301ef26
+        size: 60090
+        evr: 7.0.0-1.fc44
+      - name: libdvdread
+        repo_id: fedora
+        location: Packages/l/libdvdread-7.0.1-1.fc44.x86_64.rpm
+        checksum: sha256:9c0bbc09e385449c163a998f923fb08b771ee71d1997ac5dbfd3a5fcb3c5c94d
+        size: 84102
+        evr: 7.0.1-1.fc44
       - name: libebur128
         repo_id: fedora
         location: Packages/l/libebur128-1.2.6-15.fc44.x86_64.rpm
@@ -1689,6 +1869,12 @@ data:
         checksum: sha256:9b34c995e8feab6f9623917ee907052aca214d33656015d506ae73a0c5c07ac5
         size: 644900
         evr: 1.12.2-1.fc44
+      - name: libgexiv2
+        repo_id: fedora
+        location: Packages/l/libgexiv2-0.16.0-2.fc44.x86_64.rpm
+        checksum: sha256:575b844d4bd8467d057064d9212682a32b0d66d62468480a93b8f6d21e9000a8
+        size: 104412
+        evr: 0.16.0-2.fc44
       - name: libglvnd
         repo_id: fedora
         location: Packages/l/libglvnd-1.7.0-9.fc44.x86_64.rpm
@@ -1725,6 +1911,12 @@ data:
         checksum: sha256:15d74f36f267a823f578697f5cac1ea5c7ebf0a765a6768d039f9b333447007d
         size: 260153
         evr: 1.58-2.fc44
+      - name: libgsf
+        repo_id: updates-archive
+        location: libgsf-1.14.58-1.fc44.x86_64.rpm
+        checksum: sha256:65cef973caf0e8cfef9a7fa680b0e1c619047f587ae4f5337e6ad98b5ad8ec3e
+        size: 277305
+        evr: 1.14.58-1.fc44
       - name: libgudev
         repo_id: fedora
         location: Packages/l/libgudev-238-9.fc44.x86_64.rpm
@@ -1737,6 +1929,12 @@ data:
         checksum: sha256:14d94cd79d0f52400e8eeaae62b37662f84df934ff9f5240d65433331e351be6
         size: 66281
         evr: 0.4.9-5.fc44
+      - name: libgxps
+        repo_id: fedora
+        location: Packages/l/libgxps-0.3.2-12.fc44.x86_64.rpm
+        checksum: sha256:79ee06eca34abd30597646bd983fefcc8b7d5de6e93b4e48381d11bf590a6517
+        size: 80532
+        evr: 0.3.2-12.fc44
       - name: libheif
         repo_id: fedora
         location: Packages/l/libheif-1.21.2-1.fc44.x86_64.rpm
@@ -1797,6 +1995,12 @@ data:
         checksum: sha256:e36055fdc7a4cfe93aa3c76aa298c9bbcb9dfed26f748cb74f386ad984bb9c65
         size: 44569
         evr: 2.0.2.3-19.fc44
+      - name: libldb
+        repo_id: updates-archive
+        location: libldb-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:5e39c00833a21110b7e35214c59d0c169f7e2fbd6843c52597d82f4d192a03cd
+        size: 204847
+        evr: 2:4.24.3-1.fc44
       - name: liblerc
         repo_id: fedora
         location: Packages/l/liblerc-4.0.0-10.fc44.x86_64.rpm
@@ -1809,6 +2013,12 @@ data:
         checksum: sha256:de4e39905949201dbba809e84d99d6628b0afc19f20e25c04ac1011242922990
         size: 27420
         evr: 0.5.0-5.fc44
+      - name: libmodplug
+        repo_id: fedora
+        location: Packages/l/libmodplug-0.8.9.0-29.fc44.x86_64.rpm
+        checksum: sha256:ea37acdcc55c34e7096dbf801d420fb9fb3231400d7bb16c5265f69936c5c464
+        size: 187249
+        evr: 1:0.8.9.0-29.fc44
       - name: libmount
         repo_id: updates-archive
         location: libmount-2.41.5-1.fc44.x86_64.rpm
@@ -1881,6 +2091,18 @@ data:
         checksum: sha256:f910b8f19ddb3759bc840d149418cd4b1863b187db7a983455fc7d1b292a6a00
         size: 165793
         evr: 0.25.3-3.fc44
+      - name: libopenmpt
+        repo_id: updates-archive
+        location: libopenmpt-0.8.7-1.fc44.x86_64.rpm
+        checksum: sha256:07f382c4dd71ea708b9e20fbb41a59942211c21bbf013b3aeda27ef0cfa3b353
+        size: 825814
+        evr: 0.8.7-1.fc44
+      - name: libosinfo
+        repo_id: fedora
+        location: Packages/l/libosinfo-1.12.0-5.fc44.x86_64.rpm
+        checksum: sha256:ba3c5e4dc52765d4d74617188fdcc57938a3257b18ce045e13159615366711e0
+        size: 325065
+        evr: 1.12.0-5.fc44
       - name: libpciaccess
         repo_id: fedora
         location: Packages/l/libpciaccess-0.16-17.fc44.x86_64.rpm
@@ -1899,6 +2121,18 @@ data:
         checksum: sha256:88403c9c7b95c25a8b98c6f6ccf37ddc7cc8aa761e21e86d7083d2979148d09e
         size: 132636
         evr: 2:1.6.58-1.fc44
+      - name: libportal
+        repo_id: updates-archive
+        location: libportal-0.10.0-1.fc44.x86_64.rpm
+        checksum: sha256:bd56170a54a8b8a397fb06c7ad4b07b3cae480449d6fdbb471973941f75031cb
+        size: 90969
+        evr: 0.10.0-1.fc44
+      - name: libportal-gtk4
+        repo_id: updates-archive
+        location: libportal-gtk4-0.10.0-1.fc44.x86_64.rpm
+        checksum: sha256:a33505e46f554ee68bf41a7248bc57a0625314a76b8e93e343c8f4010dd475a8
+        size: 17739
+        evr: 0.10.0-1.fc44
       - name: libproxy
         repo_id: fedora
         location: Packages/l/libproxy-0.5.12-2.fc44.x86_64.rpm
@@ -1923,6 +2157,18 @@ data:
         checksum: sha256:2fce79a1fa02ced905d2036817c33d29b966363f2250d4e7303d877eef0ffa37
         size: 2683803
         evr: 5.9.0-1.fc44
+      - name: librabbitmq
+        repo_id: updates-archive
+        location: librabbitmq-0.16.0-1.fc44.x86_64.rpm
+        checksum: sha256:a80ff80ea0f2761adcde704ac65d47b4c38743eb3b0fcc4a62ed086247a1abce
+        size: 45239
+        evr: 0.16.0-1.fc44
+      - name: librist
+        repo_id: fedora
+        location: Packages/l/librist-0.2.11-1.fc44.x86_64.rpm
+        checksum: sha256:ff18b0619f06f1d71674de3b4ec47d1ff22642da7390eb5d1a4bf3511cc79beb
+        size: 90296
+        evr: 0.2.11-1.fc44
       - name: librsvg2
         repo_id: updates-archive
         location: librsvg2-2.62.3-1.fc44.x86_64.rpm
@@ -1983,12 +2229,24 @@ data:
         checksum: sha256:f6743acc4b48d79f8d9c213d5647d7073daeac2fa3e7292e3f4f1471cc9c94ab
         size: 89483
         evr: 2.41.5-1.fc44
+      - name: libsmbclient
+        repo_id: updates-archive
+        location: libsmbclient-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:a41fea9a5428dff8b75a041c8cbead3047e6a3fbc728c4903025dcc9d7a6c0c9
+        size: 84805
+        evr: 2:4.24.3-1.fc44
       - name: libsndfile
         repo_id: fedora
         location: Packages/l/libsndfile-1.2.2-11.fc44.x86_64.rpm
         checksum: sha256:f7bb2f0abb0a15687ce5e4c972bc2394405457021e0118ef6d43ba2fb97d626c
         size: 229462
         evr: 1.2.2-11.fc44
+      - name: libsodium
+        repo_id: updates-archive
+        location: libsodium-1.0.22-1.fc44.x86_64.rpm
+        checksum: sha256:d68bfb57a93d95c5f7d0be1fd8557a2cfda20afac3c43904325b30c17b4fae4f
+        size: 215010
+        evr: 1.0.22-1.fc44
       - name: libsoup3
         repo_id: updates-archive
         location: libsoup3-3.6.6-8.fc44.x86_64.rpm
@@ -2013,12 +2271,36 @@ data:
         checksum: sha256:df3bafb6551ea650dbe3a571bee8f15f280ba3601ef048edab0140fdc00d0806
         size: 149738
         evr: 3.0.1-11.fc44
+      - name: libswresample-free
+        repo_id: updates-archive
+        location: libswresample-free-8.1.2-1.fc44.x86_64.rpm
+        checksum: sha256:d97ab251e51a1c94553f86451bdce110dbe4474603b365374788f422afa196b5
+        size: 72771
+        evr: 8.1.2-1.fc44
+      - name: libtalloc
+        repo_id: fedora
+        location: Packages/l/libtalloc-2.4.4-1.fc44.x86_64.rpm
+        checksum: sha256:f85faec803d236600ae7181bd0d0fa64ee8408fef267792095cb87836c581538
+        size: 37369
+        evr: 2.4.4-1.fc44
       - name: libtasn1
         repo_id: fedora
         location: Packages/l/libtasn1-4.21.0-1.fc44.x86_64.rpm
         checksum: sha256:32806a98942dc5492838b4642cb830ce20f478609733326fb9388539930d6596
         size: 77814
         evr: 4.21.0-1.fc44
+      - name: libtdb
+        repo_id: fedora
+        location: Packages/l/libtdb-1.4.15-1.fc44.x86_64.rpm
+        checksum: sha256:99a8984721421a1e85b522bce32a3e22c7927fce505584ad21d8b5f8885ec2d2
+        size: 58523
+        evr: 1.4.15-1.fc44
+      - name: libtevent
+        repo_id: fedora
+        location: Packages/l/libtevent-0.17.1-4.fc44.x86_64.rpm
+        checksum: sha256:36fbb72b41dfe7a46123f99578f2b53a188e7a501a10a3d7e64dc698648bc717
+        size: 54706
+        evr: 0.17.1-4.fc44
       - name: libthai
         repo_id: fedora
         location: Packages/l/libthai-0.1.30-2.fc44.x86_64.rpm
@@ -2097,6 +2379,12 @@ data:
         checksum: sha256:d2fc6a290e4f5e142fb4506ed2e188f615c8eb3b407dabbf4159b774edf20402
         size: 124185
         evr: 2.23.0-3.fc44
+      - name: libvdpau
+        repo_id: fedora
+        location: Packages/l/libvdpau-1.5-11.fc44.x86_64.rpm
+        checksum: sha256:5955332827a62021cfcfe2cedaa850e4a1d978db790f0e5ebdc6c1b26c24c21f
+        size: 16877
+        evr: 1.5-11.fc44
       - name: libverto
         repo_id: fedora
         location: Packages/l/libverto-0.3.2-12.fc44.x86_64.rpm
@@ -2121,6 +2409,18 @@ data:
         checksum: sha256:f003acd249ad988a60ecc5458895f6e444fe13f98108969d82598339d1942f85
         size: 195613
         evr: 1:1.3.7-14.fc44
+      - name: libvpl
+        repo_id: fedora
+        location: Packages/l/libvpl-2.16.0-2.fc44.x86_64.rpm
+        checksum: sha256:4538454b4a313f063305dfd3a697521774070b42001ff3f014f4e50e3a586d6b
+        size: 171589
+        evr: 1:2.16.0-2.fc44
+      - name: libvpx
+        repo_id: fedora
+        location: Packages/l/libvpx-1.15.0-5.fc44.x86_64.rpm
+        checksum: sha256:d57a8be46724d00d1a798706e621b7a0934bc7ddcd58dff815b3bf705d727ec1
+        size: 1259442
+        evr: 1.15.0-5.fc44
       - name: libwacom
         repo_id: updates-archive
         location: libwacom-2.19.0-1.fc44.x86_64.rpm
@@ -2151,6 +2451,12 @@ data:
         checksum: sha256:8c504b91f2a057bd7e73247d6ff6c28c5772b263264237e71d853d5abb74fe97
         size: 43607
         evr: 1.24.0-3.fc44
+      - name: libwbclient
+        repo_id: updates-archive
+        location: libwbclient-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:b5d192ad666089fd72b2734602972f0608cbdfbcfe2cc950d7636b60933ac017
+        size: 50888
+        evr: 2:4.24.3-1.fc44
       - name: libwebp
         repo_id: fedora
         location: Packages/l/libwebp-1.6.0-3.fc44.x86_64.rpm
@@ -2193,12 +2499,24 @@ data:
         checksum: sha256:c25f27024419607d84725563bdde157887dd8c90b767beaf10745826715ccc5e
         size: 13533
         evr: 1.3.2-8.fc44
+      - name: libxslt
+        repo_id: fedora
+        location: Packages/l/libxslt-1.1.43-6.fc44.x86_64.rpm
+        checksum: sha256:bf3abcd45083190ea0833d3332526712dee545a7e0d8898307efe5f623ed007f
+        size: 197353
+        evr: 1.1.43-6.fc44
       - name: libyaml
         repo_id: fedora
         location: Packages/l/libyaml-0.2.5-18.fc44.x86_64.rpm
         checksum: sha256:acb3fcb1381f1cd0cb337c34ce7109547e602945911c5c5ef1b3d4c8f719a852
         size: 64563
         evr: 0.2.5-18.fc44
+      - name: libzip
+        repo_id: fedora
+        location: Packages/l/libzip-1.11.4-3.fc44.x86_64.rpm
+        checksum: sha256:301d4294b2506f522e4fd2c84f423767e16e533ae4b449f9db34e541c5941f36
+        size: 76659
+        evr: 1.11.4-3.fc44
       - name: libzstd
         repo_id: fedora
         location: Packages/l/libzstd-1.5.7-5.fc44.x86_64.rpm
@@ -2223,12 +2541,36 @@ data:
         checksum: sha256:8baa6be6981022632fad26a741e598c7e89c864494c676a3b4a9433f7899e4bc
         size: 42940
         evr: 3.6.0-24.fc44
+      - name: lmdb-libs
+        repo_id: fedora
+        location: Packages/l/lmdb-libs-0.9.34-2.fc44.x86_64.rpm
+        checksum: sha256:506bface042bb5caac4c343147ea4b1275b694ed45c233a5a0728b0a2ff1c21d
+        size: 65359
+        evr: 0.9.34-2.fc44
+      - name: localsearch
+        repo_id: updates-archive
+        location: localsearch-3.11.1-1.fc44.x86_64.rpm
+        checksum: sha256:8a305cb14ca7e7db309996e717ccf2efdf1607f0418737ea677b99392c283dfd
+        size: 901684
+        evr: 3.11.1-1.fc44
+      - name: lpcnetfreedv
+        repo_id: fedora
+        location: Packages/l/lpcnetfreedv-0.5-10.fc44.x86_64.rpm
+        checksum: sha256:4800044b4f400aec05c96320ca161bcd07ba086a707d35a8847701bf9556ee2b
+        size: 7690083
+        evr: 0.5-10.fc44
       - name: lua-libs
         repo_id: fedora
         location: Packages/l/lua-libs-5.4.8-5.fc44.x86_64.rpm
         checksum: sha256:f0e198863835e3e159457fe8de7f47e60896277aaf380fdd3363875a0c985586
         size: 139832
         evr: 5.4.8-5.fc44
+      - name: lz4-libs
+        repo_id: fedora
+        location: Packages/l/lz4-libs-1.10.0-4.fc44.x86_64.rpm
+        checksum: sha256:3e5697a9804a0c9fe1f1cd2b5a9c99e474bc6c6e2b543a8b1794f2649c013077
+        size: 79562
+        evr: 1.10.0-4.fc44
       - name: lzo
         repo_id: fedora
         location: Packages/l/lzo-2.10-16.fc44.x86_64.rpm
@@ -2295,6 +2637,18 @@ data:
         checksum: sha256:03a269b7e899a2a57b51aa2328268a82ceec8e456db62bf304d5ab1be56055e6
         size: 21692
         evr: 1.1.6-12.fc44
+      - name: nautilus
+        repo_id: updates-archive
+        location: nautilus-50.2.2-2.fc44.x86_64.rpm
+        checksum: sha256:5683e72f65b7621596b3c7d8fc2b65ba7d233a8114132ce7c1ac089d9199d8c3
+        size: 2653192
+        evr: 50.2.2-2.fc44
+      - name: nautilus-extensions
+        repo_id: updates-archive
+        location: nautilus-extensions-50.2.2-2.fc44.x86_64.rpm
+        checksum: sha256:ca00255adb71388a2fc2183ae514f55542af49f5599a0bfb2f1f687292f5197d
+        size: 37631
+        evr: 50.2.2-2.fc44
       - name: ncurses
         repo_id: fedora
         location: Packages/n/ncurses-6.6-1.fc44.x86_64.rpm
@@ -2319,6 +2673,12 @@ data:
         checksum: sha256:0ca9f4a87d2c3657a7c802e2cc3b9fd09e7668d474dee662b6f221cb92fb7565
         size: 161199
         evr: 1.22.1-1.fc44
+      - name: ngtcp2-crypto-gnutls
+        repo_id: updates-archive
+        location: ngtcp2-crypto-gnutls-1.22.1-1.fc44.x86_64.rpm
+        checksum: sha256:5c6dd2c2d28ce5c1a0f052c899f231e841487a6466cb4e87024fe5ef9168a102
+        size: 25166
+        evr: 1.22.1-1.fc44
       - name: ngtcp2-crypto-ossl
         repo_id: updates-archive
         location: ngtcp2-crypto-ossl-1.22.1-1.fc44.x86_64.rpm
@@ -2333,10 +2693,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260630git.c5042b9-1.fc44.x86_64.rpm
-        checksum: sha256:c3ecb14f9b36311a7e480f5c01a392b5c99966925854d03f3c1d4b4fa5e12eab
-        size: 7790477
-        evr: 5.0.0^20260630git.c5042b9-1.fc44
+        location: noctalia-git-0:5.0.0^20260630git.195c43f-1.fc44.x86_64.rpm
+        checksum: sha256:de160d64096fb5347814eaaf41e006ee65bab6656271b98eb622d527ad9d8df9
+        size: 7762441
+        evr: 5.0.0^20260630git.195c43f-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.0.0^20260621git.fca79eb-2.fc44.x86_64.rpm
@@ -2397,6 +2757,18 @@ data:
         checksum: sha256:3b49398d54913199677395c4336eb25e186a9235539f0e78e4dfdafe64b142cc
         size: 225317
         evr: 6.9.10-4.fc44
+      - name: openapv-libs
+        repo_id: fedora
+        location: Packages/o/openapv-libs-0.2.1.2-1.fc44.x86_64.rpm
+        checksum: sha256:5a7088cdd9afec1125fc37aa9038c5a29f960b22a4627855abac8a43b97dbb15
+        size: 69689
+        evr: 0.2.1.2-1.fc44
+      - name: opencore-amr
+        repo_id: fedora
+        location: Packages/o/opencore-amr-0.1.6-10.fc44.x86_64.rpm
+        checksum: sha256:81a60260e95fe1360e8451d881bd5471815bad1a38a20a746b701be885c9771d
+        size: 187850
+        evr: 0.1.6-10.fc44
       - name: openjpeg
         repo_id: fedora
         location: Packages/o/openjpeg-2.5.4-3.fc44.x86_64.rpm
@@ -2409,6 +2781,12 @@ data:
         checksum: sha256:2fc8edf3da4faabe82ce7adcbc91a1b92cda589ec9de80dd8c55865fd59381e0
         size: 278140
         evr: 2.6.13-1.fc44
+      - name: openpgm
+        repo_id: fedora
+        location: Packages/o/openpgm-5.3.128-6.fc44.x86_64.rpm
+        checksum: sha256:b2d4c2d378a26407599f7f44a7d7dabf5340806000fe87021fa07b26c72ff085
+        size: 189307
+        evr: 5.3.128-6.fc44
       - name: openssl-libs
         repo_id: updates-archive
         location: openssl-libs-3.5.7-1.fc44.x86_64.rpm
@@ -2427,6 +2805,12 @@ data:
         checksum: sha256:0ffa36584a12ce23d6623290ef85a95868d315dbd676444ee5919dfe69e753dc
         size: 229582
         evr: 0.4.41-3.fc44
+      - name: osinfo-db-tools
+        repo_id: fedora
+        location: Packages/o/osinfo-db-tools-1.12.0-5.fc44.x86_64.rpm
+        checksum: sha256:87fcec7b287a1bc863abf277ca39a827857b65a047bae5438234c08c0e7bd387
+        size: 76208
+        evr: 1.12.0-5.fc44
       - name: p11-kit
         repo_id: fedora
         location: Packages/p/p11-kit-0.26.2-1.fc44.x86_64.rpm
@@ -2631,6 +3015,18 @@ data:
         checksum: sha256:748412047744be5216ffd7a92684edddea688b5ec1123c08de5f1f3684c719d7
         size: 74525
         evr: 127-2.fc44.2
+      - name: poppler
+        repo_id: fedora
+        location: Packages/p/poppler-26.01.0-3.fc44.x86_64.rpm
+        checksum: sha256:4a7de5b6cd1d6254a40922064d98f7383e8963ba94c7ae0a1f09d5af2b715278
+        size: 1433284
+        evr: 26.01.0-3.fc44
+      - name: poppler-glib
+        repo_id: fedora
+        location: Packages/p/poppler-glib-26.01.0-3.fc44.x86_64.rpm
+        checksum: sha256:6bab8c926b0c2e32cdffed01b05f79ce208caf81a19c9a877769884c5f1b4082
+        size: 221348
+        evr: 26.01.0-3.fc44
       - name: popt
         repo_id: fedora
         location: Packages/p/popt-1.19-10.fc44.x86_64.rpm
@@ -2733,6 +3129,24 @@ data:
         checksum: sha256:d1f99a29cb7d03781bdf69ae8dcc7aebe7fe45205a36f3756bc67bbe26609608
         size: 235274
         evr: 8.3-4.fc44
+      - name: samba-client-libs
+        repo_id: updates-archive
+        location: samba-client-libs-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:5ef6120f543060d64c989bce1656f2e439a7191082075dd71f8ab62164408444
+        size: 3368505
+        evr: 2:4.24.3-1.fc44
+      - name: samba-core-libs
+        repo_id: updates-archive
+        location: samba-core-libs-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:ca8fd8756119d434b689faf4c7ccf6f8dab02e80dcf81bf64106cd489821d2ae
+        size: 527550
+        evr: 2:4.24.3-1.fc44
+      - name: samba-ndr-libs
+        repo_id: updates-archive
+        location: samba-ndr-libs-4.24.3-1.fc44.x86_64.rpm
+        checksum: sha256:4e44694e6a43e2791ba9d7b6d442e4c20630b556ee78100c9de7ad32c0390d31
+        size: 1326953
+        evr: 2:4.24.3-1.fc44
       - name: sdbus-cpp.terra
         repo_id: terra
         location: sdbus-cpp.terra-0:2.3.1-1.fc44.x86_64.rpm
@@ -2751,12 +3165,30 @@ data:
         checksum: sha256:4a70f4a268e8902ef7e33aed9e1b4d64afec8e7390114aa8a20b883ad07aa8dd
         size: 411690
         evr: 2.4-3.fc44
+      - name: snappy
+        repo_id: fedora
+        location: Packages/s/snappy-1.2.2-4.fc44.x86_64.rpm
+        checksum: sha256:d184204061e5b218328dfcc298b6d7aee4a4d668a89e6987eaa21d3b1632b160
+        size: 44279
+        evr: 1.2.2-4.fc44
+      - name: soxr
+        repo_id: fedora
+        location: Packages/s/soxr-0.1.3-21.fc44.x86_64.rpm
+        checksum: sha256:e06810ef05658fb8a532a706b6529ebd58f7c4e9b6b6de437bc24962c3f4014a
+        size: 90268
+        evr: 0.1.3-21.fc44
       - name: spandsp
         repo_id: fedora
         location: Packages/s/spandsp-0.0.6-22.fc44.x86_64.rpm
         checksum: sha256:40359e0a019cd8ef2714286f1e81c0e1a3d4c9472559d75885d585c14eb3725e
         size: 343015
         evr: 0.0.6-22.fc44
+      - name: speex
+        repo_id: fedora
+        location: Packages/s/speex-1.2.0-21.fc44.x86_64.rpm
+        checksum: sha256:a32e5d218260bc9a5642fd83c3732370e824087c023db4c9b75bd50f230d4af2
+        size: 73304
+        evr: 1.2.0-21.fc44
       - name: spirv-tools-libs
         repo_id: fedora
         location: Packages/s/spirv-tools-libs-2026.1-1.fc44.x86_64.rpm
@@ -2769,6 +3201,12 @@ data:
         checksum: sha256:b9a9f1ce6cd359622b100b9d313e6859adf2a0574e5e75ff166baab3e67ccd6f
         size: 818349
         evr: 3.51.2-1.fc44
+      - name: srt-libs
+        repo_id: updates-archive
+        location: srt-libs-1.5.5-1.fc44.x86_64.rpm
+        checksum: sha256:5ed1422b1e047ec60751afdcef7ed6c990a95bbaf2f03eb0b186ba67b9c2cfc7
+        size: 433548
+        evr: 1.5.5-1.fc44
       - name: svt-av1-libs
         repo_id: fedora
         location: Packages/s/svt-av1-libs-3.1.2-2.fc44.x86_64.rpm
@@ -2811,18 +3249,48 @@ data:
         checksum: sha256:be078c965c98e07f1818e2dba9865326117e1b03d23e274e7360ced2fe0ea952
         size: 24303
         evr: 0.11-1
+      - name: tomlplusplus
+        repo_id: fedora
+        location: Packages/t/tomlplusplus-3.4.0-7.fc44.x86_64.rpm
+        checksum: sha256:61fc59376ba96d82ead7a8231c67562024f815221249035a0addd753e3468cb2
+        size: 109647
+        evr: 3.4.0-7.fc44
+      - name: totem-pl-parser
+        repo_id: updates-archive
+        location: totem-pl-parser-3.26.7-1.fc44.x86_64.rpm
+        checksum: sha256:2cab69a9a1e26d5c4ccd3c67297a69254df798ec3e3aa097603180d7bcd70519
+        size: 151621
+        evr: 3.26.7-1.fc44
       - name: tpm2-tss
         repo_id: fedora
         location: Packages/t/tpm2-tss-4.1.3-9.fc44.x86_64.rpm
         checksum: sha256:af2f67ebf143220447a059c11aa7a22896e62bff57b8959bcca903ba13d0a663
         size: 451445
         evr: 4.1.3-9.fc44
+      - name: twolame-libs
+        repo_id: fedora
+        location: Packages/t/twolame-libs-0.4.0-9.fc44.x86_64.rpm
+        checksum: sha256:dd7f47177a802808f68c53dd4ede9d12e7de9e5f65efd7421989b14139753426
+        size: 70245
+        evr: 0.4.0-9.fc44
+      - name: uchardet
+        repo_id: fedora
+        location: Packages/u/uchardet-0.0.8-10.fc44.x86_64.rpm
+        checksum: sha256:6f5e8faf2d1baa73ab4b34d1a0db27e53f9ab5f82f5d2a3921d346b5e627cedd
+        size: 109272
+        evr: 0.0.8-10.fc44
       - name: udisks2
         repo_id: updates-archive
         location: udisks2-2.11.1-2.fc44.x86_64.rpm
         checksum: sha256:e7def569ae1fb0594e7d5285257b972bce4c58b1dacbd6baa922eaf380e41448
         size: 579025
         evr: 2.11.1-2.fc44
+      - name: upower-libs
+        repo_id: updates-archive
+        location: upower-libs-1.91.2-1.fc44.x86_64.rpm
+        checksum: sha256:33c2d54a148c321082c680092e9cb92ce30ce34555a871320a1cdc0b016a1a51
+        size: 62001
+        evr: 1.91.2-1.fc44
       - name: usbutils
         repo_id: fedora
         location: Packages/u/usbutils-019-2.fc44.x86_64.rpm
@@ -2841,6 +3309,12 @@ data:
         checksum: sha256:a3e4e4994216ced856b71153b9311135c5cde9d00b66c0f61a492916a51f5f7d
         size: 571516
         evr: 2.41.5-1.fc44
+      - name: vo-amrwbenc
+        repo_id: fedora
+        location: Packages/v/vo-amrwbenc-0.1.3-24.fc44.x86_64.rpm
+        checksum: sha256:55db9771f8bfe68f71845be99010fca078353ceb846affe5fb3152b061fa647b
+        size: 87060
+        evr: 0.1.3-24.fc44
       - name: volume_key-libs
         repo_id: fedora
         location: Packages/v/volume_key-libs-0.3.12-29.fc44.x86_64.rpm
@@ -2919,6 +3393,12 @@ data:
         checksum: sha256:9068cdcfced2956a7fda42d9c7a931e9ea49edcd3dd370c5d2bfc04b14da1a79
         size: 543260
         evr: 1.22.1-1.fc44
+      - name: xdg-desktop-portal-gnome
+        repo_id: fedora
+        location: Packages/x/xdg-desktop-portal-gnome-50.0-1.fc44.x86_64.rpm
+        checksum: sha256:327d51ee23810c2af2994cb9ba16558368765c929d82e2223530f0f0cd8cf915
+        size: 284354
+        evr: 50.0-1.fc44
       - name: xdg-desktop-portal-gtk
         repo_id: fedora
         location: Packages/x/xdg-desktop-portal-gtk-1.15.3-3.fc44.x86_64.rpm
@@ -2931,12 +3411,30 @@ data:
         checksum: sha256:4953e3e89f63649cdcaa5c307158a02a861fc55fe3f02819910df1fc8b3e7ff9
         size: 67317
         evr: 0.8.2-1.fc44
+      - name: xevd-libs
+        repo_id: fedora
+        location: Packages/x/xevd-libs-0.5.0-6.fc44.x86_64.rpm
+        checksum: sha256:fe37a4b43c03e0c2250723076e0fb8d1534521bab510e50c47682d016d83f302
+        size: 173716
+        evr: 0.5.0-6.fc44
+      - name: xeve-libs
+        repo_id: fedora
+        location: Packages/x/xeve-libs-0.5.1-6.fc44.x86_64.rpm
+        checksum: sha256:a645f2e7ad84e753bdee498e7fbf78301718ce34c32a7883362d4ecca40cc808
+        size: 290695
+        evr: 0.5.1-6.fc44
       - name: xprop
         repo_id: fedora
         location: Packages/x/xprop-1.2.8-5.fc44.x86_64.rpm
         checksum: sha256:bbbc626d69aa58a67510477a981f22857edec1fac56402730a4b4d88893de96f
         size: 36147
         evr: 1.2.8-5.fc44
+      - name: xvidcore
+        repo_id: fedora
+        location: Packages/x/xvidcore-1.3.7-19.fc44.x86_64.rpm
+        checksum: sha256:d7b815cd4d464b88c63e30ded360be1dbaee424a4015b150e0d1c7d604249822
+        size: 273409
+        evr: 1.3.7-19.fc44
       - name: xwayland-satellite
         repo_id: terra
         location: xwayland-satellite-0:0.8.1-1.fc44.x86_64.rpm
@@ -2955,9 +3453,21 @@ data:
         checksum: sha256:5d4754479d8fbc511cc030f90c28cc4459215aecb8e09ca36fc3fa6acac5f315
         size: 20558
         evr: 1.4.0-5.fc44
+      - name: zeromq
+        repo_id: fedora
+        location: Packages/z/zeromq-4.3.5-22.fc43.x86_64.rpm
+        checksum: sha256:3b4c2b223afb877313cedb1541d66f915d4c532eed623f87852770998e586bf0
+        size: 479459
+        evr: 4.3.5-22.fc43
       - name: zlib-ng-compat
         repo_id: fedora
         location: Packages/z/zlib-ng-compat-2.3.3-3.fc44.x86_64.rpm
         checksum: sha256:53ee3cd7082b1a34e4901f13079b1840648113c809effb5b78e7725235a7d939
         size: 93304
         evr: 2.3.3-3.fc44
+      - name: zvbi
+        repo_id: fedora
+        location: Packages/z/zvbi-0.2.44-3.fc44.x86_64.rpm
+        checksum: sha256:ede61e217f098b0e0754a13b8ad560d79966933e201cbc3730a843164196e9ae
+        size: 454085
+        evr: 0.2.44-3.fc44
