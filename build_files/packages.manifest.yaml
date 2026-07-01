@@ -119,7 +119,7 @@ data:
       - name: ghostty-terminfo
         repo_id: terra
         location: ghostty-terminfo-0:1.3.1-1.fc44.noarch.rpm
-        checksum: sha256:a51b55cb69bf136bef1db5fe3aaab183fb4a67e8a672d84dd905a0cb20c61f8f
+        checksum: sha256:e9b59c0c0ced5724bcdc0760d17ee9a0e09c866c32183bbe3e93939340ed0035
         size: 9816
         evr: 1.3.1-1.fc44
       - name: gnulib-l10n
@@ -1044,8 +1044,8 @@ data:
       - name: ghostty
         repo_id: terra
         location: ghostty-0:1.3.1-1.fc44.x86_64.rpm
-        checksum: sha256:8e8ef4b52be62acc09bd0f812d737f814a08656704f5bd17fcf00fd074035ad6
-        size: 17103489
+        checksum: sha256:cd4ff335d7f93dce20b87e7ad81e541c5c69b4cc326862fd5f988a13006a5cf8
+        size: 17103240
         evr: 1.3.1-1.fc44
       - name: giflib
         repo_id: updates-archive
@@ -2693,10 +2693,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260630git.195c43f-1.fc44.x86_64.rpm
-        checksum: sha256:de160d64096fb5347814eaaf41e006ee65bab6656271b98eb622d527ad9d8df9
-        size: 7762441
-        evr: 5.0.0^20260630git.195c43f-1.fc44
+        location: noctalia-git-0:5.0.0^20260701git.5f636c6-1.fc44.x86_64.rpm
+        checksum: sha256:083343bf50d89fdfe758495be40310716524bd949ff2e28abcc9f1b6ad2721bc
+        size: 7550924
+        evr: 5.0.0^20260701git.5f636c6-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.0.0^20260621git.fca79eb-2.fc44.x86_64.rpm
