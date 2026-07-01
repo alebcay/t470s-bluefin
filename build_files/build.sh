@@ -57,9 +57,6 @@ with open('/ctx/rpms.in.yaml') as f:
 ")
 dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
 
-# greetd + noctalia-greeter: ensure proper ownership
-chown -R greetd:greetd /var/lib/noctalia-greeter 2>/dev/null || true
-
 # Mask GDM and enable greetd as the display-manager
 systemctl mask gdm.service
 systemctl enable greetd.service
