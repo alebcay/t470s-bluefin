@@ -57,37 +57,7 @@ with open('/ctx/rpms.in.yaml') as f:
 ")
 dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
 
-# Configure xdg-desktop-portal backends for niri
-mkdir -p /etc/xdg-desktop-portal
-cat > /etc/xdg-desktop-portal/niri-portals.conf << 'PORTCONF'
-[preferred]
-org.freedesktop.impl.portal.FileChooser=gnome
-org.freedesktop.impl.portal.ScreenCast=wlr
-org.freedesktop.impl.portal.Screenshot=wlr
-PORTCONF
-
-# Set up greetd + noctalia-greeter (replaces GDM as display manager)
-
-# Greeter runtime directory
-mkdir -p /var/lib/noctalia-greeter
-chmod 0755 /var/lib/noctalia-greeter
-
-# greetd config
-cat > /etc/greetd/config.toml << 'EOF'
-[terminal]
-vt = 1
-
-[default_session]
-command = "/usr/bin/noctalia-greeter-session"
-user = "greetd"
-EOF
-
-# Skeleton greeter preferences
-cat > /var/lib/noctalia-greeter/greeter.toml << 'EOF'
-# noctalia-greeter greeter.toml
-# [session] default/last, [user] default, [appearance] scheme/password_style
-# [output] name/layout/scale, [cursor] theme/size/path, [keyboard] layout/variant/options
-EOF
+# greetd + noctalia-greeter: ensure proper ownership
 chown -R greetd:greetd /var/lib/noctalia-greeter 2>/dev/null || true
 
 # Mask GDM and enable greetd as the display-manager
@@ -98,13 +68,6 @@ systemctl enable greetd.service
 dnf5 -y copr disable abn/throttled
 dnf5 -y copr disable sneexy/python-validity
 dnf5 -y copr disable lionheartp/Hyprland
-
-# Ensure initramfs includes bootc and ostree modules for proper root filesystem setup
-printf 'export DRACUT_NO_XATTR=1\nreproducible=yes\nadd_dracutmodules+=" bootc ostree "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-bootc-ostree.conf
-
-# Early KMS for i915
-printf 'force_drivers+=" i915 "\n' | tee /usr/lib/dracut/dracut.conf.d/20-t470s-early-kms.conf
-printf 'options i915 enable_guc=2\noptions i915 enable_psr=1\noptions i915 enable_rc6=7\n' | tee /usr/lib/modprobe.d/t470s-i915.conf
 
 kver="$(cd /usr/lib/modules && echo *)"
 depmod -a "${kver}"
@@ -117,10 +80,6 @@ systemctl enable zcfan.service
 systemctl enable throttled.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
-cat << EOF > /usr/lib/bootc/kargs.d/99-thinkpad-fan-control.toml
-kargs = ["thinkpad_acpi.fan_control=1"]
-EOF
-
 # Regenerate fontconfig cache deterministically
 fc-cache -rs
 
@@ -132,46 +91,6 @@ fc-cache -rs
 # correctly inside the sandbox.  A systemd oneshot service distributes this
 # to existing users at boot; new users get it via /etc/skel.
 # ---------------------------------------------------------------------------
-
-mkdir -p /usr/share/cjk-fonts-flatpak
-cat > /usr/share/cjk-fonts-flatpak/fonts.conf << 'FONTSCONF'
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
-<fontconfig>
-  <dir>/run/host/fonts/google-noto-sans-cjk-fonts</dir>
-</fontconfig>
-FONTSCONF
-
-cat > /usr/libexec/cjk-fonts-flatpak-setup.sh << 'SETUPSCRIPT'
-#!/bin/bash
-set -euo pipefail
-
-FONTS_CONF_SRC="/usr/share/cjk-fonts-flatpak/fonts.conf"
-
-for home_dir in /home/*; do
-    [ -d "$home_dir" ] || continue
-    user_conf_dir="$home_dir/.var/app/org.mozilla.firefox/config/fontconfig"
-    [ -f "$user_conf_dir/fonts.conf" ] && continue
-    mkdir -p "$user_conf_dir"
-    cp "$FONTS_CONF_SRC" "$user_conf_dir/fonts.conf"
-done
-SETUPSCRIPT
-chmod 0755 /usr/libexec/cjk-fonts-flatpak-setup.sh
-
-cat > /usr/lib/systemd/system/cjk-fonts-flatpak.service << 'SERVICEUNIT'
-[Unit]
-Description=Setup CJK fontconfig for Flatpak Firefox
-After=local-fs.target
-ConditionPathExists=/usr/share/cjk-fonts-flatpak/fonts.conf
-
-[Service]
-Type=oneshot
-ExecStart=/usr/libexec/cjk-fonts-flatpak-setup.sh
-RemainAfterExit=yes
-
-[Install]
-WantedBy=basic.target
-SERVICEUNIT
 
 systemctl enable cjk-fonts-flatpak.service
 

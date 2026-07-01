@@ -1,0 +1,3 @@
+# noctalia-greeter greeter.toml
+# [session] default/last, [user] default, [appearance] scheme/password_style
+# [output] name/layout/scale, [cursor] theme/size/path, [keyboard] layout/variant/options

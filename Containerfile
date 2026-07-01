@@ -30,6 +30,8 @@ FROM ghcr.io/projectbluefin/bluefin@sha256:d64d705e4cbade9f51872f22f9256bf05cea2
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
+COPY system_files /
+
 ARG BUILD_SOURCE_DATE_EPOCH
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \

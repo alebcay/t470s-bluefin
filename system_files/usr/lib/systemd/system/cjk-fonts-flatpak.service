@@ -1,0 +1,12 @@
+[Unit]
+Description=Setup CJK fontconfig for Flatpak Firefox
+After=local-fs.target
+ConditionPathExists=/usr/share/cjk-fonts-flatpak/fonts.conf
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/cjk-fonts-flatpak-setup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
