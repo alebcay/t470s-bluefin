@@ -124,6 +124,61 @@ EOF
 # Regenerate fontconfig cache deterministically
 fc-cache -rs
 
+# ---------------------------------------------------------------------------
+# CJK font support for Flatpak Firefox
+# Flatpak's fontconfig inside the Freedesktop runtime doesn't properly scan
+# /run/host/fonts/ for CJK fonts.  We add a per-user fonts.conf that
+# explicitly tells fontconfig to scan the CJK font directory, which maps
+# correctly inside the sandbox.  A systemd oneshot service distributes this
+# to existing users at boot; new users get it via /etc/skel.
+# ---------------------------------------------------------------------------
+
+mkdir -p /usr/share/cjk-fonts-flatpak
+cat > /usr/share/cjk-fonts-flatpak/fonts.conf << 'FONTSCONF'
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+<fontconfig>
+  <dir>/run/host/fonts/google-noto-sans-cjk-fonts</dir>
+</fontconfig>
+FONTSCONF
+
+cat > /usr/libexec/cjk-fonts-flatpak-setup.sh << 'SETUPSCRIPT'
+#!/bin/bash
+set -euo pipefail
+
+FONTS_CONF_SRC="/usr/share/cjk-fonts-flatpak/fonts.conf"
+
+for home_dir in /home/*; do
+    [ -d "$home_dir" ] || continue
+    user_conf_dir="$home_dir/.var/app/org.mozilla.firefox/config/fontconfig"
+    [ -f "$user_conf_dir/fonts.conf" ] && continue
+    mkdir -p "$user_conf_dir"
+    cp "$FONTS_CONF_SRC" "$user_conf_dir/fonts.conf"
+done
+SETUPSCRIPT
+chmod 0755 /usr/libexec/cjk-fonts-flatpak-setup.sh
+
+cat > /usr/lib/systemd/system/cjk-fonts-flatpak.service << 'SERVICEUNIT'
+[Unit]
+Description=Setup CJK fontconfig for Flatpak Firefox
+After=local-fs.target
+ConditionPathExists=/usr/share/cjk-fonts-flatpak/fonts.conf
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/cjk-fonts-flatpak-setup.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
+SERVICEUNIT
+
+systemctl enable cjk-fonts-flatpak.service
+
+# Populate /etc/skel so new users get the config
+mkdir -p /etc/skel/.var/app/org.mozilla.firefox/config/fontconfig
+cp /usr/share/cjk-fonts-flatpak/fonts.conf /etc/skel/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
+
 dnf5 -y remove dnf5-plugin-manifest libpkgmanifest createrepo_c
 dnf5 clean all
 
