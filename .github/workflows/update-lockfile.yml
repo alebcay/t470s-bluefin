@@ -79,14 +79,9 @@ jobs:
         id: branch
         run: |
           BRANCH="automated/lockfile-update"
-          if git ls-remote --exit-code origin "$BRANCH" >/dev/null 2>&1; then
-            git fetch origin "$BRANCH"
-            git checkout "$BRANCH"
-            echo "exists=true" >> "$GITHUB_OUTPUT"
-          else
-            git checkout -B "$BRANCH"
-            echo "exists=false" >> "$GITHUB_OUTPUT"
-          fi
+          git fetch origin main
+          git checkout -B "$BRANCH"
+          git reset --hard origin/main
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
       - name: Download lockfile
@@ -112,12 +107,14 @@ jobs:
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: update base image and RPM lockfile"
           git push -u origin "$BRANCH" --force
-          PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
-          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-            gh pr create \
+          PR_EXISTS=$(gh pr list --head "$BRANCH" --state open --json number --jq 'if .[0].number then "true" else "false" end')
+          if [ "$PR_EXISTS" != "true" ]; then
+            PR_NUMBER=$(gh pr create \
               --title "chore: update base image and RPM lockfile" \
               --body "Automated daily update of the RPM package lockfile from \`build_files/rpms.in.yaml\`." \
-              --base main
+              --base main)
+            echo "Created PR #$PR_NUMBER"
           else
+            PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
             echo "PR #$PR_NUMBER already exists, updated with new lockfile"
           fi
