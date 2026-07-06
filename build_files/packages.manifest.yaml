@@ -160,10 +160,10 @@ data:
         evr: 0.18-3.fc44
       - name: hwdata
         repo_id: updates-archive
-        location: hwdata-0.408-1.fc44.noarch.rpm
-        checksum: sha256:82c6ef76d4d75f34016b4cb01cb3e105f0f1ca5669565c6fa7e0c0907f50c936
-        size: 1781598
-        evr: 0.408-1.fc44
+        location: hwdata-0.409-1.fc44.noarch.rpm
+        checksum: sha256:a22918cbbb15351d9b776721e152dd764c3e75ac780832cf481c7906c1004229
+        size: 1786963
+        evr: 0.409-1.fc44
       - name: iso-codes
         repo_id: fedora
         location: Packages/i/iso-codes-4.20.1-3.fc44.noarch.rpm
@@ -532,10 +532,10 @@ data:
         evr: 0.15-1.fc44
       - name: samba-common
         repo_id: updates-archive
-        location: samba-common-4.24.3-1.fc44.noarch.rpm
-        checksum: sha256:c5546f01e0584a041b4cce952723a726a4c81697696b0c92d15e8345cd4ef161
-        size: 189317
-        evr: 2:4.24.3-1.fc44
+        location: samba-common-4.24.4-1.fc44.noarch.rpm
+        checksum: sha256:87be4608868a32839967845dd6f19b39dde8b35bd4490fb0b814189a24ac0579
+        size: 189449
+        evr: 2:4.24.4-1.fc44
       - name: selinux-policy
         repo_id: updates-archive
         location: selinux-policy-44.3-1.fc44.noarch.rpm
@@ -1942,11 +1942,11 @@ data:
         size: 684380
         evr: 1.21.2-1.fc44
       - name: libicu
-        repo_id: fedora
-        location: Packages/l/libicu-77.1-2.fc44.x86_64.rpm
-        checksum: sha256:ee35c5413aa8300ad9df56626c4c812efdf88736ec9d830f443fbefadb18d2c4
-        size: 11346263
-        evr: 77.1-2.fc44
+        repo_id: updates-archive
+        location: libicu-77.1-3.fc44.x86_64.rpm
+        checksum: sha256:db68619033421e65ef4b583946bf301fe3964509f25f4d6e3c7b8c2a41544c29
+        size: 11343938
+        evr: 77.1-3.fc44
       - name: libidn2
         repo_id: fedora
         location: Packages/l/libidn2-2.3.8-3.fc44.x86_64.rpm
@@ -1997,10 +1997,10 @@ data:
         evr: 2.0.2.3-19.fc44
       - name: libldb
         repo_id: updates-archive
-        location: libldb-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:5e39c00833a21110b7e35214c59d0c169f7e2fbd6843c52597d82f4d192a03cd
-        size: 204847
-        evr: 2:4.24.3-1.fc44
+        location: libldb-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:6fda54b0ef6fe931ed749bee7b4cd997a33b37f0f4349b231b38f935589cdf36
+        size: 204614
+        evr: 2:4.24.4-1.fc44
       - name: liblerc
         repo_id: fedora
         location: Packages/l/liblerc-4.0.0-10.fc44.x86_64.rpm
@@ -2231,10 +2231,10 @@ data:
         evr: 2.41.5-1.fc44
       - name: libsmbclient
         repo_id: updates-archive
-        location: libsmbclient-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:a41fea9a5428dff8b75a041c8cbead3047e6a3fbc728c4903025dcc9d7a6c0c9
-        size: 84805
-        evr: 2:4.24.3-1.fc44
+        location: libsmbclient-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:fd934ff05870dedf45a438dbca944f294fbc1ac1d6e73917d7a6e270ea17b3b9
+        size: 84695
+        evr: 2:4.24.4-1.fc44
       - name: libsndfile
         repo_id: fedora
         location: Packages/l/libsndfile-1.2.2-11.fc44.x86_64.rpm
@@ -2410,11 +2410,11 @@ data:
         size: 195613
         evr: 1:1.3.7-14.fc44
       - name: libvpl
-        repo_id: fedora
-        location: Packages/l/libvpl-2.16.0-2.fc44.x86_64.rpm
-        checksum: sha256:4538454b4a313f063305dfd3a697521774070b42001ff3f014f4e50e3a586d6b
-        size: 171589
-        evr: 1:2.16.0-2.fc44
+        repo_id: updates-archive
+        location: libvpl-2.17.0-1.fc44.x86_64.rpm
+        checksum: sha256:39cb71cb3fad4ac82372d13eb08e1a650f3137326f2547f5df3c2facc7afd2c1
+        size: 170884
+        evr: 1:2.17.0-1.fc44
       - name: libvpx
         repo_id: fedora
         location: Packages/l/libvpx-1.15.0-5.fc44.x86_64.rpm
@@ -2453,10 +2453,10 @@ data:
         evr: 1.24.0-3.fc44
       - name: libwbclient
         repo_id: updates-archive
-        location: libwbclient-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:b5d192ad666089fd72b2734602972f0608cbdfbcfe2cc950d7636b60933ac017
-        size: 50888
-        evr: 2:4.24.3-1.fc44
+        location: libwbclient-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:2202b47ce52b935c48d34c8ba6568d3808d34897b857f42495b21fd6729409b7
+        size: 50703
+        evr: 2:4.24.4-1.fc44
       - name: libwebp
         repo_id: fedora
         location: Packages/l/libwebp-1.6.0-3.fc44.x86_64.rpm
@@ -2699,16 +2699,16 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260704git.0d2c346-1.fc44.x86_64.rpm
-        checksum: sha256:fc9b7aa90e8934f70749d5b921532cac1863ffebb49c01dd45c57ca7e7aca215
-        size: 7615931
-        evr: 5.0.0^20260704git.0d2c346-1.fc44
+        location: noctalia-git-0:5.0.0^20260706git.d8d8ed5-1.fc44.x86_64.rpm
+        checksum: sha256:97b757dfcddd839fdac55823a50cc6fe8c31b62ac797f08a0c511b2a00e440c7
+        size: 7690307
+        evr: 5.0.0^20260706git.d8d8ed5-1.fc44
       - name: noctalia-greeter
         repo_id: terra
-        location: noctalia-greeter-0:1.0.0^20260621git.fca79eb-2.fc44.x86_64.rpm
-        checksum: sha256:1e92bc963ad316e48f0e2c44a7b48b1241af26900b854b1403ec181d8b54beb9
-        size: 1875567
-        evr: 1.0.0^20260621git.fca79eb-2.fc44
+        location: noctalia-greeter-0:1.0.0^20260621git.48fc6d2-1.fc44.x86_64.rpm
+        checksum: sha256:a5e68262226ebf68514acf16dfedf9be1d32200338361283c5b24642b2d6f437
+        size: 1888796
+        evr: 1.0.0^20260621git.48fc6d2-1.fc44
       - name: noopenh264
         repo_id: fedora
         location: Packages/n/noopenh264-2.6.0-4.fc44.x86_64.rpm
@@ -3137,22 +3137,22 @@ data:
         evr: 8.3-4.fc44
       - name: samba-client-libs
         repo_id: updates-archive
-        location: samba-client-libs-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:5ef6120f543060d64c989bce1656f2e439a7191082075dd71f8ab62164408444
-        size: 3368505
-        evr: 2:4.24.3-1.fc44
+        location: samba-client-libs-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:7e4ca122c5bd6866a232dd223f8db65d0efb9ec732c074901b221777f5f071b9
+        size: 3368934
+        evr: 2:4.24.4-1.fc44
       - name: samba-core-libs
         repo_id: updates-archive
-        location: samba-core-libs-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:ca8fd8756119d434b689faf4c7ccf6f8dab02e80dcf81bf64106cd489821d2ae
-        size: 527550
-        evr: 2:4.24.3-1.fc44
+        location: samba-core-libs-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:31bcf36b310b0ca4f1a154e5211c68a6f3c06df3c247defa37748243fd77cc7e
+        size: 527579
+        evr: 2:4.24.4-1.fc44
       - name: samba-ndr-libs
         repo_id: updates-archive
-        location: samba-ndr-libs-4.24.3-1.fc44.x86_64.rpm
-        checksum: sha256:4e44694e6a43e2791ba9d7b6d442e4c20630b556ee78100c9de7ad32c0390d31
-        size: 1326953
-        evr: 2:4.24.3-1.fc44
+        location: samba-ndr-libs-4.24.4-1.fc44.x86_64.rpm
+        checksum: sha256:4095ec69d7e4cace47d21495fa660029c3e0448e61c499678a69fbbab6ee8dff
+        size: 1326587
+        evr: 2:4.24.4-1.fc44
       - name: sdbus-cpp.terra
         repo_id: terra
         location: sdbus-cpp.terra-0:2.3.1-1.fc44.x86_64.rpm
