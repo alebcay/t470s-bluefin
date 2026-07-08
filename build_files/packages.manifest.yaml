@@ -578,6 +578,12 @@ data:
         checksum: sha256:768a5f75763c1a0ace801e50b057136ce17b79ea8cf7ac573adf82dbd603510f
         size: 40914
         evr: 0.8-6.fc44
+      - name: xdg-utils
+        repo_id: fedora
+        location: Packages/x/xdg-utils-1.2.1-5.fc44.noarch.rpm
+        checksum: sha256:ba9fbbadf1eb8026cdab12b9545e4f4ddb13b652365703b3a8089d071bf11501
+        size: 80786
+        evr: 1.2.1-5.fc44
       - name: xkeyboard-config
         repo_id: fedora
         location: Packages/x/xkeyboard-config-2.47-1.fc44.noarch.rpm
@@ -753,6 +759,12 @@ data:
         checksum: sha256:ead652ccea75f1345305c82e97759a360da5e4f46b2f1862a18ebf0f8547d2b9
         size: 44832
         evr: 1.0.8-23.fc44
+      - name: c-ares
+        repo_id: fedora
+        location: Packages/c/c-ares-1.34.6-3.fc44.x86_64.rpm
+        checksum: sha256:4ec8b906c80151dfdebcb6f1cbe5588c4c7b3b880ddd6c3df261e25b304486e2
+        size: 126951
+        evr: 1.34.6-3.fc44
       - name: cairo
         repo_id: fedora
         location: Packages/c/cairo-1.18.4-6.fc44.x86_64.rpm
@@ -849,6 +861,12 @@ data:
         checksum: sha256:7feb93ce981ee35dc4a2d7f960a1077bf7656bc439335ff49bf51dfa0ddbd236
         size: 158816
         evr: 1:1.16.2-1.fc44
+      - name: desktop-file-utils
+        repo_id: fedora
+        location: Packages/d/desktop-file-utils-0.28-5.fc44.x86_64.rpm
+        checksum: sha256:b6b0cf7cd39100c4adb5cf47c15b585263c10042a88e97bf5a46f90c776bbd8f
+        size: 71503
+        evr: 0.28-5.fc44
       - name: device-mapper
         repo_id: fedora
         location: Packages/d/device-mapper-1.02.212-2.fc44.x86_64.rpm
@@ -891,6 +909,12 @@ data:
         checksum: sha256:ff692b9958e562eb41ff5e338bfc5ddf04075cfe3b7b5367008737aea80cd0e8
         size: 289773
         evr: 0.195-1.fc44
+      - name: emacs-filesystem
+        repo_id: fedora
+        location: Packages/e/emacs-filesystem-30.2-2.fc44.x86_64.rpm
+        checksum: sha256:df6adb5e3cd8a95e4df52df726d4400de2765388328c312a7780de07e1130a82
+        size: 8236
+        evr: 1:30.2-2.fc44
       - name: exempi
         repo_id: fedora
         location: Packages/e/exempi-2.6.4-9.fc44.x86_64.rpm
@@ -939,6 +963,12 @@ data:
         checksum: sha256:2b3b670cadeb5ae63319bd9841f561c48f8d3e6918425ad6c9b9c7ca97020c39
         size: 231089
         evr: 1.5.0-8.fc44
+      - name: fluxer
+        repo_id: terra
+        location: fluxer-0:2026.707.150855-1.fc44.x86_64.rpm
+        checksum: sha256:ec882f00efce97d0659d2a5094a476c101bbffcd7c15cdbed146661bbf9547ef
+        size: 123725262
+        evr: 2026.707.150855-1.fc44
       - name: fontconfig
         repo_id: fedora
         location: Packages/f/fontconfig-2.17.0-4.fc44.x86_64.rpm
@@ -1455,6 +1485,12 @@ data:
         checksum: sha256:1f7521ac70e0cb92bcc195afd40467faad387757c49f5cb417237ccc6f88888c
         size: 11275
         evr: 1.8.13-1.fc44
+      - name: libXScrnSaver
+        repo_id: fedora
+        location: Packages/l/libXScrnSaver-1.2.4-7.fc44.x86_64.rpm
+        checksum: sha256:feddc794eb3681a22a141d89ef7e63055c3fb25d71b660f72b371ca90ba25482
+        size: 25622
+        evr: 1.2.4-7.fc44
       - name: libXau
         repo_id: fedora
         location: Packages/l/libXau-1.0.12-4.fc44.x86_64.rpm
@@ -1707,12 +1743,6 @@ data:
         checksum: sha256:34a847c52cd31744faa756683265f61c7f1f35dd015dff193474e6cb107b3a73
         size: 35046
         evr: 0.9.3-1.fc44
-      - name: libcbor
-        repo_id: fedora
-        location: Packages/l/libcbor-0.13.0-2.fc44.x86_64.rpm
-        checksum: sha256:e5ed0379715086b19c4cf34ba02b5df1543e0648fe8bb1e0b0e7df315b508bc6
-        size: 36819
-        evr: 0.13.0-2.fc44
       - name: libcdio
         repo_id: fedora
         location: Packages/l/libcdio-2.3.0-1.fc44.x86_64.rpm
@@ -1845,12 +1875,6 @@ data:
         checksum: sha256:a7dae96d30d007140c7dab605df40e55f90ef16f04392dd8ded32fa230c10dd6
         size: 43388
         evr: 3.5.2-2.fc44
-      - name: libfido2
-        repo_id: fedora
-        location: Packages/l/libfido2-1.16.0-5.fc44.x86_64.rpm
-        checksum: sha256:e71e9bb6308be5a693c69f4fac0460e58b5ed58b8fe164e162a6d959a9085f36
-        size: 107020
-        evr: 1.16.0-5.fc44
       - name: libfyaml
         repo_id: fedora
         location: Packages/l/libfyaml-0.8-9.fc44.x86_64.rpm
@@ -2699,10 +2723,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260707git.a5727de-1.fc44.x86_64.rpm
-        checksum: sha256:4f5e319f4a58e1c4b3213602ae122b29e08dd0a1e2ffb515abc5955b7077fbb9
-        size: 7696823
-        evr: 5.0.0^20260707git.a5727de-1.fc44
+        location: noctalia-git-0:5.0.0^20260708git.099312d-1.fc44.x86_64.rpm
+        checksum: sha256:9afc2a0b2e075cb642c24e4206407c213afaf01f4348481b58a2814b49c3262e
+        size: 7701929
+        evr: 5.0.0^20260708git.099312d-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.0.0^20260621git.48fc6d2-1.fc44.x86_64.rpm
@@ -3129,6 +3153,12 @@ data:
         checksum: sha256:14ce90b91a9631b42f6034b6d8c7506502adbfa852391a1682b5055d3195747c
         size: 1119995
         evr: 0.8.1-3.fc44
+      - name: re2
+        repo_id: fedora
+        location: Packages/r/re2-20251105-4.fc44.x86_64.rpm
+        checksum: sha256:553686b1dc8c21c6adddd200e28b5ba5f421f32257ff461c9feb1e5fc223950b
+        size: 256929
+        evr: 2:20251105-4.fc44
       - name: readline
         repo_id: fedora
         location: Packages/r/readline-8.3-4.fc44.x86_64.rpm
@@ -3471,12 +3501,6 @@ data:
         checksum: sha256:3b4c2b223afb877313cedb1541d66f915d4c532eed623f87852770998e586bf0
         size: 479459
         evr: 4.3.5-22.fc43
-      - name: zlib-ng-compat
-        repo_id: fedora
-        location: Packages/z/zlib-ng-compat-2.3.3-3.fc44.x86_64.rpm
-        checksum: sha256:53ee3cd7082b1a34e4901f13079b1840648113c809effb5b78e7725235a7d939
-        size: 93304
-        evr: 2.3.3-3.fc44
       - name: zvbi
         repo_id: fedora
         location: Packages/z/zvbi-0.2.44-3.fc44.x86_64.rpm
