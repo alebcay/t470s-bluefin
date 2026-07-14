@@ -4,7 +4,7 @@ COPY build_files /
 
 # Base Image
 # ghcr.io/projectbluefin/bluefin:stable
-FROM ghcr.io/projectbluefin/bluefin@sha256:0bc6a304b487010140ade449fce82eb4a75d4187d92b6e5cb06eaf95135272d0
+FROM ghcr.io/projectbluefin/bluefin@sha256:a7ee761699b796d856c09e18e5f816448dd5cf953a231bc4025c8f981fb7ca4b
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
