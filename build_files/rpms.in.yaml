@@ -39,6 +39,7 @@ packages:
   - fprintd-clients-pam
   - open-fprintd
   - python3-validity
+  - starship
   - tlp
   - tlp-rdw
   - throttled
