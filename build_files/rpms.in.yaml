@@ -1,19 +1,26 @@
 contentOrigin:
   repos:
-    - repoid: fedora
-      baseurl: https://mirrors.kernel.org/fedora/releases/$releasever/Everything/$basearch/os/
-    - repoid: updates
-      baseurl: https://mirrors.kernel.org/fedora/updates/$releasever/Everything/$basearch/os/
     - repoid: updates-archive
       baseurl: https://fedoraproject-updates-archive.fedoraproject.org/fedora/$releasever/$basearch/
+      priority: 10
     - repoid: copr:copr.fedorainfracloud.org:abn:throttled
       baseurl: https://copr-be.cloud.fedoraproject.org/results/abn/throttled/fedora-$releasever-$basearch/
+      priority: 10
     - repoid: copr:copr.fedorainfracloud.org:sneexy:python-validity
       baseurl: https://copr-be.cloud.fedoraproject.org/results/sneexy/python-validity/fedora-$releasever-$basearch/
+      priority: 10
     - repoid: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
       baseurl: https://copr-be.cloud.fedoraproject.org/results/lionheartp/Hyprland/fedora-$releasever-$basearch/
+      priority: 10
     - repoid: terra
       baseurl: https://repos.fyralabs.com/terra$releasever
+      priority: 10
+    - repoid: fedora
+      baseurl: https://mirrors.kernel.org/fedora/releases/$releasever/Everything/$basearch/os/
+      priority: 20
+    - repoid: updates
+      baseurl: https://mirrors.kernel.org/fedora/updates/$releasever/Everything/$basearch/os/
+      priority: 99
 packages:
   - niri
   - noctalia-git
