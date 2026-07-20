@@ -38,6 +38,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     SOURCE_DATE_EPOCH=$BUILD_SOURCE_DATE_EPOCH /ctx/build.sh && \
-    rm -rf /run/dnf /run/selinux-policy /var/lib && \
+    rm -rf /run/dnf /run/selinux-policy /var/lib /boot/* && \
     find /var/cache /var/log -mindepth 1 -delete && \
     bootc container lint --fatal-warnings
