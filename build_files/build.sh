@@ -77,9 +77,6 @@ systemctl enable zcfan.service
 systemctl enable throttled.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
-# Regenerate fontconfig cache deterministically
-fc-cache -rs
-
 # ---------------------------------------------------------------------------
 # CJK font support for Flatpak Firefox
 # Flatpak's fontconfig inside the Freedesktop runtime doesn't properly scan
