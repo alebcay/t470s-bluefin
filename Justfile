@@ -336,5 +336,5 @@ resolve-lockfile:
             dnf5 -y copr enable lionheartp/Hyprland
             dnf5 -y install dnf5-plugin-manifest libpkgmanifest
             dnf5 manifest resolve --input build_files/rpms.in.yaml
-            cp packages.manifest.yaml build_files/packages.manifest.yaml
+            mv packages.manifest.yaml build_files/packages.manifest.yaml
         '
