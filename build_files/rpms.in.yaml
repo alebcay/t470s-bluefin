@@ -38,6 +38,7 @@ packages:
   - fprintd-clients
   - fprintd-clients-pam
   - open-fprintd
+  - patch
   - python3-validity
   - starship
   - tlp

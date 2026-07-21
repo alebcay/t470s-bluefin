@@ -879,6 +879,12 @@ data:
         checksum: sha256:eb44580c503917972d623c5cda8b31f527019b08c62e3223e909d91dc1eaa3ef
         size: 245381
         evr: 1.47.3-4.fc44
+      - name: ed
+        repo_id: fedora
+        location: Packages/e/ed-1.22.5-2.fc44.x86_64.rpm
+        checksum: sha256:349b5a8cf63314f14c41dabcf04323a1cead3bd49637996d3e2866355313c834
+        size: 87423
+        evr: 1.22.5-2.fc44
       - name: elfutils-libelf
         repo_id: updates-archive
         location: elfutils-libelf-0.195-1.fc44.x86_64.rpm
@@ -2847,6 +2853,12 @@ data:
         checksum: sha256:6df0a2b9e60cf72364989eaede54b8535208ffeb4a3666ba848f415a830a6b5b
         size: 374863
         evr: 1.57.1-1.fc44
+      - name: patch
+        repo_id: fedora
+        location: Packages/p/patch-2.8-4.fc44.x86_64.rpm
+        checksum: sha256:1b723c3a261ef0bd59b035dcc9cea28d4d407e63b0c687f0230c065f308392bb
+        size: 118015
+        evr: 2.8-4.fc44
       - name: pciutils
         repo_id: updates-archive
         location: pciutils-3.15.0-1.fc44.x86_64.rpm
