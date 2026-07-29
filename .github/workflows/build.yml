@@ -110,6 +110,7 @@ jobs:
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
           oci: true
+          squash: false
           extra-args: |
             --timestamp ${{ env.SOURCE_DATE_EPOCH }}
             --build-arg BUILD_SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
