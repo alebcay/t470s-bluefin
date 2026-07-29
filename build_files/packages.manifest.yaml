@@ -814,11 +814,11 @@ data:
         size: 98240
         evr: 2.10.3-1.fc44
       - name: cryptsetup-libs
-        repo_id: fedora
-        location: Packages/c/cryptsetup-libs-2.8.4-1.fc44.x86_64.rpm
-        checksum: sha256:f8ae96eca560476b9681060ee31ccff8d8bb0bada48b96500ed0a89692d130af
-        size: 601958
-        evr: 2.8.4-1.fc44
+        repo_id: updates-archive
+        location: cryptsetup-libs-2.8.7-1.fc44.x86_64.rpm
+        checksum: sha256:f79a915243fae51d3f56f07c3006ce4a6169a568f36f1de2710373ac4dd1237f
+        size: 626468
+        evr: 2.8.7-1.fc44
       - name: cups-libs
         repo_id: updates-archive
         location: cups-libs-2.4.19-3.fc44.x86_64.rpm
@@ -2705,16 +2705,16 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260728git.18921f7-1.fc44.x86_64.rpm
-        checksum: sha256:a8bb1b118f6ba4592b3eef7ac757d76cfa01b45f239d7250eeb55765162ed579
-        size: 13948246
-        evr: 5.0.0^20260728git.18921f7-1.fc44
+        location: noctalia-git-0:5.0.0^20260729git.df43de5-1.fc44.x86_64.rpm
+        checksum: sha256:164bb6849d1ea84ababe8d309b0a1fccd44c5bbae215c45581cfbbb82574b010
+        size: 13985335
+        evr: 5.0.0^20260729git.df43de5-1.fc44
       - name: noctalia-greeter
         repo_id: terra
-        location: noctalia-greeter-0:1.0.0^20260726git.32b015f-1.fc44.x86_64.rpm
-        checksum: sha256:d34133f9909d8d61f818d2073b187a2ab8c50536ef81291e8851f5d940458360
-        size: 1800194
-        evr: 1.0.0^20260726git.32b015f-1.fc44
+        location: noctalia-greeter-0:1.0.0^20260729git.c6a48ea-1.fc44.x86_64.rpm
+        checksum: sha256:0f1c11d738106ad3cc09ea2d5765b930af925443273b77aa4d200480553c0a31
+        size: 1816416
+        evr: 1.0.0^20260729git.c6a48ea-1.fc44
       - name: noopenh264
         repo_id: fedora
         location: Packages/n/noopenh264-2.6.0-4.fc44.x86_64.rpm
@@ -3239,34 +3239,34 @@ data:
         evr: 3.1.2-2.fc44
       - name: systemd
         repo_id: updates-archive
-        location: systemd-259.7-1.fc44.x86_64.rpm
-        checksum: sha256:bc08a526d7f0697573aabbf9d2ca43dc5757e5347c6125ee219fcd91b7b10826
-        size: 4479093
-        evr: 259.7-1.fc44
+        location: systemd-259.8-1.fc44.x86_64.rpm
+        checksum: sha256:e74bf8412013be3b1c25bbcaa6acb99413488d828ac8a1a7edd3db9f63e6b4cf
+        size: 4487291
+        evr: 259.8-1.fc44
       - name: systemd-libs
         repo_id: updates-archive
-        location: systemd-libs-259.7-1.fc44.x86_64.rpm
-        checksum: sha256:da6a58be7f114d153829053965c5079a8e599a3baddfb3c643d4d9b7ff92a15b
-        size: 887158
-        evr: 259.7-1.fc44
+        location: systemd-libs-259.8-1.fc44.x86_64.rpm
+        checksum: sha256:64620cf44ce8afa85f6d2946d4d1b31f942831738b03c3ca7563f4ca232e3123
+        size: 888322
+        evr: 259.8-1.fc44
       - name: systemd-shared
         repo_id: updates-archive
-        location: systemd-shared-259.7-1.fc44.x86_64.rpm
-        checksum: sha256:8c2f0eaa935d51cda5ffdb9fe1a1b3bebc92d9aedb2a89524eda176fd12a2659
-        size: 2101375
-        evr: 259.7-1.fc44
+        location: systemd-shared-259.8-1.fc44.x86_64.rpm
+        checksum: sha256:64bbd2b9e23b808f91973d596e64732f53e9eb4d91b6f00a3fe7517c25aed0b7
+        size: 2105581
+        evr: 259.8-1.fc44
       - name: systemd-sysusers
         repo_id: updates-archive
-        location: systemd-sysusers-259.7-1.fc44.x86_64.rpm
-        checksum: sha256:bc104e88ca428fb3767b9cb232d574c891ee1b12f6050d133433a1c8cd617795
-        size: 49758
-        evr: 259.7-1.fc44
+        location: systemd-sysusers-259.8-1.fc44.x86_64.rpm
+        checksum: sha256:2ff9614d3aee7d403a1b4d742b0cc39c35e78e29a78a0b5fd5d7c4a689ced571
+        size: 50443
+        evr: 259.8-1.fc44
       - name: systemd-udev
         repo_id: updates-archive
-        location: systemd-udev-259.7-1.fc44.x86_64.rpm
-        checksum: sha256:055913a8331a0693eeda15db84669f943e185d9882691eefab46b26b8c923b1d
-        size: 2772520
-        evr: 259.7-1.fc44
+        location: systemd-udev-259.8-1.fc44.x86_64.rpm
+        checksum: sha256:18d8b8c0dc65f5874745fc51209a14e0267583f6285f61a05c23947abc5e9477
+        size: 2775710
+        evr: 259.8-1.fc44
       - name: throttled
         repo_id: copr:copr.fedorainfracloud.org:abn:throttled
         location: 09641246-throttled/throttled-0.11-1.x86_64.rpm
