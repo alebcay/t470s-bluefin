@@ -2713,16 +2713,16 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260731git.eaa207e-1.fc44.x86_64.rpm
-        checksum: sha256:2f52995c0b278c17592c51a8437c1045a6b7acef057f89c7ed8349558be6ef7e
-        size: 14025792
-        evr: 5.0.0^20260731git.eaa207e-1.fc44
+        location: noctalia-git-0:5.0.0^20260802git.157c0e6-1.fc44.x86_64.rpm
+        checksum: sha256:71a62d552ba3d9d927fd31dc0f5503e09d5fbf1d092dfdf93c5565effadeae82
+        size: 14089487
+        evr: 5.0.0^20260802git.157c0e6-1.fc44
       - name: noctalia-greeter
         repo_id: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
-        location: 10795794-noctalia-greeter/noctalia-greeter-1.1.0^1.257ce92-1.fc44.x86_64.rpm
-        checksum: sha256:9cccb8eb1c2bb01b0fdf2d4811e3381e90de6ad2051100150ff2a1c297af019d
-        size: 1888284
-        evr: 1.1.0^1.257ce92-1.fc44
+        location: 10803896-noctalia-greeter/noctalia-greeter-1.1.0^3.4aa960d-1.fc44.x86_64.rpm
+        checksum: sha256:a8bafa10bef696442d78ad0a5cb605b06381102067607ec02370c00264915b79
+        size: 1890683
+        evr: 1.1.0^3.4aa960d-1.fc44
       - name: noopenh264
         repo_id: fedora
         location: Packages/n/noopenh264-2.6.0-4.fc44.x86_64.rpm
