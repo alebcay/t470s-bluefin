@@ -48,5 +48,6 @@ packages:
   - fuse
   - fuse-libs
   - google-noto-sans-cjk-fonts
+  - xorg-x11-server-Xwayland
 arches:
   - x86_64
