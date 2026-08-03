@@ -328,13 +328,7 @@ resolve-lockfile:
         -w /work \
         ghcr.io/projectbluefin/bluefin:stable \
         bash -c '
-            dnf5 -y config-manager addrepo \
-                --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-            dnf5 -y install terra-release
-            dnf5 -y copr enable abn/throttled
-            dnf5 -y copr enable sneexy/python-validity
-            dnf5 -y copr enable lionheartp/Hyprland
-            dnf5 -y install dnf5-plugin-manifest libpkgmanifest
+            bash build_files/install-repos.sh enable
             dnf5 manifest resolve --input build_files/rpms.in.yaml
             mv packages.manifest.yaml build_files/packages.manifest.yaml
         '
