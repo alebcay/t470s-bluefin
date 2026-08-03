@@ -89,13 +89,11 @@ sudoif command *args:
 build $target_image=image_name $tag=default_tag:
     #!/usr/bin/env bash
 
-    BUILD_ARGS=()
-    if [[ -z "$(git status -s)" ]]; then
-        BUILD_ARGS+=("--build-arg" "SHA_HEAD_SHORT=$(git rev-parse --short HEAD)")
-    fi
+    SOURCE_DATE_EPOCH="$(git log -1 --format=%ct)"
 
     podman build \
-        "${BUILD_ARGS[@]}" \
+        --build-arg "BUILD_SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH}" \
+        --timestamp "${SOURCE_DATE_EPOCH}" \
         --pull=newer \
         --tag "${target_image}:${tag}" \
         .
@@ -292,7 +290,6 @@ spawn-vm rebuild="0" type="qcow2" ram="6G":
       --network-user-mode \
       --vsock=false --pass-ssh-key=false \
       -i ./output/**/*.{{ type }}
-
 
 # Runs shell check on all Bash scripts
 lint:
