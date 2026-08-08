@@ -4,8 +4,6 @@ data:
   repositories:
     - id: copr:copr.fedorainfracloud.org:abn:throttled
       baseurl: https://copr-be.cloud.fedoraproject.org/results/abn/throttled/fedora-44-$arch/
-    - id: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
-      baseurl: https://copr-be.cloud.fedoraproject.org/results/lionheartp/Hyprland/fedora-44-$arch/
     - id: copr:copr.fedorainfracloud.org:sneexy:python-validity
       baseurl: https://copr-be.cloud.fedoraproject.org/results/sneexy/python-validity/fedora-44-$arch/
     - id: fedora
@@ -2761,16 +2759,16 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260806git.e9db917-1.fc44.x86_64.rpm
-        checksum: sha256:b42f3fcc2c55986c3cdea7e6a5de943e18dce4db6b5e1f0ef946be52f184b40b
-        size: 14198099
-        evr: 5.0.0^20260806git.e9db917-1.fc44
+        location: noctalia-git-0:5.0.0^20260808git.e9230c8-1.fc44.x86_64.rpm
+        checksum: sha256:c79d13ae682a70a1a53ce8f182a677d638d87961b18bac745d28ffb5fb848616
+        size: 14204863
+        evr: 5.0.0^20260808git.e9230c8-1.fc44
       - name: noctalia-greeter
-        repo_id: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
-        location: 10833883-noctalia-greeter/noctalia-greeter-1.2.1^1.bf5feef-1.fc44.x86_64.rpm
-        checksum: sha256:e79c459d265a3a8c976b25678000c509532fd6bf2760e7c87ecb73f2656a54a6
-        size: 1889646
-        evr: 1.2.1^1.bf5feef-1.fc44
+        repo_id: terra
+        location: noctalia-greeter-0:1.2.1^20260808git.bf5feef-1.fc44.x86_64.rpm
+        checksum: sha256:10dafd758b937681c5a8ff305b539ad246eca86dfcec5d3baf8f31b09bca9146
+        size: 1890128
+        evr: 1.2.1^20260808git.bf5feef-1.fc44
       - name: noopenh264
         repo_id: fedora
         location: Packages/n/noopenh264-2.6.0-4.fc44.x86_64.rpm
