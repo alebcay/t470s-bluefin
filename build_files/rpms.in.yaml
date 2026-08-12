@@ -16,10 +16,10 @@ contentOrigin:
       baseurl: https://repos.fyralabs.com/terra$releasever
       priority: 10
     - repoid: fedora
-      baseurl: https://mirrors.kernel.org/fedora/releases/$releasever/Everything/$basearch/os/
+      baseurl: https://dl.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
       priority: 20
     - repoid: updates
-      baseurl: https://mirrors.kernel.org/fedora/updates/$releasever/Everything/$basearch/os/
+      baseurl: https://dl.fedoraproject.org/pub/fedora/linux/updates/$releasever/Everything/$basearch/
       priority: 99
 packages:
   - niri
