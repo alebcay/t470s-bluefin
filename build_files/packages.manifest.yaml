@@ -575,11 +575,11 @@ data:
         size: 14398
         evr: 1.10.1-1.fc44
       - name: tzdata
-        repo_id: updates-archive
-        location: tzdata-2026b-1.fc44.noarch.rpm
-        checksum: sha256:f3ca5d87590b97173e394134e33fda70a5399327a2a7c060084315a975d1f7de
-        size: 730534
-        evr: 2026b-1.fc44
+        repo_id: updates
+        location: Packages/t/tzdata-2026c-1.fc44.noarch.rpm
+        checksum: sha256:a5a600ae27bf46427705da734c3c4c11fe85700c9705c6b817fb86da17b78618
+        size: 728814
+        evr: 2026c-1.fc44
       - name: wsdd
         repo_id: fedora
         location: Packages/w/wsdd-0.8-6.fc44.noarch.rpm
@@ -3222,11 +3222,11 @@ data:
         size: 1825635
         evr: 2026.1-1.fc44
       - name: sqlite-libs
-        repo_id: fedora
-        location: Packages/s/sqlite-libs-3.51.2-1.fc44.x86_64.rpm
-        checksum: sha256:b9a9f1ce6cd359622b100b9d313e6859adf2a0574e5e75ff166baab3e67ccd6f
-        size: 818349
-        evr: 3.51.2-1.fc44
+        repo_id: updates
+        location: Packages/s/sqlite-libs-3.51.2-2.fc44.x86_64.rpm
+        checksum: sha256:c1c6c6cb5258e361068379c9eeef6897e256b3d99a8d65cbb9c3cff29d9bf775
+        size: 815700
+        evr: 3.51.2-2.fc44
       - name: srt-libs
         repo_id: updates-archive
         location: srt-libs-1.5.6-1.fc44.x86_64.rpm
