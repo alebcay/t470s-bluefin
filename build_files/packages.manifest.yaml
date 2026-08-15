@@ -2250,11 +2250,11 @@ data:
         size: 215010
         evr: 1.0.22-1.fc44
       - name: libsoup3
-        repo_id: updates-archive
-        location: libsoup3-3.6.6-8.fc44.x86_64.rpm
-        checksum: sha256:8a7262e5208284203759f60bbf337a64538e0cdee05ee9a344802e4263b23213
-        size: 417275
-        evr: 3.6.6-8.fc44
+        repo_id: updates
+        location: Packages/l/libsoup3-3.6.6-9.fc44.x86_64.rpm
+        checksum: sha256:50ac9f1c61d4ffec4247fa40ccbcb0a437d760a831a7b9ca7a6445447b9e20f0
+        size: 416926
+        evr: 3.6.6-9.fc44
       - name: libssh
         repo_id: updates-archive
         location: libssh-0.12.2-1.fc44.x86_64.rpm
@@ -2713,10 +2713,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260812git.451c391-1.fc44.x86_64.rpm
-        checksum: sha256:008fa3503af7783838f2e7615ff1f6ac7b38285b8a3b62e343094de243c878a1
-        size: 14282354
-        evr: 5.0.0^20260812git.451c391-1.fc44
+        location: noctalia-git-0:5.0.0^20260814git.f6ae73a-1.fc44.x86_64.rpm
+        checksum: sha256:cdc7d5b38f2cb965b6c0e5eeba832d678162fc6517b95c66e1ebc8c2075c1c46
+        size: 14325284
+        evr: 5.0.0^20260814git.f6ae73a-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.2.1^20260808git.bf5feef-1.fc44.x86_64.rpm
