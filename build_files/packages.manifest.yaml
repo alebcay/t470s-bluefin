@@ -545,17 +545,17 @@ data:
         size: 190327
         evr: 2:4.24.5-1.fc44
       - name: selinux-policy
-        repo_id: updates-archive
-        location: selinux-policy-44.5-1.fc44.noarch.rpm
-        checksum: sha256:219f58c019049aec76a775d3aeca0577e3ecca3a38c91d8d26781193a5cd5f00
-        size: 24513
-        evr: 44.5-1.fc44
+        repo_id: updates
+        location: Packages/s/selinux-policy-44.6-1.fc44.noarch.rpm
+        checksum: sha256:e93c630a9d1a4e8afa28f3cac994492bd2793ba8eb1834cc6bf8e5267ac0644b
+        size: 25324
+        evr: 44.6-1.fc44
       - name: selinux-policy-targeted
-        repo_id: updates-archive
-        location: selinux-policy-targeted-44.5-1.fc44.noarch.rpm
-        checksum: sha256:7c33703859d41f9cdff84d7e4bd897974ded323afc0c261ba89c54b3ef3620b3
-        size: 7106001
-        evr: 44.5-1.fc44
+        repo_id: updates
+        location: Packages/s/selinux-policy-targeted-44.6-1.fc44.noarch.rpm
+        checksum: sha256:d5e72dee5dd2502f8d9ea36814095b6c840baa4292d6202d7ac2cfbec0e1a0ab
+        size: 7106629
+        evr: 44.6-1.fc44
       - name: setup
         repo_id: fedora
         location: Packages/s/setup-2.15.0-28.fc44.noarch.rpm
@@ -2713,10 +2713,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260814git.f6ae73a-1.fc44.x86_64.rpm
-        checksum: sha256:cdc7d5b38f2cb965b6c0e5eeba832d678162fc6517b95c66e1ebc8c2075c1c46
-        size: 14325284
-        evr: 5.0.0^20260814git.f6ae73a-1.fc44
+        location: noctalia-git-0:5.0.0^20260816git.51576e3-1.fc44.x86_64.rpm
+        checksum: sha256:94fa5fe4ad3d91f4f3ad097e1b53fbda242e556b92d964b24d908aa3bc0f2a36
+        size: 14385800
+        evr: 5.0.0^20260816git.51576e3-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.2.1^20260808git.bf5feef-1.fc44.x86_64.rpm
