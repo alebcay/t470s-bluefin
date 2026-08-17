@@ -63,7 +63,10 @@ kver="$(cd /usr/lib/modules && echo *)"
 depmod -a "${kver}"
 dracut -vf "/usr/lib/modules/${kver}/initramfs.img" "${kver}"
 
-setsebool -P domain_kernel_load_modules on
+# Kernel module loads must be allowed by SELinux (can't allow at build-time
+# because setsebool requires a loaded kernel, so a oneshot unit applies it
+# at boot)
+systemctl enable setsebool-domain-kernel-load-modules.service
 
 systemctl enable tlp.service
 systemctl enable zcfan.service

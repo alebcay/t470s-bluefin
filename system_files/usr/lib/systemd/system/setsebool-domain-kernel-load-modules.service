@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable domain_kernel_load_modules SELinux boolean
+After=local-fs.target
+ConditionPathIsDirectory=/sys/fs/selinux
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/setsebool -P domain_kernel_load_modules on
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
