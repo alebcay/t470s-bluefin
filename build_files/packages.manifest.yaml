@@ -1794,11 +1794,11 @@ data:
         size: 113076
         evr: 3.1-59.20260512cvs.fc44
       - name: libei
-        repo_id: fedora
-        location: Packages/l/libei-1.5.0-2.fc44.x86_64.rpm
-        checksum: sha256:e61f91ccc87dd7f22a8eb37f25bb3179641b8b560f4fadceac1d6de6c91ba35d
-        size: 55796
-        evr: 1.5.0-2.fc44
+        repo_id: updates
+        location: Packages/l/libei-1.6.0-2.fc44.x86_64.rpm
+        checksum: sha256:0bb64c5db2a2c025cb5b85c31a5657ea018af6389a4a15bdbc1fc84694495997
+        size: 58616
+        evr: 1.6.0-2.fc44
       - name: libepoxy
         repo_id: fedora
         location: Packages/l/libepoxy-1.5.10-12.fc44.x86_64.rpm
@@ -1806,11 +1806,11 @@ data:
         size: 235904
         evr: 1.5.10-12.fc44
       - name: libevdev
-        repo_id: fedora
-        location: Packages/l/libevdev-1.13.6-2.fc44.x86_64.rpm
-        checksum: sha256:2df6f27b682b3b12b3786ebdd8a6ce84c5bd2cd7fd9b19eff906bd86dda58ae5
-        size: 40115
-        evr: 1.13.6-2.fc44
+        repo_id: updates
+        location: Packages/l/libevdev-1.13.7-1.fc44.x86_64.rpm
+        checksum: sha256:70397701d0c98f1e2afa7820e3dda3197c462f5ed03f86cce0599bb6040d4f12
+        size: 39947
+        evr: 1.13.7-1.fc44
       - name: libevent
         repo_id: fedora
         location: Packages/l/libevent-2.1.12-17.fc44.x86_64.rpm
@@ -2076,11 +2076,11 @@ data:
         size: 124943
         evr: 1.16.2-1.fc44
       - name: liboeffis
-        repo_id: fedora
-        location: Packages/l/liboeffis-1.5.0-2.fc44.x86_64.rpm
-        checksum: sha256:aa61f4e7633a4b8b6c96b7aa4f43b64b46d20f5b579ffaee25586d071fe4b230
-        size: 22669
-        evr: 1.5.0-2.fc44
+        repo_id: updates
+        location: Packages/l/liboeffis-1.6.0-2.fc44.x86_64.rpm
+        checksum: sha256:5ead421cf261427f45f80d6e816a8e6244a49e62ff4b5820a661cdc60844c8b0
+        size: 22642
+        evr: 1.6.0-2.fc44
       - name: libogg
         repo_id: fedora
         location: Packages/l/libogg-1.3.6-2.fc44.x86_64.rpm
@@ -2605,34 +2605,34 @@ data:
         evr: 4.3-11.fc44
       - name: mesa-dri-drivers
         repo_id: updates
-        location: Packages/m/mesa-dri-drivers-26.1.6-1.fc44.x86_64.rpm
-        checksum: sha256:3f643678445189e9ca3aeccbe3f35d7184ac0522e65602d1b743184e37d10aae
-        size: 14173793
-        evr: 26.1.6-1.fc44
+        location: Packages/m/mesa-dri-drivers-26.1.7-1.fc44.x86_64.rpm
+        checksum: sha256:af321e234d8fc1356e1c52cdd26347f449e54bd9e94ac4d0d7c293d4a37e7a94
+        size: 14174852
+        evr: 26.1.7-1.fc44
       - name: mesa-filesystem
         repo_id: updates
-        location: Packages/m/mesa-filesystem-26.1.6-1.fc44.x86_64.rpm
-        checksum: sha256:9d1eb45c379ee7525f1ae48be4beec9a72fa0784ba6c50cc5c0a4db5ab1554dd
-        size: 9145
-        evr: 26.1.6-1.fc44
+        location: Packages/m/mesa-filesystem-26.1.7-1.fc44.x86_64.rpm
+        checksum: sha256:b2bf2c305d6aa16f1fe3d15297a762cbb6141b285a026489cd54144ae214e840
+        size: 9251
+        evr: 26.1.7-1.fc44
       - name: mesa-libEGL
         repo_id: updates
-        location: Packages/m/mesa-libEGL-26.1.6-1.fc44.x86_64.rpm
-        checksum: sha256:60706b0f655a259d6c591a00abc33d917c6ebf91270a2bf3ec4c9a547780617d
-        size: 142950
-        evr: 26.1.6-1.fc44
+        location: Packages/m/mesa-libEGL-26.1.7-1.fc44.x86_64.rpm
+        checksum: sha256:8180b06ecd98612c0209db35684789ba9cf8cbe31548dff6e6bd2f6f641aab17
+        size: 142955
+        evr: 26.1.7-1.fc44
       - name: mesa-libGL
         repo_id: updates
-        location: Packages/m/mesa-libGL-26.1.6-1.fc44.x86_64.rpm
-        checksum: sha256:e330dcb6841124008a80e79cbbd5dde72a701e87b3b6982698472137f7bde34f
-        size: 139492
-        evr: 26.1.6-1.fc44
+        location: Packages/m/mesa-libGL-26.1.7-1.fc44.x86_64.rpm
+        checksum: sha256:4dd620be572edc07cc87434b921d952d914309b68b4578e4e4d363054f9d39ea
+        size: 139610
+        evr: 26.1.7-1.fc44
       - name: mesa-libgbm
         repo_id: updates
-        location: Packages/m/mesa-libgbm-26.1.6-1.fc44.x86_64.rpm
-        checksum: sha256:0454d88cbd34bade31e5e71d33fd358de07216a85b30f7183c66bb01857537a5
-        size: 15296
-        evr: 26.1.6-1.fc44
+        location: Packages/m/mesa-libgbm-26.1.7-1.fc44.x86_64.rpm
+        checksum: sha256:4eacc116ff05287443e1dcf0d066bd2b807fd9475cf406dd5edbdbe2ba1e402d
+        size: 15408
+        evr: 26.1.7-1.fc44
       - name: mpdecimal
         repo_id: fedora
         location: Packages/m/mpdecimal-4.0.1-3.fc44.x86_64.rpm
@@ -2713,10 +2713,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260817git.bf4da23-1.fc44.x86_64.rpm
-        checksum: sha256:bd1120a8fa4bebdf02c0acb5c1ea30823ec8d5edfc143b91f88bc442f18263ca
-        size: 14403481
-        evr: 5.0.0^20260817git.bf4da23-1.fc44
+        location: noctalia-git-0:5.0.0^20260819git.fa1a968-1.fc44.x86_64.rpm
+        checksum: sha256:1eb6aa30dd15b1306f97581d2898579df537c6f04bdffe9226aefb56db52edb3
+        size: 14428795
+        evr: 5.0.0^20260819git.fa1a968-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.2.1^20260808git.bf5feef-1.fc44.x86_64.rpm
@@ -3066,11 +3066,11 @@ data:
         size: 722182
         evr: 17.0-9.fc44
       - name: python3
-        repo_id: updates-archive
-        location: python3-3.14.6-1.fc44.x86_64.rpm
-        checksum: sha256:d4ca58378a7f191e01300ad640b9b69b39902b98c5b9449be0533e55762c9fcc
-        size: 29516
-        evr: 3.14.6-1.fc44
+        repo_id: updates
+        location: Packages/p/python3-3.14.7-1.fc44.x86_64.rpm
+        checksum: sha256:3cd7dd81a6a500363663e12f84bb4613508a702bddcf60e06aa7045c2b65dbbc
+        size: 29725
+        evr: 3.14.7-1.fc44
       - name: python3-audit
         repo_id: updates-archive
         location: python3-audit-4.2.1-1.fc44.x86_64.rpm
@@ -3114,11 +3114,11 @@ data:
         size: 414241
         evr: 3.56.3-1.fc44
       - name: python3-libs
-        repo_id: updates-archive
-        location: python3-libs-3.14.6-1.fc44.x86_64.rpm
-        checksum: sha256:8b8e8aacdbb0c12a5bc57727018f4cdfb09911ed5ff427430e63ac72b6b6f552
-        size: 10626803
-        evr: 3.14.6-1.fc44
+        repo_id: updates
+        location: Packages/p/python3-libs-3.14.7-1.fc44.x86_64.rpm
+        checksum: sha256:cd05a17cb745e4603cc92631d369374177e090a5d750b7e5f0bbeb91e68cc52e
+        size: 10636540
+        evr: 3.14.7-1.fc44
       - name: python3-libselinux
         repo_id: updates-archive
         location: python3-libselinux-3.11-1.fc44.x86_64.rpm
