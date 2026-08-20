@@ -120,10 +120,10 @@ data:
         evr: 1:5.0.0-2.fc44
       - name: ghostty-terminfo
         repo_id: terra
-        location: ghostty-terminfo-0:1.3.1-2.fc44.noarch.rpm
-        checksum: sha256:5ac2f340a0af1b03273e0d6943634e0436dc80305eba6a233c554a5bee57fa0a
+        location: ghostty-terminfo-0:1.3.1-3.fc44.noarch.rpm
+        checksum: sha256:4edb8c5ed8cc6a87d1fd5a337ff4809f1b3c7cd3c578527e1809f4c5c7c354b4
         size: 9816
-        evr: 1.3.1-2.fc44
+        evr: 1.3.1-3.fc44
       - name: gnulib-l10n
         repo_id: fedora
         location: Packages/g/gnulib-l10n-20241231-2.fc44.noarch.rpm
@@ -1015,10 +1015,10 @@ data:
         evr: 2.8.2-1.fc44
       - name: ghostty
         repo_id: terra
-        location: ghostty-0:1.3.1-2.fc44.x86_64.rpm
-        checksum: sha256:185ba6944713882f2a4e5b79bbb8fa413995e9febb44e59135c22af7c591c4c2
-        size: 17122675
-        evr: 1.3.1-2.fc44
+        location: ghostty-0:1.3.1-3.fc44.x86_64.rpm
+        checksum: sha256:86f514a5fde50d33a09300aff685395e93e9652537b9c662f1c3470c8a88e47f
+        size: 17102484
+        evr: 1.3.1-3.fc44
       - name: giflib
         repo_id: updates-archive
         location: giflib-6.1.3-2.fc44.x86_64.rpm
