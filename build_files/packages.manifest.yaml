@@ -2713,10 +2713,10 @@ data:
         evr: 26.04-1.fc44
       - name: noctalia-git
         repo_id: terra
-        location: noctalia-git-0:5.0.0^20260819git.fa1a968-1.fc44.x86_64.rpm
-        checksum: sha256:1eb6aa30dd15b1306f97581d2898579df537c6f04bdffe9226aefb56db52edb3
-        size: 14428795
-        evr: 5.0.0^20260819git.fa1a968-1.fc44
+        location: noctalia-git-0:5.0.0^20260820git.21a272f-1.fc44.x86_64.rpm
+        checksum: sha256:3821505bfee1e5bae983367934f694b117e80561709fb8ddc333a2739130b9e1
+        size: 14462142
+        evr: 5.0.0^20260820git.21a272f-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.2.1^20260808git.bf5feef-1.fc44.x86_64.rpm
