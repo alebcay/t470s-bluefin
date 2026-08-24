@@ -1,0 +1,23 @@
+FROM %%BASE_IMAGE%%
+
+# Thin layer for integration testing only:
+# - static VM network address and SSH access through the firewall
+# - sshd unmasked/enabled regardless of base image defaults
+# - `core` user (uid/gid 1001) with wheel membership and the runner's key
+#   baked in as a fallback beside bootc-image-builder's user configuration
+#
+# The base image reference is templated in by the calling composite action.
+#
+# NOTE: /var is the mutable portion of a bootc/ostree system and files placed
+# there during the container build may not persist to the deployed disk.
+# The SSH authorized key is placed under /etc (immutable OS content) and
+# sshd is configured to read it from there via AuthorizedKeysFile.
+
+COPY system_files /
+
+COPY scripts /tmp/integration-test-scripts/
+COPY authorized_keys /etc/ssh/authorized_keys.d/core
+RUN bash /tmp/integration-test-scripts/enableservices.sh && \
+    bash /tmp/integration-test-scripts/setpermissivecontainerpolicy.sh && \
+    rm -rf /tmp/integration-test-scripts && \
+    chmod 600 /etc/ssh/authorized_keys.d/core

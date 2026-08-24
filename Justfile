@@ -273,6 +273,48 @@ run-vm-raw $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-
 [group('Run Virtal Machine')]
 run-vm-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-vm target_image tag "iso" "disk_config/iso.toml")
 
+# Run integration tests locally (reuses the same helpers as CI)
+# Requires: podman, qemu, libvirt, bootc-image-builder (via podman), nc, ssh
+# Usage: just integration-test
+# This builds a local test image, creates a qcow2 via BIB, boots it in libvirt,
+# and runs the integration_tests/*.sh suites over SSH. No GHCR push is needed.
+[group('Test')]
+integration-test:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "=== Local integration test ==="
+    echo "This reuses .github/actions/integration-test/scripts/ for CI parity."
+    # Generate SSH key if missing (same as CI)
+    mkdir -p ~/.ssh
+    if [[ ! -f ~/.ssh/id_ed25519 ]]; then
+        ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+    fi
+    # Use a local tag to avoid GHCR
+    export REGISTRY="localhost"
+    export IMAGE="t470s-bluefin"
+    export TAG="integrationtest-local"
+    export ACTION_IMAGE_DIR=".github/actions/integration-test/image"
+    export AUTH_FILE=""
+    # Build test image locally
+    .github/actions/integration-test/scripts/build-test-image.sh
+    export INTEGRATION_TEST_IMAGE="localhost/t470s-bluefin:integrationtest-local"
+    # Create VM disk via BIB (uses the local image)
+    .github/actions/integration-test/scripts/create-vm-disk.sh
+    # Boot VM and run tests
+    export TESTS="./integration_tests/test-services.sh
+    ./integration_tests/test-packages.sh
+    ./integration_tests/test-config.sh
+    ./integration_tests/test-hardened-malloc.sh"
+    export DATA_FILES="./build_files/rpms.in.yaml
+    ./build_files/rpms.remove.yaml"
+    export VM_NAME="vm-bootc-local"
+    export VCPUS="3"
+    export MEMORY_MB="8192"
+    export DISK_SIZE_GB="30"
+    export STARTUP_WAIT_SECONDS="60"
+    .github/actions/integration-test/scripts/run-vm-and-tests.sh
+    echo "=== Local integration test complete ==="
+
 # Run a virtual machine using systemd-vmspawn
 [group('Run Virtal Machine')]
 spawn-vm rebuild="0" type="qcow2" ram="6G":
@@ -326,6 +368,3 @@ resolve-lockfile:
         ghcr.io/projectbluefin/bluefin:stable \
         bash -c '
             bash build_files/install-repos.sh enable
-            dnf5 manifest resolve --input build_files/rpms.in.yaml
-            mv packages.manifest.yaml build_files/packages.manifest.yaml
-        '

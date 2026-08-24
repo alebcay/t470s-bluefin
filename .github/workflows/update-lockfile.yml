@@ -5,6 +5,16 @@ on:
   schedule:
     - cron: '32 14 * * *'  # Daily 14:32 UTC
   workflow_dispatch:
+    inputs:
+      run_integration_test:
+        description: "Run integration tests against the updated image"
+        required: false
+        default: "on-changes"
+        type: choice
+        options:
+          - on-changes
+          - always
+          - skip
 
 jobs:
   resolve:
@@ -59,6 +69,9 @@ jobs:
     needs: resolve
     runs-on: ubuntu-latest
 
+    outputs:
+      changes: ${{ steps.commit.outputs.changes }}
+
     permissions:
       contents: write
       pull-requests: write
@@ -91,6 +104,7 @@ jobs:
           path: ./
 
       - name: Create or update Pull Request
+        id: commit
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -98,7 +112,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           BRANCH="${{ steps.branch.outputs.branch }}"
           git add Containerfile build_files/packages.manifest.yaml
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          if git diff --cached --quiet; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit"
+            exit 0
+          fi
+          echo "changes=true" >> "$GITHUB_OUTPUT"
           git commit -m "chore: update base image and RPM lockfile"
           git push -u origin "$BRANCH" --force
           PR_EXISTS=$(gh pr list --head "$BRANCH" --state open --json number --jq 'if .[0].number then "true" else "false" end')
@@ -112,3 +131,18 @@ jobs:
             PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
             echo "PR #$PR_NUMBER already exists, updated with new lockfile"
           fi
+
+  integration-test:
+    name: Integration test updated image
+    needs: pull-request
+    if: >-
+      inputs.run_integration_test == 'always' ||
+      ((inputs.run_integration_test == '' || inputs.run_integration_test == 'on-changes') && needs.pull-request.outputs.changes == 'true')
+    uses: ./.github/workflows/integration-tests.yml
+    with:
+      checkout-ref: refs/heads/automated/lockfile-update
+      concurrency-key: automated/lockfile-update
+    permissions:
+      contents: read
+      packages: write
+    secrets: inherit

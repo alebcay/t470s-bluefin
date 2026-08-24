@@ -1,0 +1,210 @@
+---
+name: Integration tests
+
+on:
+  workflow_call:
+    inputs:
+      checkout-ref:
+        description: "Git ref to check out and test (defaults to the triggering ref)"
+        required: false
+        type: string
+        default: ""
+      concurrency-key:
+        description: "Overrides the concurrency group key"
+        required: false
+        type: string
+        default: ""
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+env:
+  IMAGE_NAME: ${{ github.event.repository.name }}
+  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
+  DEFAULT_TAG: "latest"
+
+# Keyed on the PR head branch (or explicit key) so a chained run from
+# update-lockfile.yml and the PR's own synchronize run coalesce into one.
+concurrency:
+  group: integration-tests-${{ inputs.concurrency-key || github.event.pull_request.head.ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-image:
+    name: Build and push test image
+    # Fork PRs cannot push packages, so skip them entirely
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+
+    outputs:
+      image_registry: ${{ steps.prep.outputs.image_registry }}
+      test_image_name: ${{ steps.prep.outputs.test_image_name }}
+
+    steps:
+      - name: Prepare environment
+        id: prep
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # Lowercase the image uri and derive the temporary test package name.
+          # The integration test action always stacks onto <registry>/<image>:latest,
+          # so each run gets its own throwaway GHCR package to avoid touching :latest.
+          IMAGE_REGISTRY="${IMAGE_REGISTRY,,}"
+          IMAGE_NAME="${IMAGE_NAME,,}"
+          if [ -n "${PR_NUMBER}" ]; then
+            TEST_IMAGE_NAME="${IMAGE_NAME}-pr${PR_NUMBER}"
+          else
+            TEST_IMAGE_NAME="${IMAGE_NAME}-ci"
+          fi
+          echo "image_registry=${IMAGE_REGISTRY}" >> "$GITHUB_OUTPUT"
+          echo "test_image_name=${TEST_IMAGE_NAME}" >> "$GITHUB_OUTPUT"
+          echo "IMAGE_REGISTRY=${IMAGE_REGISTRY}" >> "${GITHUB_ENV}"
+          echo "TEST_IMAGE_NAME=${TEST_IMAGE_NAME}" >> "${GITHUB_ENV}"
+
+      # Stage versions are pinned by dependabot
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@695eb75bc387dbcd9685a8e72d23439d8686cba6
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.checkout-ref || github.ref }}
+
+      - name: Set SOURCE_DATE_EPOCH
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)" >> "$GITHUB_ENV"
+
+      - name: Restore RPM cache
+        id: restore_cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: /tmp/rpm-cache
+          key: rpm-${{ hashFiles('build_files/packages.manifest.yaml') }}
+
+      - name: Ensure RPM cache directory exists
+        run: mkdir -p /tmp/rpm-cache
+
+      # BlueBuild derives the OS version from the OCI version label of the
+      # base image. The Bluefin base carries a stream-prefixed value like
+      # `testing-44.20260720` that the pinned BlueBuild build fails to parse,
+      # so stamp a plain numeric version onto our image to keep inspection
+      # happy. Read from the base's metadata directly — no pull needed.
+      - name: Resolve base image version
+        id: base_version
+        run: |
+          BASE_REF=$(awk '/^FROM /{ref=$2} END{print ref}' Containerfile)
+          echo "Base image ref: ${BASE_REF}"
+          RAW_VERSION=$(skopeo inspect --format '{{ index .Labels "org.opencontainers.image.version" }}' "docker://${BASE_REF}" || true)
+          echo "Base version label: ${RAW_VERSION}"
+          VERSION_ID=$(printf '%s' "${RAW_VERSION}" | grep -oP '\d+(\.\d+)*' | head -n1 || true)
+          if [ -z "${VERSION_ID}" ]; then
+            echo "No numeric version found, falling back to SOURCE_DATE_EPOCH"
+            VERSION_ID="${SOURCE_DATE_EPOCH}"
+          fi
+          echo "version=${VERSION_ID}" >> "$GITHUB_OUTPUT"
+
+      - name: Build Image
+        id: build_image
+        uses: redhat-actions/buildah-build@3a51aade9afa17e5c78256bcbe2e1ee08c7b995b # v3.0.2
+        with:
+          containerfiles: |
+            ./Containerfile
+          image: ${{ env.TEST_IMAGE_NAME }}
+          tags: ${{ env.DEFAULT_TAG }}
+          oci: true
+          squash: false
+          extra-args: |
+            --timestamp ${{ env.SOURCE_DATE_EPOCH }}
+            --build-arg BUILD_SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
+            --volume /tmp/rpm-cache:/rpm-cache
+            --label org.opencontainers.image.version=${{ steps.base_version.outputs.version }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push test image to temporary package
+        uses: redhat-actions/push-to-registry@94ade333c38ecc0e60e94785125d9a52ca423b37 # v3.0.0
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_PASSWORD: ${{ github.token }}
+        with:
+          registry: ${{ env.IMAGE_REGISTRY }}
+          image: ${{ env.TEST_IMAGE_NAME }}
+          tags: ${{ env.DEFAULT_TAG }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+
+  integration-test:
+    name: Run integration tests
+    needs: build-image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+
+    env:
+      TEST_IMAGE_NAME: ${{ needs.build-image.outputs.test_image_name }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ inputs.checkout-ref || github.ref }}
+
+      - name: Run integration tests
+        uses: ./.github/actions/integration-test
+        with:
+          registry: ${{ needs.build-image.outputs.image_registry }}
+          image: ${{ needs.build-image.outputs.test_image_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          startup-wait-seconds: 300
+          tests: |
+            ./integration_tests/test-services.sh
+            ./integration_tests/test-packages.sh
+            ./integration_tests/test-config.sh
+            ./integration_tests/test-hardened-malloc.sh
+          data-files: |
+            ./build_files/rpms.in.yaml
+            ./build_files/rpms.remove.yaml
+
+      # Delete the throwaway package wholesale, whether or not tests passed.
+      # Tag-level deletion cannot remove the last tagged version of a package
+      # (GitHub API limit), which is the exact state left behind whenever the
+      # VM steps are skipped, so delete the package entity instead. Failure to
+      # clean up is a warning only — it must never mask real test results.
+      - name: Cleanup temporary test package
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CODE=000
+          for _ in 1 2 3 4 5; do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' -X DELETE \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/user/packages/container/${TEST_IMAGE_NAME}")
+            case "${CODE}" in
+              204|404)
+                echo "Temporary package deleted (HTTP ${CODE})."
+                exit 0
+                ;;
+              403|409)
+                echo "HTTP ${CODE}, retrying (package may still be propagating)..."
+                sleep 15
+                ;;
+              *)
+                break
+                ;;
+            esac
+          done
+          echo "::warning::Failed to delete temporary package ${TEST_IMAGE_NAME} (HTTP ${CODE}); remove it manually."

@@ -1,0 +1,154 @@
+# Copyright 2025 The Secureblue Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under the License is
+# distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and limitations under the License.
+
+# Adapted for in-repo use from secureblue/bootc-integration-test-action (Apache-2.0).
+# Core logic is factored into scripts/ for reuse outside GitHub Actions (see
+# integration_tests/README.md and `just integration-test`).
+
+name: 'pr-integration-test'
+description: 'Boots a published bootable container image under KVM and runs test scripts over SSH.'
+
+inputs:
+  registry:
+    description: 'Registry hosting the image. Example: ghcr.io/alebcay'
+    required: true
+  image:
+    description: 'Image name to test. Must already be published as <registry>/<image>:latest.'
+    required: true
+  tests:
+    description: 'List of test scripts to execute on the VM via SSH after it boots.'
+    required: true
+  token:
+    description: 'Token used to sign into the container registry.'
+    required: true
+  data-files:
+    description: 'List of data files to be copied to the VM via SSH after it boots.'
+    default: ''
+    required: false
+  vm-name:
+    description: 'Name for the virtual machine and its disk in libvirt.'
+    default: 'vm-bootc'
+    required: false
+  vcpus:
+    description: 'Number of virtual CPUs for the VM. Must be less than the runner CPUs.'
+    default: 3
+    required: false
+  memory-mb:
+    description: 'Amount of RAM in MB for the VM. Must be less than the runner memory.'
+    default: 8192
+    required: false
+  disk-size-gb:
+    description: 'Size (in GB) of the virtual machine disk. Must be less than runner disk space.'
+    default: 30
+    required: false
+  startup-wait-seconds:
+    description: 'Time in seconds to wait after VM startup, before running tests.'
+    default: 300
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Optimize runner setup time
+      shell: bash
+      run: |
+        echo 'set man-db/auto-update false' | sudo debconf-communicate
+        sudo dpkg-reconfigure man-db
+        sudo rm -f /var/lib/man-db/auto-update
+        sudo sed -i -e 's/^update_initramfs=.*/update_initramfs=no/' /etc/initramfs-tools/update-initramfs.conf
+
+    - name: Free disk space
+      uses: hastd/free-disk-space@68572aeaadb7f76bd408246328e95926323402b5 # v0.1.2
+      with:
+        skip-if-available: "64G"
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        sudo apt update
+        sudo apt install -y passt qemu-system-x86 libvirt-daemon-system libvirt-clients virtinst podman apparmor-utils wget libguestfs-tools
+
+    - name: Configure Libvirt and AppArmor
+      shell: bash
+      run: |
+        echo 'owner "/var/lib/libvirt/boot/**" r,' | sudo tee -a /etc/apparmor.d/abstractions/libvirt-qemu
+        sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.libvirtd
+        sudo systemctl restart libvirtd
+        sudo usermod -aG kvm,libvirt "$USER"
+
+    - name: Generate SSH Keypair
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+
+    - name: Log in to the container registry
+      shell: bash
+      env:
+        TOKEN: ${{ inputs.token }}
+        REGISTRY_HOST: ${{ inputs.registry }}
+      run: |
+        REGISTRY_HOST="${REGISTRY_HOST%%/*}"
+        AUTH_FILE="${RUNNER_TEMP}/it-auth.json"
+        printf '%s' "${TOKEN}" | podman login --authfile "${AUTH_FILE}" "${REGISTRY_HOST}" -u "${{ github.actor }}" --password-stdin
+        sudo install -Dm600 "${AUTH_FILE}" /run/containers/auth.json
+        echo "IT_AUTH_FILE=${AUTH_FILE}" >> "${GITHUB_ENV}"
+
+    - name: Build and push integration test image
+      shell: bash
+      env:
+        REGISTRY: ${{ inputs.registry }}
+        IMAGE: ${{ inputs.image }}
+        AUTH_FILE: ${{ env.IT_AUTH_FILE }}
+      run: |
+        "${{ github.action_path }}/scripts/build-test-image.sh"
+
+    - name: Create VM disk image
+      shell: bash
+      env:
+        INTEGRATION_TEST_IMAGE: ${{ env.INTEGRATION_TEST_IMAGE }}
+      run: |
+        "${{ github.action_path }}/scripts/create-vm-disk.sh"
+
+    - name: Run VM and integration tests
+      shell: bash
+      env:
+        TESTS: ${{ inputs.tests }}
+        DATA_FILES: ${{ inputs.data-files }}
+        VM_NAME: ${{ inputs.vm-name }}
+        VCPUS: ${{ inputs.vcpus }}
+        MEMORY_MB: ${{ inputs.memory-mb }}
+        DISK_SIZE_GB: ${{ inputs.disk-size-gb }}
+        STARTUP_WAIT_SECONDS: ${{ inputs.startup-wait-seconds }}
+      run: |
+        "${{ github.action_path }}/scripts/run-vm-and-tests.sh"
+
+    - name: Collect VM diagnostics on failure
+      if: always()
+      shell: bash
+      run: |
+        echo "=== boot.log tail ==="; sudo tail -100 test-logs/boot.log 2>&1 | head -100 || true
+        echo "=== libvirt ==="; sudo virsh list --all 2>&1 | head -20 || true
+
+    - name: Ensure test logs are readable
+      if: always()
+      shell: bash
+      run: |
+        sudo chmod -R a+r test-logs
+
+    - name: Upload Test Logs
+      if: always()
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      with:
+        name: test-logs
+        path: test-logs/
+        retention-days: 7
