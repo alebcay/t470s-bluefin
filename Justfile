@@ -368,3 +368,6 @@ resolve-lockfile:
         ghcr.io/projectbluefin/bluefin:stable \
         bash -c '
             bash build_files/install-repos.sh enable
+            dnf5 manifest resolve --input build_files/rpms.in.yaml
+            mv packages.manifest.yaml build_files/packages.manifest.yaml
+        '

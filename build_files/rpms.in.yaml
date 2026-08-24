@@ -12,6 +12,9 @@ contentOrigin:
     - repoid: copr:copr.fedorainfracloud.org:lionheartp:Hyprland
       baseurl: https://copr-be.cloud.fedoraproject.org/results/lionheartp/Hyprland/fedora-$releasever-$basearch/
       priority: 10
+    - repoid: copr:copr.fedorainfracloud.org:secureblue:packages
+      baseurl: https://copr-be.cloud.fedoraproject.org/results/secureblue/packages/fedora-$releasever-$basearch/
+      priority: 10
     - repoid: terra
       baseurl: https://repos.fyralabs.com/terra$releasever
       priority: 10
@@ -50,5 +53,10 @@ packages:
   - gcc-c++
   - google-noto-sans-cjk-fonts
   - xorg-x11-server-Xwayland
+  # GrapheneOS hardened_malloc (light variant is activated at runtime).
+  # no_rlimit_as stops apps from setting RLIMIT_AS, which hardened_malloc's
+  # large virtual address space reservation breaks.
+  - hardened_malloc
+  - no_rlimit_as
 arches:
   - x86_64

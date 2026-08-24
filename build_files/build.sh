@@ -42,6 +42,25 @@ with open('/ctx/rpms.in.yaml') as f:
 ")
 dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
 
+# ---------------------------------------------------------------------------
+# GrapheneOS hardened_malloc (light variant), following secureblue's layered
+# activation model:
+#   1. /etc/ld.so.preload is root-only readable (umask 077). Root-owned
+#      processes preload from this file. Unprivileged processes cannot read
+#      it, so they can opt out by clearing LD_PRELOAD.
+#   2. systemd DefaultEnvironment gives all services LD_PRELOAD.
+#   3. pam_env sets LD_PRELOAD for login sessions.
+# The library name without a path lets glibc pick the best microarchitecture
+# build from /usr/lib64/glibc-hwcaps/.
+# ---------------------------------------------------------------------------
+
+(umask 077; echo 'libhardened_malloc-light.so libno_rlimit_as.so' > /etc/ld.so.preload)
+
+# Set LD_PRELOAD for PAM sessions (greetd -> niri). Drop any stale entry first.
+sed -i '/^LD_PRELOAD[[:space:]]*DEFAULT=/d' /etc/security/pam_env.conf
+[ -n "$(tail -c1 /etc/security/pam_env.conf 2>/dev/null || echo)" ] && echo >> /etc/security/pam_env.conf
+printf '%s\n' 'LD_PRELOAD DEFAULT="libhardened_malloc-light.so libno_rlimit_as.so"' >> /etc/security/pam_env.conf
+
 # Mask GDM and enable greetd as the display-manager
 systemctl mask gdm.service
 systemctl enable greetd.service

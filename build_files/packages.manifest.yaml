@@ -4,6 +4,8 @@ data:
   repositories:
     - id: copr:copr.fedorainfracloud.org:abn:throttled
       baseurl: https://copr-be.cloud.fedoraproject.org/results/abn/throttled/fedora-44-$arch/
+    - id: copr:copr.fedorainfracloud.org:secureblue:packages
+      baseurl: https://copr-be.cloud.fedoraproject.org/results/secureblue/packages/fedora-44-$arch/
     - id: copr:copr.fedorainfracloud.org:sneexy:python-validity
       baseurl: https://copr-be.cloud.fedoraproject.org/results/sneexy/python-validity/fedora-44-$arch/
     - id: fedora
@@ -1331,6 +1333,12 @@ data:
         checksum: sha256:a94d5384a9e8c30b31f5a85ae2ca953f8b0af946f425103f942457770fb268b4
         size: 183368
         evr: 1.14-2.fc44
+      - name: hardened_malloc
+        repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
+        location: 10687040-hardened_malloc/hardened_malloc-14-2026070500.fc44.x86_64.rpm
+        checksum: sha256:53afa1d82a398b320cdff90139d7382278c39db600afd45923341b92605ddd61
+        size: 89446
+        evr: 14-2026070500.fc44
       - name: harfbuzz
         repo_id: updates-archive
         location: harfbuzz-14.1.0-2.fc44.x86_64.rpm
@@ -2783,6 +2791,12 @@ data:
         checksum: sha256:78641cc586bfd5bc379f97bc08a5ba93906c447dc40f299ccb3ca1793fc687f4
         size: 7180073
         evr: 26.04-1.fc44
+      - name: no_rlimit_as
+        repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
+        location: 10238925-no_rlimit_as/no_rlimit_as-0.1.3-1.x86_64.rpm
+        checksum: sha256:7566a1e041d10ba99afc5fe894c93c66026909ac4a18f5c2d1f767664e25aa15
+        size: 10734
+        evr: 0.1.3-1
       - name: noctalia
         repo_id: terra
         location: noctalia-0:5.0.0~beta.9-1.fc44.x86_64.rpm

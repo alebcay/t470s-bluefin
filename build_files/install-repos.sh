@@ -19,12 +19,14 @@ case "$ACTION" in
     dnf5 -y copr enable abn/throttled
     dnf5 -y copr enable sneexy/python-validity
     dnf5 -y copr enable lionheartp/Hyprland
+    dnf5 -y copr enable secureblue/packages
     dnf5 -y install dnf5-plugin-manifest libpkgmanifest
     ;;
   disable)
     dnf5 -y copr disable abn/throttled
     dnf5 -y copr disable sneexy/python-validity
     dnf5 -y copr disable lionheartp/Hyprland
+    dnf5 -y copr disable secureblue/packages
     ;;
   *)
     echo "Usage: $0 [enable|disable]" >&2
