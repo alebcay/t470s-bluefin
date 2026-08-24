@@ -1,0 +1,25 @@
+FROM %%BASE_IMAGE%%
+
+# Thin layer for integration testing only:
+# - static VM network address and SSH access through the firewall
+# - sshd unmasked/enabled regardless of base image defaults
+# - `core` user (uid/gid 1001) with wheel membership and the runner's key
+#   baked in as a fallback beside bootc-image-builder's user configuration
+#
+# The base image reference is templated in by the calling composite action.
+
+COPY system_files /
+
+COPY scripts /tmp/integration-test-scripts/
+COPY authorized_keys /
+# /home is a symlink to /var/home on Atomic images and its target only exists
+# after first boot, so resolve it at build time instead of assuming either.
+RUN HOME_BASE="$(realpath -m /home)" && \
+    bash /tmp/integration-test-scripts/enableservices.sh && \
+    bash /tmp/integration-test-scripts/setpermissivecontainerpolicy.sh && \
+    rm -rf /tmp/integration-test-scripts && \
+    mkdir -p "${HOME_BASE}/core/.ssh" && \
+    mv /authorized_keys "${HOME_BASE}/core/.ssh/authorized_keys" && \
+    chmod 700 "${HOME_BASE}/core/.ssh" && \
+    chmod 600 "${HOME_BASE}/core/.ssh/authorized_keys" && \
+    chown -R 1001:1001 "$(realpath -m /home/core)"

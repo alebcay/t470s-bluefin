@@ -1,0 +1,54 @@
+# Packages removed from the base image.
+#
+# Consumed by build_files/build.sh at build time, and shipped into the
+# integration test VM (via data-files in integration-tests.yml) so
+# test-packages.sh can verify each of them is absent from the final image.
+packages:
+  # Conflict with this image's power/thermal management (TLP, throttled, zcfan)
+  - thermald
+  - tuned
+  - tuned-ppd
+
+  # Strip GNOME desktop to the minimum — we use niri + Noctalia + greetd/noctalia-greeter
+  - gdm
+  - gnome-shell
+  - gnome-session
+  - gnome-control-center
+  - gnome-software
+  - gnome-software-fedora-latex
+  - gnome-console
+  - gnome-terminal
+  - gnome-initial-setup
+  - gnome-tour
+  - gnome-user-docs
+  - gnome-logs
+  - gnome-calendar
+  - gnome-contacts
+  - gnome-maps
+  - gnome-weather
+  - gnome-clocks
+  - gnome-characters
+  - gnome-calculator
+  - gnome-font-viewer
+  - totem
+  - evince
+  - eog
+  - simple-scan
+  - baobab
+  - loupe
+  - snapshot
+  - epiphany
+  - gnome-connections
+  - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-background-logo
+  - gnome-shell-extension-launch-new-instance
+  - gnome-shell-extension-places
+  - gnome-shell-extension-window-list
+  - gnome-shell-extension-workspace-indicator
+  - gnome-browser-connector
+  - orca
+  - tracker
+  - tracker-miners
+  - rygel
+  - sushi
+  - ptyxis

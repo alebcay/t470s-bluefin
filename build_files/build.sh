@@ -9,26 +9,16 @@ bash /ctx/install-repos.sh enable
 
 dnf5 -y install createrepo_c
 
-# Remove packages from base image that conflict with our replacements
-dnf5 -y remove thermald tuned tuned-ppd
-
-# Strip GNOME desktop to the minimum — we use niri + Noctalia + greetd/noctalia-greeter
-dnf5 -y remove \
-  gdm gnome-shell gnome-session \
-  gnome-control-center gnome-software gnome-software-fedora-latex \
-  gnome-console gnome-terminal \
-  gnome-initial-setup gnome-tour gnome-user-docs \
-  gnome-logs gnome-calendar gnome-contacts gnome-maps gnome-weather \
-  gnome-clocks gnome-characters \
-  gnome-calculator gnome-font-viewer \
-  totem evince eog simple-scan baobab loupe snapshot epiphany \
-  gnome-connections \
-  gnome-shell-extension-apps-menu gnome-shell-extension-background-logo \
-  gnome-shell-extension-launch-new-instance gnome-shell-extension-places \
-  gnome-shell-extension-window-list gnome-shell-extension-workspace-indicator \
-  gnome-browser-connector orca \
-  tracker tracker-miners \
-  rygel sushi ptyxis
+# Remove packages from base image that conflict with this image's choices
+# (power management replacements, GNOME desktop strip) — see rpms.remove.yaml.
+# The final dnf5 remove of build tooling stays inline since it is build-time
+# hygiene, not image intent.
+REMOVE_PACKAGES=$(python3 -c "
+import yaml
+with open('/ctx/rpms.remove.yaml') as f:
+    print(' '.join(yaml.safe_load(f)['packages']))
+")
+dnf5 -y remove ${REMOVE_PACKAGES}
 
 # Use lockfile-based package management with download cache.
 CACHE_DIR=/rpm-cache

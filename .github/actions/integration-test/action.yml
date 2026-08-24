@@ -1,0 +1,272 @@
+# Copyright 2025 The Secureblue Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under the License is
+# distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and limitations under the License.
+
+# Adapted for in-repo use from secureblue/bootc-integration-test-action (Apache-2.0):
+# the BlueBuild tagging layer is replaced by a direct container build so the
+# pushed tag is always exactly what this action pulls afterwards, and root
+# podman authenticates before pulling (new GHCR packages start out private).
+
+name: 'pr-integration-test'
+description: 'Boots a published bootable container image under KVM and runs test scripts over SSH.'
+
+inputs:
+  registry:
+    description: 'Registry hosting the image. Example: ghcr.io/alebcay'
+    required: true
+  image:
+    description: 'Image name to test. Must already be published as <registry>/<image>:latest.'
+    required: true
+  tests:
+    description: 'List of test scripts to execute on the VM via SSH after it boots. Exit code determines test status.'
+    required: true
+  token:
+    description: 'Token used to sign into the container registry.'
+    required: true
+  data-files:
+    description: 'List of data files to be copied to the VM via SSH after it boots.'
+    default: ''
+    required: false
+  vm-name:
+    description: 'Name for the virtual machine and its disk in libvirt.'
+    default: 'vm-bootc'
+    required: false
+  vcpus:
+    description: 'Number of virtual CPUs for the VM. Must be less than the runner CPUs.'
+    default: 3
+    required: false
+  memory-mb:
+    description: 'Amount of RAM in MB for the VM. Must be less than the runner memory.'
+    default: 8192
+    required: false
+  disk-size-gb:
+    description: 'Size (in GB) of the virtual machine disk. Must be less than runner disk space.'
+    default: 20
+    required: false
+  startup-wait-seconds:
+    description: 'Time in seconds to wait after VM startup, before running post-install commands.'
+    default: 300
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Optimize runner setup time
+      shell: bash
+      run: |
+        echo 'set man-db/auto-update false' | sudo debconf-communicate
+        sudo dpkg-reconfigure man-db
+        sudo rm -f /var/lib/man-db/auto-update
+        sudo sed -i -e 's/^update_initramfs=.*/update_initramfs=no/' /etc/initramfs-tools/update-initramfs.conf
+
+    - name: Free disk space
+      uses: hastd/free-disk-space@68572aeaadb7f76bd408246328e95926323402b5 # v0.1.2
+      with:
+        skip-if-available: "64G"
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        sudo apt update
+        sudo apt install -y passt qemu-system-x86 libvirt-daemon-system libvirt-clients virtinst podman apparmor-utils wget libguestfs-tools
+
+    - name: Configure Libvirt and AppArmor
+      shell: bash
+      run: |
+        echo 'owner "/var/lib/libvirt/boot/**" r,' | sudo tee -a /etc/apparmor.d/abstractions/libvirt-qemu
+        sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.libvirtd
+        sudo systemctl restart libvirtd
+        sudo usermod -aG kvm,libvirt "$USER"
+
+    - name: Generate SSH Keypair
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+
+    - name: Log in to the container registry
+      shell: bash
+      env:
+        TOKEN: ${{ inputs.token }}
+        REGISTRY_HOST: ${{ inputs.registry }}
+      run: |
+        REGISTRY_HOST="${REGISTRY_HOST%%/*}"
+        AUTH_FILE="${RUNNER_TEMP}/it-auth.json"
+        printf '%s' "${TOKEN}" | podman login --authfile "${AUTH_FILE}" "${REGISTRY_HOST}" -u "${{ github.actor }}" --password-stdin
+        # Rootful podman (used for the BIB container and image pulls) reads
+        # /run/containers/auth.json by default. Never run `sudo podman login`:
+        # it can leave a root-owned authfile inside the user's runtime
+        # directory, breaking every later unprivileged podman call.
+        sudo install -Dm600 "${AUTH_FILE}" /run/containers/auth.json
+        echo "IT_AUTH_FILE=${AUTH_FILE}" >> "${GITHUB_ENV}"
+
+    # Stacks a thin layer onto <registry>/<image>:latest that enables SSH,
+    # guarantees the VM's network address, and bakes in the SSH public key as
+    # a fallback alongside bootc-image-builder's user configuration. The tag
+    # is generated here so the push and the later pull always agree.
+    - name: Build and push integration test image
+      id: build_test_image
+      shell: bash
+      env:
+        IMAGE: ${{ inputs.image }}
+        REGISTRY: ${{ inputs.registry }}
+      run: |
+        set -euo pipefail
+        TEST_UUID="$(cat /proc/sys/kernel/random/uuid)"
+        INTEGRATION_TEST_TAG="integrationtest-${TEST_UUID}"
+        IMAGE_REF="${REGISTRY}/${IMAGE}"
+        ACTION_IMAGE_DIR="${{ github.action_path }}/image"
+        cp ~/.ssh/id_ed25519.pub "${ACTION_IMAGE_DIR}/authorized_keys"
+        sed -e "s|%%BASE_IMAGE%%|${IMAGE_REF}:latest|" \
+            "${ACTION_IMAGE_DIR}/Containerfile.in" > "${RUNNER_TEMP}/Containerfile"
+        podman build \
+          --authfile "${IT_AUTH_FILE}" \
+          -f "${RUNNER_TEMP}/Containerfile" \
+          -t "${IMAGE_REF}:${INTEGRATION_TEST_TAG}" \
+          "${ACTION_IMAGE_DIR}"
+        podman push --authfile "${IT_AUTH_FILE}" "${IMAGE_REF}:${INTEGRATION_TEST_TAG}"
+        echo "INTEGRATION_TEST_IMAGE=${IMAGE_REF}:${INTEGRATION_TEST_TAG}" >> "${GITHUB_ENV}"
+
+    - name: Create VM disk image
+      shell: bash
+      env:
+        DISK_SIZE_GB: ${{ inputs.disk-size-gb }}
+      run: |
+        set -euo pipefail
+        sudo podman pull "${INTEGRATION_TEST_IMAGE}"
+        mkdir output
+
+        PUBKEY=$(cat ~/.ssh/id_ed25519.pub)
+        cp "${{ github.action_path }}/config.toml" ./config.toml
+        sed -i -e "s|%%PUBKEY%%|${PUBKEY}|g" ./config.toml
+        sudo podman run \
+            --rm \
+            --privileged \
+            --pull=newer \
+            --security-opt label=type:unconfined_t \
+            -v ./output:/output \
+            -v ./config.toml:/config.toml:ro \
+            -v /var/lib/containers/storage:/var/lib/containers/storage \
+            quay.io/centos-bootc/bootc-image-builder:latest \
+            --type qcow2 \
+            --use-librepo=True \
+            --rootfs btrfs \
+            --progress verbose \
+            "${INTEGRATION_TEST_IMAGE}"
+
+        sudo mv output/qcow2/disk.qcow2 /var/lib/libvirt/images/
+
+    - name: Install and start VM
+      shell: bash
+      env:
+        DISK_SIZE_GB: ${{ inputs.disk-size-gb }}
+        VM_NAME: ${{ inputs.vm-name }}
+        VCPU: ${{ inputs.vcpus }}
+        MEMORY_MB: ${{ inputs.memory-mb }}
+      run: |
+        set -euo pipefail
+        DISK_IMAGE_PATH="/var/lib/libvirt/images/disk.qcow2"
+        mkdir -p test-logs
+        BOOT_LOG_PATH="$(realpath test-logs)/boot.log"
+        sudo virt-install \
+          --connect="qemu:///system" \
+          --name="${VM_NAME}" \
+          --vcpus="${VCPU}" \
+          --memory="${MEMORY_MB}" \
+          --import \
+          --graphics=none \
+          --os-variant="silverblue-unknown" \
+          --disk="size=${DISK_SIZE_GB},backing_store=${DISK_IMAGE_PATH}" \
+          --serial="file,path=${BOOT_LOG_PATH}" \
+          --network network=default \
+          --noautoconsole
+
+    - name: Wait for VM Startup
+      if: ${{ inputs.startup-wait-seconds > 0 }}
+      env:
+        STARTUP_WAIT_SECONDS: ${{ inputs.startup-wait-seconds }}
+      shell: bash
+      run: |
+        echo "Waiting ${STARTUP_WAIT_SECONDS} seconds for the VM to start..."
+        sleep "${STARTUP_WAIT_SECONDS}"
+
+    - name: Run Tests
+      shell: bash
+      env:
+        TESTS: ${{ inputs.tests }}
+        DATA_FILES: ${{ inputs.data-files }}
+      run: |
+        set -euo pipefail
+        echo "Running tests..."
+
+        if [[ -z "$TESTS" ]]; then
+          echo "Tests missing..."
+          exit 1
+        fi
+
+        readarray -t TEST_LIST < <(echo "$TESTS" | sed '/^[[:space:]]*$/d')
+        readarray -t DATA_FILE_LIST < <(echo "${DATA_FILES:-}" | sed '/^[[:space:]]*$/d')
+
+        VM_IP="192.168.122.2"
+        echo "Waiting for SSH port to be open on ${VM_IP}..."
+        for i in {1..30}; do
+          if nc -z "${VM_IP}" 22; then
+            break
+          elif (( i == 30 )); then
+            echo "SSH port on ${VM_IP} is not open after 30 attempts. Giving up."
+            exit 1
+          fi
+          sleep 5
+        done
+        echo "SSH port is open on ${VM_IP}."
+
+        SSH_OPTS=(-o ConnectTimeout=20 -o StrictHostKeyChecking=no -i '~/.ssh/id_ed25519')
+
+        echo 'Copying files to VM...'
+        scp "${SSH_OPTS[@]}" "${TEST_LIST[@]}" "${DATA_FILE_LIST[@]}" core@"$VM_IP":/home/core/
+        echo 'Done copying files to VM.'
+
+        FAILED_TESTS=0
+        for TEST_FILE in "${TEST_LIST[@]}"; do
+          echo "Running test: $TEST_FILE"
+          BASENAME="${TEST_FILE##*/}"
+          REMOTE_PATH="/home/core/${BASENAME}"
+          LOG_FILE="test-logs/${BASENAME}.log"
+
+          set +e
+          ssh "${SSH_OPTS[@]}" core@"$VM_IP" "chmod +x $REMOTE_PATH && $REMOTE_PATH" > "$LOG_FILE" 2>&1
+          TEST_EXIT_CODE=$?
+          set -e
+
+          if (( TEST_EXIT_CODE != 0 )); then
+            echo "::error::Test $TEST_FILE failed — see the test-logs artifact for output"
+            cat "$LOG_FILE"
+            FAILED_TESTS=$((FAILED_TESTS + 1))
+          fi
+        done
+
+        if (( FAILED_TESTS > 0 )); then
+          exit 1
+        fi
+
+    - name: Ensure test logs are readable
+      if: always()
+      shell: bash
+      run: |
+        sudo chmod -R a+r test-logs
+
+    - name: Upload Test Logs
+      if: always()
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      with:
+        name: test-logs
+        path: test-logs/
+        retention-days: 7
