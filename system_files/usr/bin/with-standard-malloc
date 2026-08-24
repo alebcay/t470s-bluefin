@@ -1,0 +1,30 @@
+#!/bin/bash
+# Run a command without hardened_malloc.
+# For unprivileged users this clears LD_PRELOAD.
+# For root it also hides /etc/ld.so.preload via a private mount namespace when possible.
+if [ "$#" -eq 0 ]; then
+	echo "Usage: with-standard-malloc COMMAND [ARGS...]" >&2
+	exit 2
+fi
+if [ "$(id -u)" -eq 0 ]; then
+	if command -v unshare >/dev/null 2>&1; then
+		if unshare --mount --propagation private true 2>/dev/null; then
+			exec unshare --mount --propagation private sh -c '
+				if ! mount --bind /dev/null /etc/ld.so.preload 2>/dev/null; then
+					echo "warning: with-standard-malloc: failed to hide /etc/ld.so.preload; hardened_malloc still active for root" >&2
+				fi
+				exec env -u LD_PRELOAD "$@"
+			' _ "$@"
+		else
+			exec unshare --mount sh -c '
+				if ! mount --bind /dev/null /etc/ld.so.preload 2>/dev/null; then
+					echo "warning: with-standard-malloc: failed to hide /etc/ld.so.preload; hardened_malloc still active for root" >&2
+				fi
+				exec env -u LD_PRELOAD "$@"
+			' _ "$@"
+		fi
+	fi
+	echo "warning: with-standard-malloc: running as root without unshare(1); /etc/ld.so.preload remains active" >&2
+	echo "hint: install util-linux or run: unshare --mount sh -c 'mount --bind /dev/null /etc/ld.so.preload; exec env -u LD_PRELOAD \"\$@\"' _ \"\$@\"" >&2
+fi
+exec env -u LD_PRELOAD "$@"
