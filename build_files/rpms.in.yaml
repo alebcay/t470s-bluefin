@@ -23,7 +23,7 @@ contentOrigin:
       priority: 99
 packages:
   - niri
-  - noctalia-git
+  - noctalia
   - noctalia-greeter
   - greetd
   - greetd-selinux
