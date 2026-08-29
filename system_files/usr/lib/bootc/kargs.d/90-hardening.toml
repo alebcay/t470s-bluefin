@@ -1,0 +1,22 @@
+# Kernel hardening arguments (performance-balanced subset of secureblue's set).
+# Applied via bootc; see system_files/usr/lib/bootc/kargs.d/ for sibling files.
+# Excludes rd.shell/rd.emergency and the SMT-disabling / init_on_free / slab_debug
+# options to preserve performance on the dual-core ThinkPad T470s.
+kargs = [
+  "mitigations=auto",
+  "init_on_alloc=1",
+  "slab_nomerge",
+  "randomize_kstack_offset=on",
+  "page_alloc.shuffle=1",
+  "random.trust_cpu=off",
+  "random.trust_bootloader=off",
+  "hash_pointers=always",
+  "vsyscall=none",
+  "vdso32=0",
+  "proc_mem.force_override=ptrace",
+  "intel_iommu=on",
+  "iommu.passthrough=0",
+  "lockdown=confidentiality",
+  "module.sig_enforce=1",
+  "systemd.ssh_auto=no"
+]
