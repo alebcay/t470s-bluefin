@@ -704,11 +704,11 @@ data:
         size: 6480028
         evr: 2.46.1-1.fc44
       - name: bluez-libs
-        repo_id: updates-archive
-        location: bluez-libs-5.87-4.fc44.x86_64.rpm
-        checksum: sha256:1d00dedb9f63c92e9f1b538ea4ddadf2e9e03182831216aac00c30cd0d9440a7
-        size: 86205
-        evr: 5.87-4.fc44
+        repo_id: updates
+        location: Packages/b/bluez-libs-5.87-6.fc44.x86_64.rpm
+        checksum: sha256:1ea4d6c901136262837d12fad4c7089a302d8858383efbd120f59ba1d18e3809
+        size: 86414
+        evr: 5.87-6.fc44
       - name: bubblewrap
         repo_id: fedora
         location: Packages/b/bubblewrap-0.11.0-4.fc44.x86_64.rpm
@@ -3206,11 +3206,11 @@ data:
         size: 332451
         evr: 2.0.0-3.fc44
       - name: python3-cryptography
-        repo_id: updates-archive
-        location: python3-cryptography-49.0.0-1.fc44.x86_64.rpm
-        checksum: sha256:78a609010ddce44c731a47211391bf704e39fc67dcbb65736624374a04e7cfe6
-        size: 1839946
-        evr: 49.0.0-1.fc44
+        repo_id: updates
+        location: Packages/p/python3-cryptography-50.0.0-1.fc44.x86_64.rpm
+        checksum: sha256:0a816e60e52773c4a031e586df221d0cc37f423a8579c9eef73d4c67b2caf221
+        size: 1838158
+        evr: 50.0.0-1.fc44
       - name: python3-dbus
         repo_id: fedora
         location: Packages/p/python3-dbus-1.4.0-9.fc44.x86_64.rpm
