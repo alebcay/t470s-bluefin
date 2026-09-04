@@ -43,11 +43,11 @@ data:
         size: 2598925
         evr: 46.2-7.fc44
       - name: ca-certificates
-        repo_id: updates-archive
-        location: ca-certificates-2025.2.80_v9.0.304-7.fc44.noarch.rpm
-        checksum: sha256:a0dbe10bb683cab363faea6c2ee8f59d0414be70fe878bdaefe02f525b81b12f
-        size: 998218
-        evr: 2025.2.80_v9.0.304-7.fc44
+        repo_id: updates
+        location: Packages/c/ca-certificates-2026.2.90_v9.0.317-1.fc44.noarch.rpm
+        checksum: sha256:15c37ee7ed6f27598f540496146726cdbc5e8d0518a3acba5101f2164707eeeb
+        size: 996680
+        evr: 2026.2.90_v9.0.317-1.fc44
       - name: crypto-policies
         repo_id: fedora
         location: Packages/c/crypto-policies-20251128-3.git19878fe.fc44.noarch.rpm
@@ -2642,11 +2642,11 @@ data:
         size: 65359
         evr: 0.9.34-2.fc44
       - name: localsearch
-        repo_id: updates-archive
-        location: localsearch-3.11.1-1.fc44.x86_64.rpm
-        checksum: sha256:8a305cb14ca7e7db309996e717ccf2efdf1607f0418737ea677b99392c283dfd
-        size: 901684
-        evr: 3.11.1-1.fc44
+        repo_id: updates
+        location: Packages/l/localsearch-3.11.2-1.fc44.x86_64.rpm
+        checksum: sha256:3dac0645559bd8689c78be8d52abff03311c1a7b415803070dd5881b9819a299
+        size: 908523
+        evr: 3.11.2-1.fc44
       - name: lpcnetfreedv
         repo_id: fedora
         location: Packages/l/lpcnetfreedv-0.5-10.fc44.x86_64.rpm
@@ -2828,41 +2828,41 @@ data:
         size: 26371
         evr: 1.8-4.fc44
       - name: nspr
-        repo_id: updates-archive
-        location: nspr-4.39.0-3.fc44.x86_64.rpm
-        checksum: sha256:727bcbe63bd2bca52460f50782ff8ec12d4bddbaada1a0e2ba11c4a5066ce821
-        size: 147224
-        evr: 4.39.0-3.fc44
+        repo_id: updates
+        location: Packages/n/nspr-4.39.0-4.fc44.x86_64.rpm
+        checksum: sha256:1901cffc72ac9979dc42f27e49b8df4930c0b335197f11d576142769a7ad507b
+        size: 147307
+        evr: 4.39.0-4.fc44
       - name: nss
-        repo_id: updates-archive
-        location: nss-3.126.0-1.fc44.x86_64.rpm
-        checksum: sha256:ad67fb16baaf27e71062bcdc4952538ab851a676bc2076be2d28a26d5d1c6caf
-        size: 779867
-        evr: 3.126.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-3.127.0-1.fc44.x86_64.rpm
+        checksum: sha256:ea4eae7456745213eae7135a03478b7921bcf351ec08a6706aa7bbc3804336b5
+        size: 779868
+        evr: 3.127.0-1.fc44
       - name: nss-softokn
-        repo_id: updates-archive
-        location: nss-softokn-3.126.0-1.fc44.x86_64.rpm
-        checksum: sha256:f25d6d4035fdc167a4cce00a965d94005d08fc7bfb323984685907ccf7872307
-        size: 458214
-        evr: 3.126.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-3.127.0-1.fc44.x86_64.rpm
+        checksum: sha256:39ecd6cd8959362228618b5580db4ee1ab8b1b478507ccf0cec582d3d4c68f4d
+        size: 458313
+        evr: 3.127.0-1.fc44
       - name: nss-softokn-freebl
-        repo_id: updates-archive
-        location: nss-softokn-freebl-3.126.0-1.fc44.x86_64.rpm
-        checksum: sha256:78bf9edfd100dc3ae4dee85f7909a0415481291cb1d437f7f447d46e18c8fbaf
-        size: 384723
-        evr: 3.126.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-freebl-3.127.0-1.fc44.x86_64.rpm
+        checksum: sha256:8eb9822bd928eec55572b2555b38663f93e3b496ef4359cf3aa455f3f6c26a72
+        size: 384386
+        evr: 3.127.0-1.fc44
       - name: nss-sysinit
-        repo_id: updates-archive
-        location: nss-sysinit-3.126.0-1.fc44.x86_64.rpm
-        checksum: sha256:00a8ff4f076197bb7b159b7338c255b7aca7f612b097575d466a4cd5fc90b207
-        size: 20089
-        evr: 3.126.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-sysinit-3.127.0-1.fc44.x86_64.rpm
+        checksum: sha256:378df00eecd765497d3c010b1eb19fdb40e640fee2ba2682facd73b22009a105
+        size: 20150
+        evr: 3.127.0-1.fc44
       - name: nss-util
-        repo_id: updates-archive
-        location: nss-util-3.126.0-1.fc44.x86_64.rpm
-        checksum: sha256:533333728258bdf5dcd4557731f2a7ce973c591862fc072fe5e8a4308ed80054
-        size: 92935
-        evr: 3.126.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-util-3.127.0-1.fc44.x86_64.rpm
+        checksum: sha256:bbbf16ea892c5c28d71bf47c4d129eb255d441c00536b7b982b71b474f8126d1
+        size: 92993
+        evr: 3.127.0-1.fc44
       - name: oniguruma
         repo_id: fedora
         location: Packages/o/oniguruma-6.9.10-4.fc44.x86_64.rpm
