@@ -53,6 +53,16 @@ packages:
   - gcc-c++
   - google-noto-sans-cjk-fonts
   - xorg-x11-server-Xwayland
+  # Virtualization (@virtualization group)
+  - virt-install
+  - libvirt-daemon-config-network
+  - libvirt-daemon-kvm
+  - qemu-kvm
+  - virt-manager
+  - virt-viewer
+  - guestfs-tools
+  - python3-libguestfs
+  - virt-top
   # GrapheneOS hardened_malloc (light variant is activated at runtime).
   # no_rlimit_as stops apps from setting RLIMIT_AS, which hardened_malloc's
   # large virtual address space reservation breaks.
