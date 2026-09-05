@@ -80,6 +80,8 @@ systemctl enable setsebool-domain-kernel-load-modules.service
 systemctl enable tlp.service
 systemctl enable zcfan.service
 systemctl enable throttled.service
+systemctl enable virtqemud.service
+systemctl enable virtnetworkd.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # ---------------------------------------------------------------------------
@@ -96,6 +98,9 @@ systemctl enable cjk-fonts-flatpak.service
 # Populate /etc/skel so new users get the config
 mkdir -p /etc/skel/.var/app/org.mozilla.firefox/config/fontconfig
 cp /usr/share/cjk-fonts-flatpak/fonts.conf /etc/skel/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
+
+# Clean runtime-only directories that packages populate at install time
+rm -rf /run/gluster
 
 dnf5 -y remove dnf5-plugin-manifest libpkgmanifest createrepo_c
 dnf5 clean all
