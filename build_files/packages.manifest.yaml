@@ -2805,10 +2805,10 @@ data:
         evr: 0.1.3-1
       - name: noctalia
         repo_id: updates
-        location: Packages/n/noctalia-5.0.0~beta.10-1.fc44.x86_64.rpm
-        checksum: sha256:0d2f40a52b7e87ffc753c076bd45a7c8097b96802423fdfe4e73e71bb8b01806
-        size: 14362681
-        evr: 5.0.0~beta.10-1.fc44
+        location: Packages/n/noctalia-5.0.1-1.fc44.x86_64.rpm
+        checksum: sha256:11d196f967bf0a98b4102e4057804efec38e8a0b7af5cbe0b182c05d11ea0057
+        size: 14483942
+        evr: 5.0.1-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.3.1-1.fc44.x86_64.rpm
@@ -2888,11 +2888,11 @@ data:
         size: 202843
         evr: 2.5.4-3.fc44
       - name: openldap
-        repo_id: fedora
-        location: Packages/o/openldap-2.6.13-1.fc44.x86_64.rpm
-        checksum: sha256:2fc8edf3da4faabe82ce7adcbc91a1b92cda589ec9de80dd8c55865fd59381e0
-        size: 278140
-        evr: 2.6.13-1.fc44
+        repo_id: updates
+        location: Packages/o/openldap-2.6.14-1.fc44.x86_64.rpm
+        checksum: sha256:2651c87ee3543f1c6fd0b8e8c55daea42798d7a768e5310c3a60a344e4396ccf
+        size: 277979
+        evr: 2.6.14-1.fc44
       - name: openpgm
         repo_id: fedora
         location: Packages/o/openpgm-5.3.128-6.fc44.x86_64.rpm
