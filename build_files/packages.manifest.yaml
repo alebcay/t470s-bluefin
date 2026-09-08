@@ -1917,10 +1917,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10940386-kernel/kernel-core-7.1.13-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:e951221a2a2981a681d0dcbc652713015031f1b0116065dbcd234a5196a62872
-        size: 21674561
-        evr: 7.1.13-200.secureblue.1.fc44
+        location: 10958254-kernel/kernel-core-7.2.4-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:0b3fbdb9d8bd85f91a64ae7d68355cae6079e123c367ecd6e68ccaa1b4b72a38
+        size: 21835409
+        evr: 7.2.4-200.secureblue.1.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.1.3-200.fc44.x86_64.rpm
@@ -1929,10 +1929,10 @@ data:
         evr: 7.1.3-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10940386-kernel/kernel-modules-core-7.1.13-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:e961b615c449811cfcbf652dba81d6ddf533fd5fcc23f824ccee737e744831bf
-        size: 73505797
-        evr: 7.1.13-200.secureblue.1.fc44
+        location: 10958254-kernel/kernel-modules-core-7.2.4-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:555392fab971570ae7fd5c46c7bc0c7f4f216f4d84d69a66abb050f74c63080c
+        size: 73756045
+        evr: 7.2.4-200.secureblue.1.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
@@ -3098,11 +3098,11 @@ data:
         size: 215010
         evr: 1.0.22-1.fc44
       - name: libsoup3
-        repo_id: updates-archive
-        location: libsoup3-3.6.6-9.fc44.x86_64.rpm
-        checksum: sha256:50ac9f1c61d4ffec4247fa40ccbcb0a437d760a831a7b9ca7a6445447b9e20f0
-        size: 416926
-        evr: 3.6.6-9.fc44
+        repo_id: updates
+        location: Packages/l/libsoup3-3.6.6-10.fc44.x86_64.rpm
+        checksum: sha256:cfc785b852b1a558010a5be093996bf3fb84cc0d3ed1fe8a4e023b5acbf4a4b5
+        size: 418230
+        evr: 3.6.6-10.fc44
       - name: libss
         repo_id: fedora
         location: Packages/l/libss-1.47.3-4.fc44.x86_64.rpm
@@ -3200,11 +3200,11 @@ data:
         size: 373049
         evr: 3.11.1-1.fc44
       - name: libtirpc
-        repo_id: fedora
-        location: Packages/l/libtirpc-1.3.7-2.fc44.x86_64.rpm
-        checksum: sha256:4024c6a9601cb6244f5e06a58a4a54bb6b7a65be2d9f79dd660276b306274eb3
-        size: 101691
-        evr: 1.3.7-2.fc44
+        repo_id: updates
+        location: Packages/l/libtirpc-1.3.7-2.rc1.fc44.x86_64.rpm
+        checksum: sha256:55e22b7f0eace0100a2e51473d2773821762bd81d58a8f17a5fab0e366537b55
+        size: 101614
+        evr: 1.3.7-2.rc1.fc44
       - name: libtool-ltdl
         repo_id: fedora
         location: Packages/l/libtool-ltdl-2.5.4-10.fc44.x86_64.rpm
@@ -4412,11 +4412,11 @@ data:
         size: 747954
         evr: 4.6.0-6.fc44
       - name: qatlib
-        repo_id: updates-archive
-        location: qatlib-26.02.0-2.fc44.x86_64.rpm
-        checksum: sha256:33adf5710f2cfe411accbb3a9d54b44cb4e6262f8603e9e4ad35d26f007fd9eb
-        size: 266316
-        evr: 26.02.0-2.fc44
+        repo_id: updates
+        location: Packages/q/qatlib-26.08.0-1.fc44.x86_64.rpm
+        checksum: sha256:f5ecdf692316aec24d3fefb3231621ad04861497e932a94ae549032243205a73
+        size: 278672
+        evr: 26.08.0-1.fc44
       - name: qatzip-libs
         repo_id: updates-archive
         location: qatzip-libs-2.0.0-1.fc44.x86_64.rpm
