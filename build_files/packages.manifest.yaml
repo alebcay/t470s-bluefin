@@ -1917,10 +1917,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10976829-kernel/kernel-core-7.2.5-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:50fbea67090137417d0802dcb3fc5bcb02a65ac7fc6c0cf2f63a47ee0b916bfc
-        size: 21845705
-        evr: 7.2.5-200.secureblue.1.fc44
+        location: 10986999-kernel/kernel-core-7.2.6-200.secureblue.3.fc44.x86_64.rpm
+        checksum: sha256:8f7da73fb80fb268ce6eafc5e363d04269c983f42cab83112c7c237795ee7d89
+        size: 21527253
+        evr: 7.2.6-200.secureblue.3.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
@@ -1929,10 +1929,10 @@ data:
         evr: 7.2.4-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10976829-kernel/kernel-modules-core-7.2.5-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:4fac60192915615646c97d09ec971fee64f620dce6df766c3744d772abbdc136
-        size: 73747841
-        evr: 7.2.5-200.secureblue.1.fc44
+        location: 10986999-kernel/kernel-modules-core-7.2.6-200.secureblue.3.fc44.x86_64.rpm
+        checksum: sha256:a2d7712a642e53da2f26ad7fb040e3ad80e9296fb90b74dd14fbbc8f8fb01aef
+        size: 73535561
+        evr: 7.2.6-200.secureblue.3.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
