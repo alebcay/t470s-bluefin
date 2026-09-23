@@ -625,17 +625,17 @@ data:
         size: 52887
         evr: 1.17.0-10.fc44
       - name: selinux-policy
-        repo_id: updates-archive
-        location: selinux-policy-44.9-1.fc44.noarch.rpm
-        checksum: sha256:a37adf0dc8cbf502dc5d6ef6633e9ca72805e1e4c4a468fddf47ffb42a1efe19
-        size: 26689
-        evr: 44.9-1.fc44
+        repo_id: updates
+        location: Packages/s/selinux-policy-44.10-1.fc44.noarch.rpm
+        checksum: sha256:dd86ac4b3e3e82bf1881eb306af6f0a2fdb9c11e17933d56263e04a6504cdb8a
+        size: 27042
+        evr: 44.10-1.fc44
       - name: selinux-policy-targeted
-        repo_id: updates-archive
-        location: selinux-policy-targeted-44.9-1.fc44.noarch.rpm
-        checksum: sha256:290171f29178a79a4c770a0a035104606aa5c2400f3fdebc17b8959da63bdcf9
-        size: 7112551
-        evr: 44.9-1.fc44
+        repo_id: updates
+        location: Packages/s/selinux-policy-targeted-44.10-1.fc44.noarch.rpm
+        checksum: sha256:a3fcaf43c0d5ff344daabb9d905d53607898ac9491c6542abdcb2a693d8e1615
+        size: 7114266
+        evr: 44.10-1.fc44
       - name: setup
         repo_id: fedora
         location: Packages/s/setup-2.15.0-28.fc44.noarch.rpm
@@ -1737,10 +1737,10 @@ data:
         evr: 1.14-2.fc44
       - name: hardened_malloc
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10687040-hardened_malloc/hardened_malloc-14-2026070500.fc44.x86_64.rpm
-        checksum: sha256:53afa1d82a398b320cdff90139d7382278c39db600afd45923341b92605ddd61
-        size: 89446
-        evr: 14-2026070500.fc44
+        location: 11021528-hardened_malloc/hardened_malloc-14-2026091900.fc44.x86_64.rpm
+        checksum: sha256:e7d05cfba859ec37ef9c3a17e084dd8b6ef0212231656bf8e83d33140df2972f
+        size: 94333
+        evr: 14-2026091900.fc44
       - name: harfbuzz
         repo_id: updates-archive
         location: harfbuzz-14.1.0-2.fc44.x86_64.rpm
@@ -1917,10 +1917,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10986999-kernel/kernel-core-7.2.6-200.secureblue.3.fc44.x86_64.rpm
-        checksum: sha256:8f7da73fb80fb268ce6eafc5e363d04269c983f42cab83112c7c237795ee7d89
-        size: 21527253
-        evr: 7.2.6-200.secureblue.3.fc44
+        location: 11018864-kernel/kernel-core-7.2.7-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:993647b67639cddf4e16c12ede89c91d40d65cbaaa02cc3933054ae861642acd
+        size: 21499889
+        evr: 7.2.7-200.secureblue.1.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
@@ -1929,10 +1929,10 @@ data:
         evr: 7.2.4-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 10986999-kernel/kernel-modules-core-7.2.6-200.secureblue.3.fc44.x86_64.rpm
-        checksum: sha256:a2d7712a642e53da2f26ad7fb040e3ad80e9296fb90b74dd14fbbc8f8fb01aef
-        size: 73535561
-        evr: 7.2.6-200.secureblue.3.fc44
+        location: 11018864-kernel/kernel-modules-core-7.2.7-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:c8711d70c5abba8356e325bbcb9837d040dea16f7d3fb7e93581c63d19da5de4
+        size: 73744029
+        evr: 7.2.7-200.secureblue.1.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
@@ -3734,35 +3734,35 @@ data:
         size: 979306
         evr: 1.4.0-3.fc44
       - name: mesa-dri-drivers
-        repo_id: updates-archive
-        location: mesa-dri-drivers-26.2.2-6.fc44.x86_64.rpm
-        checksum: sha256:d269e768efa8c2098e05734cc54984a022127992d0f008067c2e6d3d51a68cd5
-        size: 14497225
-        evr: 26.2.2-6.fc44
+        repo_id: updates
+        location: Packages/m/mesa-dri-drivers-26.2.3-1.fc44.x86_64.rpm
+        checksum: sha256:da6f31af30eb63bb07ecce375f79af624c01bba68327b1665dadfd59b241dad9
+        size: 14499724
+        evr: 26.2.3-1.fc44
       - name: mesa-filesystem
-        repo_id: updates-archive
-        location: mesa-filesystem-26.2.2-6.fc44.x86_64.rpm
-        checksum: sha256:3f863b940187e9d30cdac3231914e8cfa33239815e887606137851e9bccbac43
-        size: 9058
-        evr: 26.2.2-6.fc44
+        repo_id: updates
+        location: Packages/m/mesa-filesystem-26.2.3-1.fc44.x86_64.rpm
+        checksum: sha256:d36545022c0fe9ad21f034a1242b339dc367344d7f807ce4080bee642e9786d6
+        size: 9157
+        evr: 26.2.3-1.fc44
       - name: mesa-libEGL
-        repo_id: updates-archive
-        location: mesa-libEGL-26.2.2-6.fc44.x86_64.rpm
-        checksum: sha256:7731fdd7c84d7c5ea7bde461227cddeeb5bb6dd0d75e590ba0653f0ae844bd36
-        size: 144026
-        evr: 26.2.2-6.fc44
+        repo_id: updates
+        location: Packages/m/mesa-libEGL-26.2.3-1.fc44.x86_64.rpm
+        checksum: sha256:32ff03eb7d39a1a7bdf2284acf4a9667e0171eb25948493434e197dc4ef2bd62
+        size: 144188
+        evr: 26.2.3-1.fc44
       - name: mesa-libGL
-        repo_id: updates-archive
-        location: mesa-libGL-26.2.2-6.fc44.x86_64.rpm
-        checksum: sha256:95c07f1a61403d05a6f94bbb470018ad261e1be226bb81d2772bd12f98825fc7
-        size: 141688
-        evr: 26.2.2-6.fc44
+        repo_id: updates
+        location: Packages/m/mesa-libGL-26.2.3-1.fc44.x86_64.rpm
+        checksum: sha256:98fc7d2e025f83e3a01c82a07718aa525231f6d8651f2d1483173eddf60b3d29
+        size: 141774
+        evr: 26.2.3-1.fc44
       - name: mesa-libgbm
-        repo_id: updates-archive
-        location: mesa-libgbm-26.2.2-6.fc44.x86_64.rpm
-        checksum: sha256:63db0deca9b22c82c2d876d40396c82cc7087425defa51e724d25dc9d2a12b79
-        size: 15216
-        evr: 26.2.2-6.fc44
+        repo_id: updates
+        location: Packages/m/mesa-libgbm-26.2.3-1.fc44.x86_64.rpm
+        checksum: sha256:76975ca980a236800b88cff43a580a4db16912627edc53bd7904e2ff444b666d
+        size: 15307
+        evr: 26.2.3-1.fc44
       - name: mpdecimal
         repo_id: fedora
         location: Packages/m/mpdecimal-4.0.1-3.fc44.x86_64.rpm
