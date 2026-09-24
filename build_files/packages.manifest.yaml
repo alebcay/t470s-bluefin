@@ -878,11 +878,11 @@ data:
         size: 1368310
         evr: 7.1-1.fc44
       - name: bubblewrap
-        repo_id: updates-archive
-        location: bubblewrap-0.12.0-1.fc44.x86_64.rpm
-        checksum: sha256:708b8d1de44ea16057b8ca8fcf517f3a6f176aa0e65a6bc6e38a694d0b9f8a1d
-        size: 68528
-        evr: 0.12.0-1.fc44
+        repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
+        location: 11028826-bubblewrap/bubblewrap-0.12.0-1.restricted.x86_64.rpm
+        checksum: sha256:2a6db8cb0ae2de3637cd53bc0c241d942a68aee32dc6e5a10e2297e8681c23a5
+        size: 68933
+        evr: 0.12.0-1.restricted
       - name: bzip2
         repo_id: fedora
         location: Packages/b/bzip2-1.0.8-23.fc44.x86_64.rpm
@@ -5036,11 +5036,11 @@ data:
         size: 579056
         evr: 2.11.2-1.fc44
       - name: unbound-libs
-        repo_id: updates-archive
-        location: unbound-libs-1.26.0-1.fc44.x86_64.rpm
-        checksum: sha256:e5cd5fdac290f426b0bc1a242c4da544c8bdd902a14bac5c42072a7ad1bb71e5
-        size: 625869
-        evr: 1.26.0-1.fc44
+        repo_id: updates
+        location: Packages/u/unbound-libs-1.26.1-1.fc44.x86_64.rpm
+        checksum: sha256:968487db47d39169c5f5414ade0c117980bec699dd5ee6f2f24d5159cc7e8bf5
+        size: 629029
+        evr: 1.26.1-1.fc44
       - name: upower-libs
         repo_id: updates-archive
         location: upower-libs-1.91.4-1.fc44.x86_64.rpm
