@@ -679,11 +679,11 @@ data:
         size: 14372
         evr: 1.10.2-1.fc44
       - name: tzdata
-        repo_id: updates-archive
-        location: tzdata-2026c-2.fc44.noarch.rpm
-        checksum: sha256:ba94cb4a2601ee913801ceee8213614563c2dc7277e941431892e73bc9176ce9
-        size: 729012
-        evr: 2026c-2.fc44
+        repo_id: updates
+        location: Packages/t/tzdata-2026e-1.fc44.noarch.rpm
+        checksum: sha256:c834a815040bdc1419764dcf81ca2d6ed5818c5625e07476b7923cf0e1b8f45c
+        size: 730762
+        evr: 2026e-1.fc44
       - name: vim-data
         repo_id: updates-archive
         location: vim-data-9.2.1129-1.fc44.noarch.rpm
@@ -1016,11 +1016,11 @@ data:
         size: 276733
         evr: 1:2.4.19-3.fc44
       - name: curl
-        repo_id: updates-archive
-        location: curl-8.18.0-10.fc44.x86_64.rpm
-        checksum: sha256:76a1760bbcef08ae77046baddc7e60395efebf10de445cb529bcc8adf58f6968
-        size: 245961
-        evr: 8.18.0-10.fc44
+        repo_id: updates
+        location: Packages/c/curl-8.18.0-12.fc44.x86_64.rpm
+        checksum: sha256:466bc79a9f487fd765a799a87f9aadf4fe0b16c2f7d767967393d927f4df259f
+        size: 245963
+        evr: 8.18.0-12.fc44
       - name: cyrus-sasl-gssapi
         repo_id: fedora
         location: Packages/c/cyrus-sasl-gssapi-2.1.28-35.fc44.x86_64.rpm
@@ -2354,11 +2354,11 @@ data:
         size: 36246
         evr: 2.3.0-14.fc44
       - name: libcurl-minimal
-        repo_id: updates-archive
-        location: libcurl-minimal-8.18.0-10.fc44.x86_64.rpm
-        checksum: sha256:d9c46151e3bf1f0a1803ddaa0cc8b4440f74ce9d16d3209eae3aa69f45c61150
-        size: 353643
-        evr: 8.18.0-10.fc44
+        repo_id: updates
+        location: Packages/l/libcurl-minimal-8.18.0-12.fc44.x86_64.rpm
+        checksum: sha256:5408d5e9dd046de2102e8556a332fdc3f9a1969dc568923ca342647217fd68a6
+        size: 353034
+        evr: 8.18.0-12.fc44
       - name: libdatrie
         repo_id: fedora
         location: Packages/l/libdatrie-0.2.14-2.fc44.x86_64.rpm
@@ -3896,41 +3896,41 @@ data:
         size: 26371
         evr: 1.8-4.fc44
       - name: nspr
-        repo_id: updates-archive
-        location: nspr-4.39.0-5.fc44.x86_64.rpm
-        checksum: sha256:910f800e6a2d779fe7113c92d616675d3f5a250cbdb4a53d2f732ae2c3bab3ff
-        size: 147789
-        evr: 4.39.0-5.fc44
+        repo_id: updates
+        location: Packages/n/nspr-4.39.0-6.fc44.x86_64.rpm
+        checksum: sha256:1cb343e966591aa869647d406d7a60c3641ab6f5f4be08863983e814941c1667
+        size: 147838
+        evr: 4.39.0-6.fc44
       - name: nss
-        repo_id: updates-archive
-        location: nss-3.129.0-1.fc44.x86_64.rpm
-        checksum: sha256:c3cbc10975bf4859851b154de32530d69a0b0dd1e7d927e1169a52b50c800e54
-        size: 780765
-        evr: 3.129.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-3.130.0-1.fc44.x86_64.rpm
+        checksum: sha256:624ce60592769362117699814e2140a391d519239cbc727065040ad1461fd16b
+        size: 783038
+        evr: 3.130.0-1.fc44
       - name: nss-softokn
-        repo_id: updates-archive
-        location: nss-softokn-3.129.0-1.fc44.x86_64.rpm
-        checksum: sha256:64697c30ca6e931f6588d46a0254a0cbf336ce8f30f43f2bfbe77d23e936b0c0
-        size: 458752
-        evr: 3.129.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-3.130.0-1.fc44.x86_64.rpm
+        checksum: sha256:e4482f165d28b05e0726f4ff4e665877b8b2fcfb984018a358fd94798f210302
+        size: 459207
+        evr: 3.130.0-1.fc44
       - name: nss-softokn-freebl
-        repo_id: updates-archive
-        location: nss-softokn-freebl-3.129.0-1.fc44.x86_64.rpm
-        checksum: sha256:f19128e87c733d7d0d75c7ce52ea47c73acd705b1d66f695a5878c106556a2cc
-        size: 400238
-        evr: 3.129.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-freebl-3.130.0-1.fc44.x86_64.rpm
+        checksum: sha256:515379d4bce1a61340979524ce8a5e3afd743962b8b19965adb62e14782cc209
+        size: 400395
+        evr: 3.130.0-1.fc44
       - name: nss-sysinit
-        repo_id: updates-archive
-        location: nss-sysinit-3.129.0-1.fc44.x86_64.rpm
-        checksum: sha256:dd6a4a70c69a23575d04e2acf55d8e97fb63345b93bec689a4d139977a78ab77
-        size: 20633
-        evr: 3.129.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-sysinit-3.130.0-1.fc44.x86_64.rpm
+        checksum: sha256:65752fc2cd6b7e05f043217b48f50d77d42278c50a7ed93aa21f686aea6ceb65
+        size: 20715
+        evr: 3.130.0-1.fc44
       - name: nss-util
-        repo_id: updates-archive
-        location: nss-util-3.129.0-1.fc44.x86_64.rpm
-        checksum: sha256:2ae54e3f5b97e8b8b3df2d8eba664ae286c5a90a7f4c3befd57bd5f232ce3a8e
-        size: 93463
-        evr: 3.129.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-util-3.130.0-1.fc44.x86_64.rpm
+        checksum: sha256:5e44bce2ead8d569564fd90f30ebc02f8d5e0c339f0628dde8fdb66b5b8ccf8a
+        size: 94227
+        evr: 3.130.0-1.fc44
       - name: ntfs-3g
         repo_id: updates-archive
         location: ntfs-3g-2026.2.25-1.fc44.x86_64.rpm
