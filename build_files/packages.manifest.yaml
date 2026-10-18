@@ -590,10 +590,10 @@ data:
         evr: 2.33.1-1.fc44
       - name: python3-urllib3
         repo_id: updates-archive
-        location: python3-urllib3-2.8.0-1.fc44.noarch.rpm
-        checksum: sha256:5fcc7e92833c6cb630432614d1a3c51221cc14742497694b8f0e79c4b7937bee
-        size: 317999
-        evr: 2.8.0-1.fc44
+        location: python3-urllib3-2.8.0-3.fc44.noarch.rpm
+        checksum: sha256:96717075f3397735628b75fe2359b9f881a97db6b45cc182a411bc36679b57f2
+        size: 318128
+        evr: 2.8.0-3.fc44
       - name: python3-validity
         repo_id: terra
         location: python3-validity-0:0.15-1.fc44.noarch.rpm
@@ -685,11 +685,11 @@ data:
         size: 730762
         evr: 2026e-1.fc44
       - name: vim-data
-        repo_id: updates-archive
-        location: vim-data-9.2.1129-1.fc44.noarch.rpm
-        checksum: sha256:772923be2e91ad0c32b12722550d359ec32ac1aefd4b22d0001f1dc8eef338b1
-        size: 17936
-        evr: 2:9.2.1129-1.fc44
+        repo_id: updates
+        location: Packages/v/vim-data-9.2.1202-1.fc44.noarch.rpm
+        checksum: sha256:3fe0e06adfe0d74774d67c383a822d8cb0cafefdb6a010511d98098befdcd2f9
+        size: 17934
+        evr: 2:9.2.1202-1.fc44
       - name: virt-install
         repo_id: fedora
         location: Packages/v/virt-install-5.1.0-4.fc44.noarch.rpm
@@ -1016,11 +1016,11 @@ data:
         size: 276733
         evr: 1:2.4.19-3.fc44
       - name: curl
-        repo_id: updates
-        location: Packages/c/curl-8.18.0-13.fc44.x86_64.rpm
-        checksum: sha256:9a01e56f1aaabd93eea96fd0645d821e78de2050acbcfa5745d0d7337cea64d9
-        size: 246070
-        evr: 8.18.0-13.fc44
+        repo_id: updates-archive
+        location: curl-8.18.0-14.fc44.x86_64.rpm
+        checksum: sha256:c8e19f7686e0de82296338cf86aaa4fd7e506b158f0c2954318d4bc8d9559cd5
+        size: 246292
+        evr: 8.18.0-14.fc44
       - name: cyrus-sasl-gssapi
         repo_id: fedora
         location: Packages/c/cyrus-sasl-gssapi-2.1.28-35.fc44.x86_64.rpm
@@ -1923,10 +1923,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11109585-kernel/kernel-core-7.2.10-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:2163ed8b74751ceec8d641d29f60cf0f397a8cced6914efbcddb71a92007b5d5
-        size: 21545325
-        evr: 7.2.10-200.secureblue.1.fc44
+        location: 11149260-kernel/kernel-core-7.2.11-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:cd5cc2a34bc2930d8038ac3982e3674a2549ead12de2fad84a0c987972ecc301
+        size: 21555073
+        evr: 7.2.11-200.secureblue.1.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
@@ -1935,10 +1935,10 @@ data:
         evr: 7.2.4-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11109585-kernel/kernel-modules-core-7.2.10-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:35021151a4cb23462467a5522f54e153f800cb4844b04f0617dd46719d0e713a
-        size: 48989965
-        evr: 7.2.10-200.secureblue.1.fc44
+        location: 11149260-kernel/kernel-modules-core-7.2.11-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:1fce0a24b9c0e4df4b0aaccd8562d903055eda73d301b9f6f4efaf2990cf5f8c
+        size: 49000561
+        evr: 7.2.11-200.secureblue.1.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
@@ -2354,11 +2354,11 @@ data:
         size: 36246
         evr: 2.3.0-14.fc44
       - name: libcurl-minimal
-        repo_id: updates
-        location: Packages/l/libcurl-minimal-8.18.0-13.fc44.x86_64.rpm
-        checksum: sha256:21266b449a4fb108e737b6232e2077f83afbb8628bed9b5810adb63326de69f9
-        size: 352643
-        evr: 8.18.0-13.fc44
+        repo_id: updates-archive
+        location: libcurl-minimal-8.18.0-14.fc44.x86_64.rpm
+        checksum: sha256:fb2df46b394ac351b2402b88cd2bea3bed58520c0ed475ccba8d2d00ea9c325e
+        size: 354231
+        evr: 8.18.0-14.fc44
       - name: libdatrie
         repo_id: fedora
         location: Packages/l/libdatrie-0.2.14-2.fc44.x86_64.rpm
@@ -2606,11 +2606,11 @@ data:
         size: 80532
         evr: 0.3.2-12.fc44
       - name: libheif
-        repo_id: updates-archive
-        location: libheif-1.23.5-3.fc44.x86_64.rpm
-        checksum: sha256:02d5c39df33c85fbaf4493818b47e5975dcd3c0f7e1f7b8c3226292549d9f575
-        size: 875640
-        evr: 1.23.5-3.fc44
+        repo_id: updates
+        location: Packages/l/libheif-1.23.6-1.fc44.x86_64.rpm
+        checksum: sha256:c291425d566eaf919229820d2c4fad348227456ae26a83a823031425e2a3d5eb
+        size: 878540
+        evr: 1.23.6-1.fc44
       - name: libibverbs
         repo_id: updates-archive
         location: libibverbs-61.1^20260812git975bdaf-1.fc44.x86_64.rpm
@@ -3284,149 +3284,149 @@ data:
         size: 21633
         evr: 0.3.2-12.fc44
       - name: libvirt-client
-        repo_id: fedora
-        location: Packages/l/libvirt-client-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:8d1ed491ec7d20d92063dd0616c90de711cf600796b90d00241b0ee49bcec5f9
-        size: 445969
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-client-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:f954cfd05d6c9714815b3070165c2b45b8aa0fdc4efbb43b607a06159e4e3156
+        size: 444244
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-common
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-common-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:5288eaf02f126a71c9a586eed763604a5bdb9a85d80c53bc968a549e7fe9e240
-        size: 141069
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-common-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:c596b733c4c1cc253d938158e75ea6d22e7a9115d9ebe41d630ceab354aec54c
+        size: 139579
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-config-network
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-config-network-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:360e3d42b33b3da2ec67f2dbc8d78ea22d4e7120a9112646d89bb79c5327d4b0
-        size: 14222
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-config-network-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:3a734cf048ebe80f8595c5cd36c92927c5fbdf1034971f711a09bc18d40a0987
+        size: 13006
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-interface
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-interface-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:29da0f14cf61d3f4a0459f921293f991d0505342910740988b80324afc5e7948
-        size: 204778
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-interface-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:bea60feaacbe590ea1e8bcbd100eb30103716ac82c44e243de3ec707ab209069
+        size: 203397
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-network
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-network-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:fbac16014dc24f18a500d3443f16844bf657e8301353871e18621e77d06ec41d
-        size: 256570
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-network-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:dd5fa331654c4ab4c05a144ea3799ce37e054ad10760a026199a6ed67a07eb1c
+        size: 255210
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-nodedev
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-nodedev-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:55e31e25f0efc64691d2f625d25cb3a13c4941f64c3200aef0a42d8dced94b9d
-        size: 229415
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-nodedev-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:488d4572331e88a14bfbc48a21a9c32f9bc639b128e252993d807d5b77d5be30
+        size: 228096
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-nwfilter
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-nwfilter-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:ce9d26061756dccdeedf38d5bd06f93268f8d7dcc5cfaf2526c32e02f119d62c
-        size: 241835
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-nwfilter-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:94ffaceeb281aab8c13746cb9916a11bb0aa2ebcc329b80ad24cca8d8cfe6b05
+        size: 240357
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-qemu
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-qemu-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:8f56b58475cdfba66b69b944212ed8c20eff181ce27e7bf11ec7dbe762cbd335
-        size: 1030116
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-qemu-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:96430804ab763508896bd5061cd22e0be193e5a381cc17ea7782c7bfe3c1e109
+        size: 1028092
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-secret
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-secret-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:74a915a9429e57e52ffbe7ba677d3fd31151c958ef568fa518adf2e0b9de01a7
-        size: 202259
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-secret-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:8c3ed5ebb618aa1ed229c947be08bc529c4057a6f551bb177b6b54285545637b
+        size: 200956
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:97522411ee3ea7096d4d987b8e6abfedb5d69a535321c92cb6b5179d6a55abe0
-        size: 11545
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:fc84876871c4df2c92311da772fad7f6073f8008076c0e069c1c29d65e348471
+        size: 10329
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-core
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-core-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:99031a037262b6d615a244d253b4446fc185823c2fbae4738149293aa5450c9d
-        size: 257253
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-core-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:ad24e5ba677d8670510207a5cfffbde1ac70cc1accc5898a05d63c929bfe191f
+        size: 255871
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-disk
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-disk-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:bfa817431cd55fd88e2df5d33395aceb45bebedd0b10ed738ab40794ccd2a1e3
-        size: 23056
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-disk-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:53ec577b33175d17531cb78ef053de8c6318ee0e2c1a67104c1c2fecfd838e76
+        size: 21831
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-gluster
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-gluster-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:06b9cca5cee43dff76c21c32eaa4ee0b204dedbf4e506e1ec098e7e71a6fef29
-        size: 25085
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-gluster-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:81f3010724d7c1e3d5fab68b4d0bc291f7b3b0c4bd411c1d03a9581326c94d0b
+        size: 23798
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-iscsi
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-iscsi-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:447ac91548b1956a5fba174bab9cc6f50a57b18c9b94fd0244d326027f924083
-        size: 20046
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-iscsi-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:12162b692e11e244632945493afd900a4c57b05007360c320cbd923bc6d0ed97
+        size: 18808
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-iscsi-direct
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-iscsi-direct-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:c85e3cdbef07a376f7a70796bdcad75965ca0586a6059cf3ac621e3900a7931f
-        size: 22212
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-iscsi-direct-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:29a7e9a2de2a6c45b695d877726a94e5f0d7cb682f395ff673c150556c399fca
+        size: 20891
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-logical
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-logical-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:04262bf86021005b5b042fe3ee8b8b2e4233a2d0357977e086439ba1d5ab0e5f
-        size: 24251
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-logical-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:739c5663ceb031b1d34efc5039e6a6cc39f1edbec63ccab2f1918221a498607b
+        size: 23013
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-mpath
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-mpath-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:b7bd837a85dee3c026067b3e7f50f910d2c89f55a3552f4076c5cb7ffa507b68
-        size: 17450
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-mpath-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:896e8aa8a89e59eb90c89bbb8912c8ebf1ca003072e751d370a64c45e7a86401
+        size: 16232
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-rbd
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-rbd-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:f076da1a56071a09a8bd9b94f104b3a04582511feb3ec4d301abcaeb70abf2c8
-        size: 28372
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-rbd-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:39a20b0a296ff1df52450971cd5bafb1ae4c1dd8b5c131ff0202ea623b042985
+        size: 27162
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-driver-storage-scsi
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-driver-storage-scsi-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:eebc9d418dc91a0fdc02f7a8890c71b3333647c47c1c731f282d10d80abcfe9e
-        size: 19714
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-driver-storage-scsi-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:e5a0686095d9cf2416af561d2ec335913347b8a7e63aa0d87469eb353c686b06
+        size: 18599
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-kvm
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-kvm-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:364fddfdea25cc32b129b7bf5fc1602edcc6cb53211cf1784b2039c558fdad8e
-        size: 11637
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-kvm-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:4f460d25a08a0fea0d07d30702c2a481a67cfa05283b9a87cc18cd3817f1e454
+        size: 10421
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-lock
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-lock-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:a296e359ec90e4a3e7c51c547cd472827e131186f4b23af6c46b9d21133580ae
-        size: 49754
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-lock-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:d9fb7d7d97e7405ca73c9dce1795a723022a9a36c872e83a00c5926e491336f5
+        size: 48550
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-log
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-log-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:5ad35f1ca98576c8c963bc30827a77ae1021c54e56670fafbaade09888f7e625
-        size: 53845
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-log-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:6713065176ed87d5e3a140a897d99ba0335cb649793623e5c157a6dd01fb42ad
+        size: 52619
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-plugin-lockd
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-plugin-lockd-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:511f47abf1b683735cdac9aac045b8a2cd87d9871fb7605e41ad23575091efb7
-        size: 23114
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-plugin-lockd-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:cbbfded4175f70b0541a322429774870a6caa5e394c03aab6db0c0acd21b84b9
+        size: 21885
+        evr: 12.0.0-5.fc44
       - name: libvirt-daemon-proxy
-        repo_id: fedora
-        location: Packages/l/libvirt-daemon-proxy-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:d34ecf2f40979bfbbae35c7493ad68720539ba4138f169c3ed6e9ec7bff30ca9
-        size: 197577
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-daemon-proxy-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:0aee1eb53b5df6199be2d840ad2358761a59c6fe477fe2924aacc34d83ba373d
+        size: 196585
+        evr: 12.0.0-5.fc44
       - name: libvirt-glib
         repo_id: fedora
         location: Packages/l/libvirt-glib-5.0.0-8.fc44.x86_64.rpm
@@ -3434,17 +3434,17 @@ data:
         size: 54464
         evr: 5.0.0-8.fc44
       - name: libvirt-libs
-        repo_id: fedora
-        location: Packages/l/libvirt-libs-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:0c73a469d50ebfb216c6d66af5c0039ea8581b35b20b1baaef44dbb3a49138be
-        size: 5801968
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-libs-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:eb1c4964dc5a74906b7fd05ce8a231aa4b6cafbba201cee16b8922540c0590ce
+        size: 5852270
+        evr: 12.0.0-5.fc44
       - name: libvirt-ssh-proxy
-        repo_id: fedora
-        location: Packages/l/libvirt-ssh-proxy-12.0.0-3.fc44.x86_64.rpm
-        checksum: sha256:90329a39889050f73bb3b1f8d1a9d0471b3dbb39974ae3c508111d75ac513532
-        size: 19478
-        evr: 12.0.0-3.fc44
+        repo_id: updates-archive
+        location: libvirt-ssh-proxy-12.0.0-5.fc44.x86_64.rpm
+        checksum: sha256:8d275f4c8c4ffd320dfb472d11c20c9e79b49ede53b6217148eab25d45162c87
+        size: 18259
+        evr: 12.0.0-5.fc44
       - name: libvisual
         repo_id: fedora
         location: Packages/l/libvisual-0.4.2-4.fc44.x86_64.rpm
@@ -3801,16 +3801,16 @@ data:
         evr: 4.0.49-3.fc44
       - name: nautilus
         repo_id: updates-archive
-        location: nautilus-50.3.1-1.fc44.x86_64.rpm
-        checksum: sha256:525fc293f070b1037bc695a2684c5a2efd9827bf2cfe4b0534930d198ebb2a6b
-        size: 2642529
-        evr: 50.3.1-1.fc44
+        location: nautilus-50.4-1.fc44.x86_64.rpm
+        checksum: sha256:1110cfb7e01043a6dcab42e3b653b07670a555bc5796dd12100ad4c77a05b631
+        size: 2648694
+        evr: 50.4-1.fc44
       - name: nautilus-extensions
         repo_id: updates-archive
-        location: nautilus-extensions-50.3.1-1.fc44.x86_64.rpm
-        checksum: sha256:c262455d1e86577b965e3e90f2770e50dd8800edcbd04e6b0240b636281f11fb
-        size: 37204
-        evr: 50.3.1-1.fc44
+        location: nautilus-extensions-50.4-1.fc44.x86_64.rpm
+        checksum: sha256:dfe1e720d69bb1d02666d036e8adf209fe4b8ea408d4260288c633ab2a7c6620
+        size: 37256
+        evr: 50.4-1.fc44
       - name: ncurses
         repo_id: fedora
         location: Packages/n/ncurses-6.6-1.fc44.x86_64.rpm
@@ -3873,10 +3873,10 @@ data:
         evr: 0.1.3-1
       - name: noctalia
         repo_id: updates-archive
-        location: noctalia-5.2.1-1.fc44.x86_64.rpm
-        checksum: sha256:6db70398937f9d2d3b5ee816fa3ae3543786f7c0f574db72d18c52c6983d57a0
-        size: 14638514
-        evr: 5.2.1-1.fc44
+        location: noctalia-5.3.0-1.fc44.x86_64.rpm
+        checksum: sha256:773d200bc551e3f09445c1e82ec1008db6a891cd4ab64146f78bfa6731e4ce75
+        size: 14846485
+        evr: 5.3.0-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.6.0-1.fc44.x86_64.rpm
@@ -3897,40 +3897,40 @@ data:
         evr: 1.8-4.fc44
       - name: nspr
         repo_id: updates-archive
-        location: nspr-4.39.0-6.fc44.x86_64.rpm
-        checksum: sha256:1cb343e966591aa869647d406d7a60c3641ab6f5f4be08863983e814941c1667
-        size: 147838
-        evr: 4.39.0-6.fc44
+        location: nspr-4.39.0-7.fc44.x86_64.rpm
+        checksum: sha256:bd0285a8bc4fb9a857653348d362768bae620a8eb0e980a2c71a9381c01b5531
+        size: 147847
+        evr: 4.39.0-7.fc44
       - name: nss
         repo_id: updates-archive
-        location: nss-3.130.0-1.fc44.x86_64.rpm
-        checksum: sha256:624ce60592769362117699814e2140a391d519239cbc727065040ad1461fd16b
-        size: 783038
-        evr: 3.130.0-1.fc44
+        location: nss-3.131.0-1.fc44.x86_64.rpm
+        checksum: sha256:ca731d56fef76473c9f3976af7facf92de2d23b8270378e4ba95951785f2b3c3
+        size: 783499
+        evr: 3.131.0-1.fc44
       - name: nss-softokn
         repo_id: updates-archive
-        location: nss-softokn-3.130.0-1.fc44.x86_64.rpm
-        checksum: sha256:e4482f165d28b05e0726f4ff4e665877b8b2fcfb984018a358fd94798f210302
-        size: 459207
-        evr: 3.130.0-1.fc44
+        location: nss-softokn-3.131.0-1.fc44.x86_64.rpm
+        checksum: sha256:7140700e805e88319d956848966c082f1aa0eaa26672c2d2ed605d34279714e5
+        size: 460162
+        evr: 3.131.0-1.fc44
       - name: nss-softokn-freebl
         repo_id: updates-archive
-        location: nss-softokn-freebl-3.130.0-1.fc44.x86_64.rpm
-        checksum: sha256:515379d4bce1a61340979524ce8a5e3afd743962b8b19965adb62e14782cc209
-        size: 400395
-        evr: 3.130.0-1.fc44
+        location: nss-softokn-freebl-3.131.0-1.fc44.x86_64.rpm
+        checksum: sha256:6ea8839b0c6cdc5eb7b7620dd31b7700de355908fe29e48d65a1e8d984c381ff
+        size: 400283
+        evr: 3.131.0-1.fc44
       - name: nss-sysinit
         repo_id: updates-archive
-        location: nss-sysinit-3.130.0-1.fc44.x86_64.rpm
-        checksum: sha256:65752fc2cd6b7e05f043217b48f50d77d42278c50a7ed93aa21f686aea6ceb65
-        size: 20715
-        evr: 3.130.0-1.fc44
+        location: nss-sysinit-3.131.0-1.fc44.x86_64.rpm
+        checksum: sha256:dea0f06a7075f9e33985a046add4549310cdf096bd5df63dab192701864a782b
+        size: 20707
+        evr: 3.131.0-1.fc44
       - name: nss-util
         repo_id: updates-archive
-        location: nss-util-3.130.0-1.fc44.x86_64.rpm
-        checksum: sha256:5e44bce2ead8d569564fd90f30ebc02f8d5e0c339f0628dde8fdb66b5b8ccf8a
-        size: 94227
-        evr: 3.130.0-1.fc44
+        location: nss-util-3.131.0-1.fc44.x86_64.rpm
+        checksum: sha256:4b5d7b2f6134b31575d65977ba94b246326081d6be154c8ba636167b44699b85
+        size: 93779
+        evr: 3.131.0-1.fc44
       - name: ntfs-3g
         repo_id: updates-archive
         location: ntfs-3g-2026.2.25-1.fc44.x86_64.rpm
@@ -3992,8 +3992,8 @@ data:
         size: 202843
         evr: 2.5.4-3.fc44
       - name: openldap
-        repo_id: updates
-        location: Packages/o/openldap-2.6.15-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: openldap-2.6.15-1.fc44.x86_64.rpm
         checksum: sha256:72390abc07d5362176eca74ef1f60c13b05039371072879548882cc0845a9c29
         size: 278117
         evr: 2.6.15-1.fc44
@@ -4893,10 +4893,10 @@ data:
         evr: 1.5.7-1.fc44
       - name: starship
         repo_id: terra
-        location: starship-0:1.26.0-1.fc44.x86_64.rpm
-        checksum: sha256:c8f700866a2e0a883451193f73a37962d4e320bb1850489c2aae6719019bd39b
-        size: 4093631
-        evr: 1.26.0-1.fc44
+        location: starship-0:1.27.0-1.fc44.x86_64.rpm
+        checksum: sha256:462d30d1407614df62d3c50d3fa7ae44b6cd2a7f039133149371946f5772fea2
+        size: 4098852
+        evr: 1.27.0-1.fc44
       - name: supermin
         repo_id: fedora
         location: Packages/s/supermin-5.3.5-8.fc44.x86_64.rpm
@@ -5084,11 +5084,11 @@ data:
         size: 571516
         evr: 2.41.5-1.fc44
       - name: vim-minimal
-        repo_id: updates-archive
-        location: vim-minimal-9.2.1129-1.fc44.x86_64.rpm
-        checksum: sha256:e708600c2f184f63a646c23574ed8302545b51a2815698d15ec8317cfa8cb054
-        size: 918529
-        evr: 2:9.2.1129-1.fc44
+        repo_id: updates
+        location: Packages/v/vim-minimal-9.2.1202-1.fc44.x86_64.rpm
+        checksum: sha256:d165fe2ae4d3e5ec3311bd6cbe104cefda18139bb94129769516c2ce8bbce215
+        size: 919740
+        evr: 2:9.2.1202-1.fc44
       - name: virglrenderer
         repo_id: fedora
         location: Packages/v/virglrenderer-1.3.0-1.fc44.x86_64.rpm
