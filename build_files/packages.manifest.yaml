@@ -4004,17 +4004,17 @@ data:
         size: 189307
         evr: 5.3.128-6.fc44
       - name: openssh
-        repo_id: updates-archive
-        location: openssh-10.2p1-14.fc44.x86_64.rpm
-        checksum: sha256:ba7ae55d89ecc3d5712c8331240ca695caa5b1cb11f3734dd1a9a35389f680fd
-        size: 364824
-        evr: 10.2p1-14.fc44
+        repo_id: updates
+        location: Packages/o/openssh-10.2p1-16.fc44.x86_64.rpm
+        checksum: sha256:2c86acc1597d63f450f42178437ba72c69b2895299129f982684f6357fde125a
+        size: 364418
+        evr: 10.2p1-16.fc44
       - name: openssh-clients
-        repo_id: updates-archive
-        location: openssh-clients-10.2p1-14.fc44.x86_64.rpm
-        checksum: sha256:10802c946f85b40243a55f774c5b490c28ab3639bfdd9eca96fbd2c6c89b3985
-        size: 797790
-        evr: 10.2p1-14.fc44
+        repo_id: updates
+        location: Packages/o/openssh-clients-10.2p1-16.fc44.x86_64.rpm
+        checksum: sha256:e99310e2f7620f8b2d3b53816652e4274c51470227c27d5dc3c9ca9827a99af4
+        size: 797140
+        evr: 10.2p1-16.fc44
       - name: openssl-libs
         repo_id: updates-archive
         location: openssl-libs-3.5.9-1.fc44.x86_64.rpm
@@ -4232,17 +4232,17 @@ data:
         size: 29820
         evr: 1.29-525.fc44
       - name: pipewire
-        repo_id: updates-archive
-        location: pipewire-1.6.9-1.fc44.x86_64.rpm
-        checksum: sha256:5f7e3ad7e91d666e4cdccaeb6c88c5592645a5ee941a1ce9ffd71ec5683684bd
-        size: 144619
-        evr: 1.6.9-1.fc44
+        repo_id: updates
+        location: Packages/p/pipewire-1.6.10-1.fc44.x86_64.rpm
+        checksum: sha256:76b5825a2ab22e071c66c9ee1b687c39c2ad378942c49c9ec6ede9ac319fa4b6
+        size: 144654
+        evr: 1.6.10-1.fc44
       - name: pipewire-libs
-        repo_id: updates-archive
-        location: pipewire-libs-1.6.9-1.fc44.x86_64.rpm
-        checksum: sha256:d518267ccbb395266138dbc8d53c367ecc19e402ac405feb070cbe72843b32f1
-        size: 2778697
-        evr: 1.6.9-1.fc44
+        repo_id: updates
+        location: Packages/p/pipewire-libs-1.6.10-1.fc44.x86_64.rpm
+        checksum: sha256:e6094d55991c8f84f3267bd14fe1c8f89cbf6ba843999f93177ad9d86e845c85
+        size: 2777478
+        evr: 1.6.10-1.fc44
       - name: pixman
         repo_id: fedora
         location: Packages/p/pixman-0.46.2-3.fc44.x86_64.rpm
