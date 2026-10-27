@@ -1197,10 +1197,10 @@ data:
         evr: 0.28.9-1.fc44
       - name: expat
         repo_id: updates-archive
-        location: expat-2.8.5-1.fc44.x86_64.rpm
-        checksum: sha256:47c61183c5fa87b228ce5b68b9947f2eb13f7bc621cd468e7bf25e511ff86d81
-        size: 137611
-        evr: 2.8.5-1.fc44
+        location: expat-2.9.0-1.fc44.x86_64.rpm
+        checksum: sha256:ffec2aa09ae0a4d9a33ee0f4458b222745fa7717d8098bf1bdd3ec0255c9b5b3
+        size: 139273
+        evr: 2.9.0-1.fc44
       - name: fdk-aac-free
         repo_id: fedora
         location: Packages/f/fdk-aac-free-2.0.3-2.fc44.x86_64.rpm
@@ -1923,10 +1923,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11184046-kernel/kernel-core-7.2.12-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:7d41a7f21a8fed5df0f5f6a2e0fc2b7d0b0862cf0112b160a50179a112493f92
-        size: 21548757
-        evr: 7.2.12-200.secureblue.1.fc44
+        location: 11211859-kernel/kernel-core-7.2.13-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:52896ba63f8f69b5e8ad7a52abc8400f08021040587fecd1a97b1dc71be53413
+        size: 21556977
+        evr: 7.2.13-200.secureblue.1.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
@@ -1935,10 +1935,10 @@ data:
         evr: 7.2.4-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11184046-kernel/kernel-modules-core-7.2.12-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:fd1fb0582f70d6aa11840e0bf835241c135af66c4bb3a3fc600dc811a9fed8ac
-        size: 48998953
-        evr: 7.2.12-200.secureblue.1.fc44
+        location: 11211859-kernel/kernel-modules-core-7.2.13-200.secureblue.1.fc44.x86_64.rpm
+        checksum: sha256:bc444929a2d4ecc6bda1ace56df3889e125eb5a11319ff6193e6ee62db076cf6
+        size: 49004141
+        evr: 7.2.13-200.secureblue.1.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
@@ -2619,10 +2619,10 @@ data:
         evr: 61.1^20260812git975bdaf-1.fc44
       - name: libical
         repo_id: updates-archive
-        location: libical-3.0.20-8.fc44.x86_64.rpm
-        checksum: sha256:da2df76623714f82cef29bb0b980f885042865a89b289d93e73a6ee1abda47bc
-        size: 268284
-        evr: 3.0.20-8.fc44
+        location: libical-3.0.20-9.fc44.x86_64.rpm
+        checksum: sha256:fcebddb8e52c5feb28da9082254b1cf7a16ea2356fce54ab68969b8327a5f44d
+        size: 268423
+        evr: 3.0.20-9.fc44
       - name: libicu
         repo_id: updates-archive
         location: libicu-77.1-3.fc44.x86_64.rpm
@@ -4004,14 +4004,14 @@ data:
         size: 189307
         evr: 5.3.128-6.fc44
       - name: openssh
-        repo_id: updates
-        location: Packages/o/openssh-10.2p1-16.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: openssh-10.2p1-16.fc44.x86_64.rpm
         checksum: sha256:2c86acc1597d63f450f42178437ba72c69b2895299129f982684f6357fde125a
         size: 364418
         evr: 10.2p1-16.fc44
       - name: openssh-clients
-        repo_id: updates
-        location: Packages/o/openssh-clients-10.2p1-16.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: openssh-clients-10.2p1-16.fc44.x86_64.rpm
         checksum: sha256:e99310e2f7620f8b2d3b53816652e4274c51470227c27d5dc3c9ca9827a99af4
         size: 797140
         evr: 10.2p1-16.fc44
@@ -4232,14 +4232,14 @@ data:
         size: 29820
         evr: 1.29-525.fc44
       - name: pipewire
-        repo_id: updates
-        location: Packages/p/pipewire-1.6.10-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: pipewire-1.6.10-1.fc44.x86_64.rpm
         checksum: sha256:76b5825a2ab22e071c66c9ee1b687c39c2ad378942c49c9ec6ede9ac319fa4b6
         size: 144654
         evr: 1.6.10-1.fc44
       - name: pipewire-libs
-        repo_id: updates
-        location: Packages/p/pipewire-libs-1.6.10-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: pipewire-libs-1.6.10-1.fc44.x86_64.rpm
         checksum: sha256:e6094d55991c8f84f3267bd14fe1c8f89cbf6ba843999f93177ad9d86e845c85
         size: 2777478
         evr: 1.6.10-1.fc44
