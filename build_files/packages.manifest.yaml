@@ -939,16 +939,16 @@ data:
         evr: 1.7.19-1.fc44
       - name: clevis
         repo_id: updates-archive
-        location: clevis-23-1.fc44.x86_64.rpm
-        checksum: sha256:bb5d7debe3cb5bc559aeaa6eeda2b306c13d408828465f8682c61b67a5fd6100
-        size: 57883
-        evr: 23-1.fc44
+        location: clevis-24-1.fc44.x86_64.rpm
+        checksum: sha256:5eef0bfc7662ce3cdfbdfa2426e41b94aa3f2ebd117de0f21d0278bb356d7c1d
+        size: 60259
+        evr: 24-1.fc44
       - name: clevis-luks
         repo_id: updates-archive
-        location: clevis-luks-23-1.fc44.x86_64.rpm
-        checksum: sha256:f6eb1267a4e3afc7afde667f9fe6c1442a127a6a12f5776f23940c390c93d7e0
-        size: 35855
-        evr: 23-1.fc44
+        location: clevis-luks-24-1.fc44.x86_64.rpm
+        checksum: sha256:8c35d428e24bacb59522b7cd08a2b733e2cecc97a134b824c02b6f58460a4ba8
+        size: 35918
+        evr: 24-1.fc44
       - name: clevis-pin-tpm2
         repo_id: fedora
         location: Packages/c/clevis-pin-tpm2-0.5.4-1.fc44.x86_64.rpm
@@ -2187,10 +2187,10 @@ data:
         evr: 8.1.3-1.fc44
       - name: libblkid
         repo_id: updates-archive
-        location: libblkid-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:4d38e51d031a32ff4bd64d2ba9022eb11e984c6db7db66dbbe57d12af8516b3b
-        size: 132961
-        evr: 2.41.5-1.fc44
+        location: libblkid-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:3fafe612cf35d366ec6181a7d418793377fe849970d01536fd28160e694b9769
+        size: 133103
+        evr: 2.41.6-1.fc44
       - name: libblkio
         repo_id: fedora
         location: Packages/l/libblkio-1.5.0-5.fc44.x86_64.rpm
@@ -2270,11 +2270,11 @@ data:
         size: 204066
         evr: 2:1.6.3-2.fc44
       - name: libbrotli
-        repo_id: fedora
-        location: Packages/l/libbrotli-1.2.0-3.fc44.x86_64.rpm
-        checksum: sha256:3f678e2c3eadfb559b3f91489cea1118cffe230219366426038a023bb34f5054
-        size: 356158
-        evr: 1.2.0-3.fc44
+        repo_id: updates-archive
+        location: libbrotli-1.2.1-1.fc44.x86_64.rpm
+        checksum: sha256:1cc6c4cf1b2c71dab1dd6d6c88b894bb9951fa10797503e6c8c600b83961f6b8
+        size: 356534
+        evr: 1.2.1-1.fc44
       - name: libburn
         repo_id: updates-archive
         location: libburn-1.5.8-1.fc44.x86_64.rpm
@@ -2451,10 +2451,10 @@ data:
         evr: 2.1.13-1.fc44
       - name: libfdisk
         repo_id: updates-archive
-        location: libfdisk-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:0793107e9b41f79b6ea7ed493f16a5e0aa5de5c29a4e8717197ad567d40a212c
-        size: 172696
-        evr: 2.41.5-1.fc44
+        location: libfdisk-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:1e8c1fef2b462e522ddda3f7d820528ecc741b9bb04e0ea34c73d540f8445baf
+        size: 172881
+        evr: 2.41.6-1.fc44
       - name: libfdt
         repo_id: updates-archive
         location: libfdt-1.8.1-6.fc44.x86_64.rpm
@@ -2709,10 +2709,10 @@ data:
         evr: 1.6.7-5.fc44
       - name: liblastlog2
         repo_id: updates-archive
-        location: liblastlog2-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:b1327aeae3d88c0c65c2070fc3117569cbf101b1aa92d9b05963ca058e9d0349
-        size: 24753
-        evr: 2.41.5-1.fc44
+        location: liblastlog2-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:6bf29ff92180cfcd7dda1fb598a555c90325b69ed14bb1e8983cf633ebc0b2c6
+        size: 25004
+        evr: 2.41.6-1.fc44
       - name: liblc3
         repo_id: fedora
         location: Packages/l/liblc3-1.1.3-7.fc44.x86_64.rpm
@@ -2769,10 +2769,10 @@ data:
         evr: 1:0.8.9.0-29.fc44
       - name: libmount
         repo_id: updates-archive
-        location: libmount-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:75ac4afc36e36e6e5c6e888c10075d049f26205edc900b84e99dc111a5439150
-        size: 176565
-        evr: 2.41.5-1.fc44
+        location: libmount-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:946f59978ab585da0c024fdbadc39adf22cda3d4479edd5fe1af6827908d4cda
+        size: 177176
+        evr: 2.41.6-1.fc44
       - name: libmpc
         repo_id: updates-archive
         location: libmpc-1.4.1-1.fc44.x86_64.rpm
@@ -2972,11 +2972,11 @@ data:
         size: 2683803
         evr: 5.9.0-1.fc44
       - name: librabbitmq
-        repo_id: updates-archive
-        location: librabbitmq-0.18.0-1.fc44.x86_64.rpm
-        checksum: sha256:001f2f798e38ab3b9c2a329e4d9a8e6f145638749c986dbc6752a9d17b8d26f5
-        size: 45438
-        evr: 0.18.0-1.fc44
+        repo_id: updates
+        location: Packages/l/librabbitmq-0.18.1-1.fc44.x86_64.rpm
+        checksum: sha256:0199d476aeae1091f55a662f6fba1a29523f630d4540c2ea298b1b78a8bbf1a2
+        size: 45423
+        evr: 0.18.1-1.fc44
       - name: librados2
         repo_id: updates-archive
         location: librados2-20.2.4-1.fc44.x86_64.rpm
@@ -3081,10 +3081,10 @@ data:
         evr: 4.9.1-3.fc44
       - name: libsmartcols
         repo_id: updates-archive
-        location: libsmartcols-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:f6743acc4b48d79f8d9c213d5647d7073daeac2fa3e7292e3f4f1471cc9c94ab
-        size: 89483
-        evr: 2.41.5-1.fc44
+        location: libsmartcols-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:3c2126c728fa6572895e959b2978cde7061191d4ffcb98bfed3883fed0adcebd
+        size: 89529
+        evr: 2.41.6-1.fc44
       - name: libsmbclient
         repo_id: updates-archive
         location: libsmbclient-4.24.7-1.fc44.x86_64.rpm
@@ -3261,10 +3261,10 @@ data:
         evr: 1.0.30-1.fc44
       - name: libuuid
         repo_id: updates-archive
-        location: libuuid-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:766313b4be6b60e5f4ef22346f29aeb2c0b6a4d2d13931733ba7e6111f401c3a
-        size: 27715
-        evr: 2.41.5-1.fc44
+        location: libuuid-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:d2e814ac547b1c486eb2b9416c852cd2e9dc1a846a3ab389f5eaaf3d74e58bda
+        size: 27900
+        evr: 2.41.6-1.fc44
       - name: libva
         repo_id: fedora
         location: Packages/l/libva-2.23.0-3.fc44.x86_64.rpm
@@ -3872,11 +3872,11 @@ data:
         size: 10734
         evr: 0.1.3-1
       - name: noctalia
-        repo_id: updates-archive
-        location: noctalia-5.3.0-1.fc44.x86_64.rpm
-        checksum: sha256:773d200bc551e3f09445c1e82ec1008db6a891cd4ab64146f78bfa6731e4ce75
-        size: 14846485
-        evr: 5.3.0-1.fc44
+        repo_id: updates
+        location: Packages/n/noctalia-5.4.0-1.fc44.x86_64.rpm
+        checksum: sha256:e8f401da5086c07b897cbc887c49038f167eae313a14bda993af129710116a7a
+        size: 15131939
+        evr: 5.4.0-1.fc44
       - name: noctalia-greeter
         repo_id: terra
         location: noctalia-greeter-0:1.7.0-2.fc44.x86_64.rpm
@@ -5042,11 +5042,11 @@ data:
         size: 579056
         evr: 2.11.2-1.fc44
       - name: unbound-libs
-        repo_id: updates-archive
-        location: unbound-libs-1.26.1-1.fc44.x86_64.rpm
-        checksum: sha256:968487db47d39169c5f5414ade0c117980bec699dd5ee6f2f24d5159cc7e8bf5
-        size: 629029
-        evr: 1.26.1-1.fc44
+        repo_id: updates
+        location: Packages/u/unbound-libs-1.26.2-1.fc44.x86_64.rpm
+        checksum: sha256:6a01c6c66f5202e18cb97849a30e5a169b75f565686bdbdbab17a4c8a9394be8
+        size: 629634
+        evr: 1.26.2-1.fc44
       - name: upower-libs
         repo_id: updates-archive
         location: upower-libs-1.91.5-1.fc44.x86_64.rpm
@@ -5073,16 +5073,16 @@ data:
         evr: 0.15.6-1.fc44
       - name: util-linux
         repo_id: updates-archive
-        location: util-linux-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:b02ace204e78425e41c9abb33fd3f3f91794f42a13aac28310dae6fb02cc39e1
-        size: 1262928
-        evr: 2.41.5-1.fc44
+        location: util-linux-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:06d249fa3135967cca867dbf9ffc29d00cf5a771c97a606e08bea5ee8bf1fc22
+        size: 1263073
+        evr: 2.41.6-1.fc44
       - name: util-linux-core
         repo_id: updates-archive
-        location: util-linux-core-2.41.5-1.fc44.x86_64.rpm
-        checksum: sha256:a3e4e4994216ced856b71153b9311135c5cde9d00b66c0f61a492916a51f5f7d
-        size: 571516
-        evr: 2.41.5-1.fc44
+        location: util-linux-core-2.41.6-1.fc44.x86_64.rpm
+        checksum: sha256:258b1cf34f94ab42c32618e256cc1e64a7dd4716180317c8806483d31d3ff318
+        size: 572504
+        evr: 2.41.6-1.fc44
       - name: vim-minimal
         repo_id: updates-archive
         location: vim-minimal-9.2.1202-1.fc44.x86_64.rpm
