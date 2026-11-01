@@ -986,11 +986,11 @@ data:
         size: 300385
         evr: 2.15-9.fc44
       - name: cpp
-        repo_id: updates-archive
-        location: cpp-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:a3ca10854d95dc2aefc76e36d116c0a33a305d53b2ba06d92e43aeedb179668b
-        size: 15305443
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/c/cpp-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:3e84eafff2fd6df91b8c4a7d9dedb3cd148180e9861dd6f3e9fd8f8b1943ad0c
+        size: 15311326
+        evr: 16.2.1-3.fc44
       - name: cracklib
         repo_id: updates-archive
         location: cracklib-2.10.3-1.fc44.x86_64.rpm
@@ -1316,17 +1316,17 @@ data:
         size: 1190532
         evr: 5.3.2-3.fc44
       - name: gcc
-        repo_id: updates-archive
-        location: gcc-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:77a82e328053f73d3881e633ffefb4dd49ebe0ac5b18a996de9b615de4eb9569
-        size: 45370845
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/g/gcc-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:658a51078d5c5ef2f960117d2c7d7d813b2a891aae1d972603812441ad5e55b4
+        size: 45323657
+        evr: 16.2.1-3.fc44
       - name: gcc-c++
-        repo_id: updates-archive
-        location: gcc-c++-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:79f6642db8c5ba0433041feb6e33c6dc487e1e2f4dd81eb94e5e615983e25cce
-        size: 18191031
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/g/gcc-c++-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:4c17dbcb3a20c94322f06529d6a949069c4a3e5136c2f2c5ffb9d5ed16086fc3
+        size: 18188686
+        evr: 16.2.1-3.fc44
       - name: gcr-libs
         repo_id: updates-archive
         location: gcr-libs-4.4.1-1.fc44.x86_64.rpm
@@ -1923,10 +1923,10 @@ data:
         evr: 5-7.fc44
       - name: kernel-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11211859-kernel/kernel-core-7.2.13-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:52896ba63f8f69b5e8ad7a52abc8400f08021040587fecd1a97b1dc71be53413
-        size: 21556977
-        evr: 7.2.13-200.secureblue.1.fc44
+        location: 11238636-kernel/kernel-core-7.2.14-200.secureblue.2.fc44.x86_64.rpm
+        checksum: sha256:da826e2321ad211623066a48496856d57cd4f63aa7f20cdeca28cd2ea0fc5729
+        size: 21553961
+        evr: 7.2.14-200.secureblue.2.fc44
       - name: kernel-headers
         repo_id: updates-archive
         location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
@@ -1935,10 +1935,10 @@ data:
         evr: 7.2.4-200.fc44
       - name: kernel-modules-core
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: 11211859-kernel/kernel-modules-core-7.2.13-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:bc444929a2d4ecc6bda1ace56df3889e125eb5a11319ff6193e6ee62db076cf6
-        size: 49004141
-        evr: 7.2.13-200.secureblue.1.fc44
+        location: 11238636-kernel/kernel-modules-core-7.2.14-200.secureblue.2.fc44.x86_64.rpm
+        checksum: sha256:cff0701f2ac206dbb8b1b9934b0efa1301bf592f2f5d79a4ba106cead5fd39c8
+        size: 49013265
+        evr: 7.2.14-200.secureblue.2.fc44
       - name: keyutils-libs
         repo_id: fedora
         location: Packages/k/keyutils-libs-1.6.3-7.fc44.x86_64.rpm
@@ -2150,11 +2150,11 @@ data:
         size: 49183
         evr: 0.19-32.fc44
       - name: libatomic
-        repo_id: updates-archive
-        location: libatomic-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:5df3c610688ff2548a4bbfd8e9b47c525b339a45b0d01349163079a3ec82f740
-        size: 56637
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/l/libatomic-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:796663749555551f1d2179e709cad4aacbedbcc433d433697a67e04b920b27f2
+        size: 60302
+        evr: 16.2.1-3.fc44
       - name: libattr
         repo_id: updates-archive
         location: libattr-2.6.0-1.fc44.x86_64.rpm
@@ -2492,11 +2492,11 @@ data:
         size: 217118
         evr: 0.8-9.fc44
       - name: libgcc
-        repo_id: updates-archive
-        location: libgcc-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:e9ccd7564d639c85ae455693f11d7a6cd990d1efdae6889656dacbeb9e0f846d
-        size: 139555
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/l/libgcc-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:f758a0dca05c651a4309e3e607b554486f8eb6b223387d31c240cc9799992358
+        size: 143130
+        evr: 16.2.1-3.fc44
       - name: libgcrypt
         repo_id: updates-archive
         location: libgcrypt-1.12.2-1.fc44.x86_64.rpm
@@ -2558,11 +2558,11 @@ data:
         size: 135699
         evr: 1:1.7.0-9.fc44
       - name: libgomp
-        repo_id: updates-archive
-        location: libgomp-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:0add0db002191a83c43697ce70b44aa7eec7dd54e21dbe3e4cf998e883507b29
-        size: 407218
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/l/libgomp-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:39e0eb80271fea7f6fc54b3795438d09d1fc9a21fa4cb88498b084ba96b3b5af
+        size: 410827
+        evr: 16.2.1-3.fc44
       - name: libgpg-error
         repo_id: fedora
         location: Packages/l/libgpg-error-1.58-2.fc44.x86_64.rpm
@@ -2606,11 +2606,11 @@ data:
         size: 80532
         evr: 0.3.2-12.fc44
       - name: libheif
-        repo_id: updates-archive
-        location: libheif-1.23.6-1.fc44.x86_64.rpm
-        checksum: sha256:c291425d566eaf919229820d2c4fad348227456ae26a83a823031425e2a3d5eb
-        size: 878540
-        evr: 1.23.6-1.fc44
+        repo_id: updates
+        location: Packages/l/libheif-1.23.7-1.fc44.x86_64.rpm
+        checksum: sha256:5cad05032780ea3568db08bbb956f89f9559ce61127cbe23ebbfe3946f40967b
+        size: 891974
+        evr: 1.23.7-1.fc44
       - name: libibverbs
         repo_id: updates-archive
         location: libibverbs-61.1^20260812git975bdaf-1.fc44.x86_64.rpm
@@ -2972,8 +2972,8 @@ data:
         size: 2683803
         evr: 5.9.0-1.fc44
       - name: librabbitmq
-        repo_id: updates
-        location: Packages/l/librabbitmq-0.18.1-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: librabbitmq-0.18.1-1.fc44.x86_64.rpm
         checksum: sha256:0199d476aeae1091f55a662f6fba1a29523f630d4540c2ea298b1b78a8bbf1a2
         size: 45423
         evr: 0.18.1-1.fc44
@@ -3128,17 +3128,17 @@ data:
         size: 152679
         evr: 1.11.1-9.fc44
       - name: libstdc++
-        repo_id: updates-archive
-        location: libstdc++-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:09f74b1a9b640c8273998240cb0b219c8f1fbca51197d49ec4dc8ecde39fa7ec
-        size: 1049046
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/l/libstdc++-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:e5d15651a19c6454f5154ea156578e2297f44a61aa581a6135461e1f2105b7b8
+        size: 1052784
+        evr: 16.2.1-3.fc44
       - name: libstdc++-devel
-        repo_id: updates-archive
-        location: libstdc++-devel-16.2.1-2.fc44.x86_64.rpm
-        checksum: sha256:d5e8e08c38e676fe2be6e7498aa273cdfaaa08a36a385c63f09ae20216fc54cc
-        size: 6265723
-        evr: 16.2.1-2.fc44
+        repo_id: updates
+        location: Packages/l/libstdc++-devel-16.2.1-3.fc44.x86_64.rpm
+        checksum: sha256:b1f450d1fd1005922f0222fd89242845d7f63c4edf357644d749a159df6c6d80
+        size: 6290331
+        evr: 16.2.1-3.fc44
       - name: libstemmer
         repo_id: fedora
         location: Packages/l/libstemmer-3.0.1-11.fc44.x86_64.rpm
@@ -3800,17 +3800,17 @@ data:
         size: 230359
         evr: 4.0.49-3.fc44
       - name: nautilus
-        repo_id: updates-archive
-        location: nautilus-50.4-1.fc44.x86_64.rpm
-        checksum: sha256:1110cfb7e01043a6dcab42e3b653b07670a555bc5796dd12100ad4c77a05b631
-        size: 2648694
-        evr: 50.4-1.fc44
+        repo_id: updates
+        location: Packages/n/nautilus-50.4-2.fc44.x86_64.rpm
+        checksum: sha256:c89900f0eb029914733fd74e44ffb4365f7010686fba539535b04275b8f4e550
+        size: 2651037
+        evr: 50.4-2.fc44
       - name: nautilus-extensions
-        repo_id: updates-archive
-        location: nautilus-extensions-50.4-1.fc44.x86_64.rpm
-        checksum: sha256:dfe1e720d69bb1d02666d036e8adf209fe4b8ea408d4260288c633ab2a7c6620
-        size: 37256
-        evr: 50.4-1.fc44
+        repo_id: updates
+        location: Packages/n/nautilus-extensions-50.4-2.fc44.x86_64.rpm
+        checksum: sha256:64880b5ae138a94a22b9dbabad8263c04dcb160b6fa7330ad59b1d39b53a701f
+        size: 37284
+        evr: 50.4-2.fc44
       - name: ncurses
         repo_id: fedora
         location: Packages/n/ncurses-6.6-1.fc44.x86_64.rpm
@@ -3872,8 +3872,8 @@ data:
         size: 10734
         evr: 0.1.3-1
       - name: noctalia
-        repo_id: updates
-        location: Packages/n/noctalia-5.4.0-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: noctalia-5.4.0-1.fc44.x86_64.rpm
         checksum: sha256:e8f401da5086c07b897cbc887c49038f167eae313a14bda993af129710116a7a
         size: 15131939
         evr: 5.4.0-1.fc44
@@ -4233,16 +4233,16 @@ data:
         evr: 1.29-525.fc44
       - name: pipewire
         repo_id: updates-archive
-        location: pipewire-1.6.10-1.fc44.x86_64.rpm
-        checksum: sha256:76b5825a2ab22e071c66c9ee1b687c39c2ad378942c49c9ec6ede9ac319fa4b6
-        size: 144654
-        evr: 1.6.10-1.fc44
+        location: pipewire-1.6.11-1.fc44.x86_64.rpm
+        checksum: sha256:eb9d5f9f0921d6c45f9edb59e149c53c9ff960d6d500f6eb2c265aa626e668fb
+        size: 144824
+        evr: 1.6.11-1.fc44
       - name: pipewire-libs
         repo_id: updates-archive
-        location: pipewire-libs-1.6.10-1.fc44.x86_64.rpm
-        checksum: sha256:e6094d55991c8f84f3267bd14fe1c8f89cbf6ba843999f93177ad9d86e845c85
-        size: 2777478
-        evr: 1.6.10-1.fc44
+        location: pipewire-libs-1.6.11-1.fc44.x86_64.rpm
+        checksum: sha256:42231bc1667a0ccb0e43b9f845382701899fc451aac17c80124ea1aa2d88f7e6
+        size: 2779549
+        evr: 1.6.11-1.fc44
       - name: pixman
         repo_id: fedora
         location: Packages/p/pixman-0.46.2-3.fc44.x86_64.rpm
@@ -5042,8 +5042,8 @@ data:
         size: 579056
         evr: 2.11.2-1.fc44
       - name: unbound-libs
-        repo_id: updates
-        location: Packages/u/unbound-libs-1.26.2-1.fc44.x86_64.rpm
+        repo_id: updates-archive
+        location: unbound-libs-1.26.2-1.fc44.x86_64.rpm
         checksum: sha256:6a01c6c66f5202e18cb97849a30e5a169b75f565686bdbdbab17a4c8a9394be8
         size: 629634
         evr: 1.26.2-1.fc44
@@ -5156,17 +5156,17 @@ data:
         size: 43072
         evr: 2.25-1.fc44
       - name: wireplumber
-        repo_id: updates-archive
-        location: wireplumber-0.5.18-1.fc44.x86_64.rpm
-        checksum: sha256:1c08352ff028298fb6981b13d8ed91651f9074f8022d001bf5a92136bbdee901
-        size: 140139
-        evr: 0.5.18-1.fc44
+        repo_id: updates
+        location: Packages/w/wireplumber-0.5.19-1.fc44.x86_64.rpm
+        checksum: sha256:4b48a8b41251400faee2b13f2828becbb257e548c29d213e377e9870bb5edc4b
+        size: 147922
+        evr: 0.5.19-1.fc44
       - name: wireplumber-libs
-        repo_id: updates-archive
-        location: wireplumber-libs-0.5.18-1.fc44.x86_64.rpm
-        checksum: sha256:78f46e23c9ba174263b0452ab00ca8c9e59f7f1aedfb1096f4f0f4a4de95c8ce
-        size: 484299
-        evr: 0.5.18-1.fc44
+        repo_id: updates
+        location: Packages/w/wireplumber-libs-0.5.19-1.fc44.x86_64.rpm
+        checksum: sha256:89887dcc12a6398778dc55f9ee271022ef3968418e96a0fed8d77166cdc650a6
+        size: 484116
+        evr: 0.5.19-1.fc44
       - name: wl-mirror
         repo_id: fedora
         location: Packages/w/wl-mirror-0.18.5-1.fc44.x86_64.rpm
