@@ -128,7 +128,7 @@ jobs:
             --mount=type=image,src="${IMAGE_NAME}:${DEFAULT_TAG}",target=/chunkah \
             --mount=type=bind,src=./chunkah_config.json,target=/tmp/chunkah_config.json,relabel=shared \
             -e SOURCE_DATE_EPOCH \
-            quay.io/coreos/chunkah:v0.6.0 \
+            quay.io/coreos/chunkah:v0.7.1 \
             build \
             --verbose \
             --max-layers 128 \
