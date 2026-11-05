@@ -120,7 +120,7 @@ jobs:
           oci: true
           squash: false
           extra-args: |
-            --timestamp ${{ env.SOURCE_DATE_EPOCH }}
+            --rewrite-timestamp
             --build-arg BUILD_SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
             --volume /tmp/rpm-cache:/rpm-cache
             --label org.opencontainers.image.version=${{ steps.base_version.outputs.version }}
