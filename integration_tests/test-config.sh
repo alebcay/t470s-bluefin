@@ -15,6 +15,9 @@ REQUIRED_FILES=(
 	/usr/lib/systemd/system/setsebool-domain-kernel-load-modules.service
 	/usr/share/cjk-fonts-flatpak/fonts.conf
 	/etc/skel/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
+	'/usr/share/fonts/archivo/Archivo[wdth,wght].ttf'
+	'/usr/share/fonts/archivo/Archivo-Italic[wdth,wght].ttf'
+	/usr/share/fonts/archivo/OFL.txt
 )
 
 FAILED=0
@@ -52,6 +55,12 @@ if grep -qi 'noctalia' /etc/greetd/config.toml; then
 	echo 'OK: greetd is configured for noctalia-greeter'
 else
 	fail 'greetd config does not reference noctalia-greeter'
+fi
+
+if fc-match -f '%{family}\n' Archivo 2>/dev/null | grep -q 'Archivo'; then
+	echo 'OK: Archivo is available to fontconfig'
+else
+	fail 'fontconfig cannot resolve Archivo'
 fi
 
 if [ "$FAILED" -gt 0 ]; then
