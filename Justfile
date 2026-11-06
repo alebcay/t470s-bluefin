@@ -365,7 +365,7 @@ resolve-lockfile:
     podman run --rm \
         -v "${PWD}:/work:Z" \
         -w /work \
-        ghcr.io/projectbluefin/bluefin:stable \
+        ghcr.io/ublue-os/bluefin:stable \
         bash -c '
             bash build_files/install-repos.sh enable
             dnf5 manifest resolve --input build_files/rpms.in.yaml
