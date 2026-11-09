@@ -421,11 +421,11 @@ data:
         size: 31509
         evr: 0^20261002.gcba3570-1.fc44
       - name: pcre2-syntax
-        repo_id: fedora
-        location: Packages/p/pcre2-syntax-10.47-1.fc44.1.noarch.rpm
-        checksum: sha256:f764ad48aff82dc0805ce5db071e91c805dea73dcc9696f8686583b1a2b19c16
-        size: 168666
-        evr: 10.47-1.fc44.1
+        repo_id: updates
+        location: Packages/p/pcre2-syntax-10.49-1.fc44.noarch.rpm
+        checksum: sha256:4a7fcbb7b2fda3f1515dbd25d5cc8248e960e7246805ff78b6cf87ea188287cb
+        size: 171126
+        evr: 10.49-1.fc44
       - name: perl-AutoLoader
         repo_id: updates-archive
         location: perl-AutoLoader-5.74-525.fc44.noarch.rpm
@@ -1112,11 +1112,11 @@ data:
         size: 6480028
         evr: 2.46.1-1.fc44
       - name: bluez-libs
-        repo_id: updates-archive
-        location: bluez-libs-5.87+1.git8750129efca8-1.fc44.x86_64.rpm
-        checksum: sha256:ce4ede3dc030681463240d77a41e2c66ebb930d05d2e82ff550eecc7c0cf2c4f
-        size: 86652
-        evr: 5.87+1.git8750129efca8-1.fc44
+        repo_id: updates
+        location: Packages/b/bluez-libs-5.88-1.fc44.x86_64.rpm
+        checksum: sha256:7e2fd633687c7e9935619a16d7b855bc405744cca4b5be34cad57b8ada0eff89
+        size: 87002
+        evr: 5.88-1.fc44
       - name: brlapi
         repo_id: fedora
         location: Packages/b/brlapi-0.8.7-8.fc44.x86_64.rpm
@@ -1131,10 +1131,10 @@ data:
         evr: 7.1-1.fc44
       - name: bubblewrap
         repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: Packages/b/bubblewrap-0.12.0-1.restricted.x86_64.rpm
-        checksum: sha256:2a6db8cb0ae2de3637cd53bc0c241d942a68aee32dc6e5a10e2297e8681c23a5
-        size: 68933
-        evr: 0.12.0-1.restricted
+        location: Packages/b/bubblewrap-0.13.1-1.restricted.x86_64.rpm
+        checksum: sha256:a0cb249254ea268d2c4c78f265a551fe63c357e13e1ae831c76f5c9fa01306df
+        size: 70314
+        evr: 0.13.1-1.restricted
       - name: bzip2
         repo_id: fedora
         location: Packages/b/bzip2-1.0.8-23.fc44.x86_64.rpm
@@ -2018,29 +2018,29 @@ data:
         size: 443145
         evr: 1.0.0-1.fc44
       - name: gstreamer1
-        repo_id: updates-archive
-        location: gstreamer1-1.28.8-1.fc44.x86_64.rpm
-        checksum: sha256:f4c549cf0f7d12f80ab6695fa35d64a03d16fa73f83ab4d5b64269aedc22c6be
-        size: 1782644
-        evr: 1.28.8-1.fc44
+        repo_id: updates
+        location: Packages/g/gstreamer1-1.28.9-1.fc44.x86_64.rpm
+        checksum: sha256:7f83867b2e19140fb727d4d2d6dc75012d0ce9c5add87f2395e156f385827c44
+        size: 1776950
+        evr: 1.28.9-1.fc44
       - name: gstreamer1-plugins-bad-free-libs
-        repo_id: updates-archive
-        location: gstreamer1-plugins-bad-free-libs-1.28.8-1.fc44.x86_64.rpm
-        checksum: sha256:cd829663996ac30c665696fc8a635f95ec33abe4b0e0914f214c2fe7cf9befb9
-        size: 1235161
-        evr: 1.28.8-1.fc44
+        repo_id: updates
+        location: Packages/g/gstreamer1-plugins-bad-free-libs-1.28.9-1.fc44.x86_64.rpm
+        checksum: sha256:39cc4d567e69c92a30d2b2a3a0369688de6bc0e5601d5445476f1f682d6cdd9a
+        size: 1234769
+        evr: 1.28.9-1.fc44
       - name: gstreamer1-plugins-base
-        repo_id: updates-archive
-        location: gstreamer1-plugins-base-1.28.8-1.fc44.x86_64.rpm
-        checksum: sha256:cd12e8d484ad9ddf7e1cbc71f75069629a7290c68a67abe1a3a0c7aa8f97b671
-        size: 2468491
-        evr: 1.28.8-1.fc44
+        repo_id: updates
+        location: Packages/g/gstreamer1-plugins-base-1.28.9-1.fc44.x86_64.rpm
+        checksum: sha256:4a5a6accbd01a09f98bcdb46de18d167caf881e3759ac7df49eabded0dbe1334
+        size: 2471708
+        evr: 1.28.9-1.fc44
       - name: gstreamer1-plugins-good
-        repo_id: updates-archive
-        location: gstreamer1-plugins-good-1.28.8-1.fc44.x86_64.rpm
-        checksum: sha256:d01cfd57f1e52ef410c7e2d51851fddd49ae8552c2ac6d8b8112ecf2fd26fcb7
-        size: 2629369
-        evr: 1.28.8-1.fc44
+        repo_id: updates
+        location: Packages/g/gstreamer1-plugins-good-1.28.9-1.fc44.x86_64.rpm
+        checksum: sha256:e0eace88c0584e4ab958d0f7b3224647b51bae26ddba71eb2147c3bb6f3053ee
+        size: 2631942
+        evr: 1.28.9-1.fc44
       - name: gtk-layer-shell
         repo_id: fedora
         location: Packages/g/gtk-layer-shell-0.10.0-1.fc44.x86_64.rpm
@@ -4820,11 +4820,11 @@ data:
         size: 54459
         evr: 3.15.0-1.fc44
       - name: pcre2
-        repo_id: fedora
-        location: Packages/p/pcre2-10.47-1.fc44.1.x86_64.rpm
-        checksum: sha256:9e3498c301b011ed0f517090e45798fbd3063a10b46468f2f8359738975f8702
-        size: 284397
-        evr: 10.47-1.fc44.1
+        repo_id: updates
+        location: Packages/p/pcre2-10.49-1.fc44.x86_64.rpm
+        checksum: sha256:5a15e34a5a3ca1e14b765979b215d8a0b62d0d148aeb51f44f7fd1eba1e7bd06
+        size: 286845
+        evr: 10.49-1.fc44
       - name: pcsc-lite-libs
         repo_id: fedora
         location: Packages/p/pcsc-lite-libs-2.4.1-2.fc44.x86_64.rpm
@@ -6158,17 +6158,17 @@ data:
         size: 67917
         evr: 0.8.4-1.fc44
       - name: xen-libs
-        repo_id: updates-archive
-        location: xen-libs-4.21.2-4.fc44.x86_64.rpm
-        checksum: sha256:f186298f0c17a86f5e3c0b8fa8feea7fc1eb7507db0f1b79682d6616d58f62fd
-        size: 689962
-        evr: 4.21.2-4.fc44
+        repo_id: updates
+        location: Packages/x/xen-libs-4.21.2-5.fc44.x86_64.rpm
+        checksum: sha256:9b38de86a321e40e23fdb680af489b0de29dc1141c4384df40f53edd7e118382
+        size: 690000
+        evr: 4.21.2-5.fc44
       - name: xen-licenses
-        repo_id: updates-archive
-        location: xen-licenses-4.21.2-4.fc44.x86_64.rpm
-        checksum: sha256:a13b4110580d372424ecbc72b0a241fada22f05e14af8ae4d4f3f4d61822b300
-        size: 45579
-        evr: 4.21.2-4.fc44
+        repo_id: updates
+        location: Packages/x/xen-licenses-4.21.2-5.fc44.x86_64.rpm
+        checksum: sha256:94019fa264c64c692991a6ba351b40e8beb35cb44e2d2b60fcfc3eb22b9f042b
+        size: 45723
+        evr: 4.21.2-5.fc44
       - name: xevd-libs
         repo_id: fedora
         location: Packages/x/xevd-libs-0.5.0-6.fc44.x86_64.rpm
