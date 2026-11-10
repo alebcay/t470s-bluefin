@@ -2348,23 +2348,23 @@ data:
         size: 38720
         evr: 5-7.fc44
       - name: kernel-core
-        repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: Packages/k/kernel-core-7.2.15-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:9993512aaf7dc8b46f4cbd1aa40171456111be9a6675f2ee18f7164b6d6a98b9
-        size: 21561641
-        evr: 7.2.15-200.secureblue.1.fc44
+        repo_id: updates
+        location: Packages/k/kernel-core-7.3.3-200.fc44.x86_64.rpm
+        checksum: sha256:a64cfbc5c9344bca91b6c76f286179a2f098e77de33e0e4fddab6bcfb6b09594
+        size: 22141661
+        evr: 7.3.3-200.fc44
       - name: kernel-headers
-        repo_id: updates-archive
-        location: kernel-headers-7.2.4-200.fc44.x86_64.rpm
-        checksum: sha256:60801d00dce8a4b6bd54d3c50b806c209af1c8389a6e3e7c15939e3b0c30987d
-        size: 1833938
-        evr: 7.2.4-200.fc44
+        repo_id: updates
+        location: Packages/k/kernel-headers-7.3.3-200.fc44.x86_64.rpm
+        checksum: sha256:f529e862f20bf5f3e852f59f0ef028941398575a42ee7d2822244a75c24851f0
+        size: 1847618
+        evr: 7.3.3-200.fc44
       - name: kernel-modules-core
-        repo_id: copr:copr.fedorainfracloud.org:secureblue:packages
-        location: Packages/k/kernel-modules-core-7.2.15-200.secureblue.1.fc44.x86_64.rpm
-        checksum: sha256:c5d2c40272528422f25e1eeeba931314ed37dfcc044b3660134fff3ddcf63353
-        size: 49005457
-        evr: 7.2.15-200.secureblue.1.fc44
+        repo_id: updates
+        location: Packages/k/kernel-modules-core-7.3.3-200.fc44.x86_64.rpm
+        checksum: sha256:05a719a56889e9458823debfee07aced35a20254ae1b57bcbbdd72bc6eab7a08
+        size: 56769073
+        evr: 7.3.3-200.fc44
       - name: keyutils
         repo_id: fedora
         location: Packages/k/keyutils-1.6.3-7.fc44.x86_64.rpm
@@ -4604,41 +4604,41 @@ data:
         size: 26371
         evr: 1.8-4.fc44
       - name: nspr
-        repo_id: updates-archive
-        location: nspr-4.39.0-7.fc44.x86_64.rpm
-        checksum: sha256:bd0285a8bc4fb9a857653348d362768bae620a8eb0e980a2c71a9381c01b5531
-        size: 147847
-        evr: 4.39.0-7.fc44
+        repo_id: updates
+        location: Packages/n/nspr-4.39.0-8.fc44.x86_64.rpm
+        checksum: sha256:7a73b9805ec1edfd879f87a289111776685eb04005abd1b845a390e33ecb5223
+        size: 147885
+        evr: 4.39.0-8.fc44
       - name: nss
-        repo_id: updates-archive
-        location: nss-3.131.0-1.fc44.x86_64.rpm
-        checksum: sha256:ca731d56fef76473c9f3976af7facf92de2d23b8270378e4ba95951785f2b3c3
-        size: 783499
-        evr: 3.131.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-3.133.0-1.fc44.x86_64.rpm
+        checksum: sha256:eb6d5665db8c1f71390966c6b8b6d5324bbbaefbcc872c2e232916be8d9cec6b
+        size: 785304
+        evr: 3.133.0-1.fc44
       - name: nss-softokn
-        repo_id: updates-archive
-        location: nss-softokn-3.131.0-1.fc44.x86_64.rpm
-        checksum: sha256:7140700e805e88319d956848966c082f1aa0eaa26672c2d2ed605d34279714e5
-        size: 460162
-        evr: 3.131.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-3.133.0-1.fc44.x86_64.rpm
+        checksum: sha256:e5031a3c6ce1ea9a1aeda1e0784fe0b075884a5e836094d25b4a578784424edb
+        size: 460293
+        evr: 3.133.0-1.fc44
       - name: nss-softokn-freebl
-        repo_id: updates-archive
-        location: nss-softokn-freebl-3.131.0-1.fc44.x86_64.rpm
-        checksum: sha256:6ea8839b0c6cdc5eb7b7620dd31b7700de355908fe29e48d65a1e8d984c381ff
-        size: 400283
-        evr: 3.131.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-softokn-freebl-3.133.0-1.fc44.x86_64.rpm
+        checksum: sha256:bc718f6d5717e0288da70693c89fbf0bede9b0a9be75d07bc267b6e0966d7b29
+        size: 400427
+        evr: 3.133.0-1.fc44
       - name: nss-sysinit
-        repo_id: updates-archive
-        location: nss-sysinit-3.131.0-1.fc44.x86_64.rpm
-        checksum: sha256:dea0f06a7075f9e33985a046add4549310cdf096bd5df63dab192701864a782b
-        size: 20707
-        evr: 3.131.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-sysinit-3.133.0-1.fc44.x86_64.rpm
+        checksum: sha256:f60338cc75a51d86f227d7bd8d2cfa61543d4b141c364353fba41894791ba0db
+        size: 20783
+        evr: 3.133.0-1.fc44
       - name: nss-util
-        repo_id: updates-archive
-        location: nss-util-3.131.0-1.fc44.x86_64.rpm
-        checksum: sha256:4b5d7b2f6134b31575d65977ba94b246326081d6be154c8ba636167b44699b85
-        size: 93779
-        evr: 3.131.0-1.fc44
+        repo_id: updates
+        location: Packages/n/nss-util-3.133.0-1.fc44.x86_64.rpm
+        checksum: sha256:b26a8d93d9152b58ebba99ba81d7c0d1655c2540aba880eaae8ea3666b010406
+        size: 93848
+        evr: 3.133.0-1.fc44
       - name: ntfs-3g
         repo_id: updates-archive
         location: ntfs-3g-2026.2.25-1.fc44.x86_64.rpm
@@ -6152,11 +6152,11 @@ data:
         size: 146866
         evr: 1.15.3-3.fc44
       - name: xdg-desktop-portal-wlr
-        repo_id: updates-archive
-        location: xdg-desktop-portal-wlr-0.8.4-1.fc44.x86_64.rpm
-        checksum: sha256:13e41f0d7e23462efd148c69834f32a53b69054bf0e0e445eeb8c303f6da13c1
-        size: 67917
-        evr: 0.8.4-1.fc44
+        repo_id: updates
+        location: Packages/x/xdg-desktop-portal-wlr-0.8.5-1.fc44.x86_64.rpm
+        checksum: sha256:bcc5a77db3b8d376ec731ce9bec6b92732fa434e3e7d8aafa6966725f2b3d0a3
+        size: 68247
+        evr: 0.8.5-1.fc44
       - name: xen-libs
         repo_id: updates
         location: Packages/x/xen-libs-4.21.2-5.fc44.x86_64.rpm
