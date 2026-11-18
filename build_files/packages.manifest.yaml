@@ -957,10 +957,10 @@ data:
     x86_64:
       - name: 7zip
         repo_id: updates-archive
-        location: 7zip-26.04-1.fc44.x86_64.rpm
-        checksum: sha256:24023cbf42d6250cc7d4a862401cf4e3f8f0f515a31aed3ec3c8fd7238e2abdd
-        size: 1358347
-        evr: 26.04-1.fc44
+        location: 7zip-26.06-1.fc44.x86_64.rpm
+        checksum: sha256:aa14b4673af6ebde638e372747fb7874f0c161fa1e9a71f481502a3bbd2e3123
+        size: 1352782
+        evr: 26.06-1.fc44
       - name: ModemManager-glib
         repo_id: fedora
         location: Packages/m/ModemManager-glib-1.24.2-3.fc44.x86_64.rpm
@@ -1935,10 +1935,10 @@ data:
         evr: 2.0.1-5.fc44
       - name: gpsd-libs
         repo_id: updates-archive
-        location: gpsd-libs-3.27.5-5.fc44.x86_64.rpm
-        checksum: sha256:d5498da3fd2f53059d1f6eea9b0ceddfc1560aa5dd4c872c2a114117d3f96e2d
-        size: 73873
-        evr: 1:3.27.5-5.fc44
+        location: gpsd-libs-3.27.5-8.fc44.x86_64.rpm
+        checksum: sha256:45e5d52db6c33ff1b0ff9c818caadbed294f7001fa5c1d39ef39812ecdd3d6b2
+        size: 73958
+        evr: 1:3.27.5-8.fc44
       - name: graphene
         repo_id: fedora
         location: Packages/g/graphene-1.10.8-4.fc44.x86_64.rpm
@@ -4353,40 +4353,40 @@ data:
         evr: 0.2.5-8.fc44
       - name: mesa-dri-drivers
         repo_id: updates-archive
-        location: mesa-dri-drivers-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:0112fa51422add691d5e3e22720118b65ac25b15b1111d67a8e6a8500c3faeb9
-        size: 14509767
-        evr: 26.2.6-1.fc44
+        location: mesa-dri-drivers-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:808f4a09150ec551303a46992aa8217af4ca695660a654251097fe730e7aeb24
+        size: 14510425
+        evr: 26.2.7-1.fc44
       - name: mesa-filesystem
         repo_id: updates-archive
-        location: mesa-filesystem-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:44e31311c0c103f4c12ce86d04c0ca48998749ce88b585240ee8e61a6b91dc55
-        size: 9467
-        evr: 26.2.6-1.fc44
+        location: mesa-filesystem-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:e97748d5baa859ce143b8f0954eae48c3132cf982ab41e312f491bc5a4b59683
+        size: 9566
+        evr: 26.2.7-1.fc44
       - name: mesa-libEGL
         repo_id: updates-archive
-        location: mesa-libEGL-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:122fcc2907ef9ee8e59f115d106da0a315e35cdea55dfb004141a02c69e64bfd
-        size: 144525
-        evr: 26.2.6-1.fc44
+        location: mesa-libEGL-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:392f8ce745f3154334ab1b890b8ec389b4b8a5f20d5e57b2cdff5144080c0de2
+        size: 144629
+        evr: 26.2.7-1.fc44
       - name: mesa-libGL
         repo_id: updates-archive
-        location: mesa-libGL-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:0a4424e2b6ec41da248dbf42212d35536bdd9a301361d0820d8d160bd5aa2144
-        size: 142203
-        evr: 26.2.6-1.fc44
+        location: mesa-libGL-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:5c3a8c49a079ed80f225846141a0d0074099227bce7e6ea114c49f4174ccbd7d
+        size: 142352
+        evr: 26.2.7-1.fc44
       - name: mesa-libgbm
         repo_id: updates-archive
-        location: mesa-libgbm-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:9cc614c533241a23e902783de13e4a598b03f9a7b7a01b10609d6ab348036e2d
-        size: 15617
-        evr: 26.2.6-1.fc44
+        location: mesa-libgbm-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:aecdcdd3b267e3af7db4fb6c7ed4f618364ac2fb749464182c3c35a16c13e544
+        size: 15722
+        evr: 26.2.7-1.fc44
       - name: mesa-vulkan-drivers
         repo_id: updates-archive
-        location: mesa-vulkan-drivers-26.2.6-1.fc44.x86_64.rpm
-        checksum: sha256:1b8ca7ef93e1f362097d1f200beedb055482a2d9c58acf7d262d427e905640d9
-        size: 29137089
-        evr: 26.2.6-1.fc44
+        location: mesa-vulkan-drivers-26.2.7-1.fc44.x86_64.rpm
+        checksum: sha256:2597211365f9819dd34f67b9be45806e0097cf74f570cfcb3a7d04528388eb11
+        size: 29138025
+        evr: 26.2.7-1.fc44
       - name: mkpasswd
         repo_id: fedora
         location: Packages/m/mkpasswd-5.6.6-1.fc44.x86_64.rpm
