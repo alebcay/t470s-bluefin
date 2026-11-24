@@ -16,14 +16,12 @@ case "$ACTION" in
   enable)
     dnf5 -y config-manager addrepo --from-repofile=https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     dnf5 -y install terra-release
-    dnf5 -y copr enable abn/throttled
     dnf5 -y copr enable sneexy/python-validity
     dnf5 -y copr enable lionheartp/Hyprland
     dnf5 -y copr enable secureblue/packages
     dnf5 -y install dnf5-plugin-manifest libpkgmanifest
     ;;
   disable)
-    dnf5 -y copr disable abn/throttled
     dnf5 -y copr disable sneexy/python-validity
     dnf5 -y copr disable lionheartp/Hyprland
     dnf5 -y copr disable secureblue/packages

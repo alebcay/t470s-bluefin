@@ -3,9 +3,6 @@ contentOrigin:
     - repoid: updates-archive
       baseurl: https://fedoraproject-updates-archive.fedoraproject.org/fedora/$releasever/$basearch/
       priority: 10
-    - repoid: copr:copr.fedorainfracloud.org:abn:throttled
-      baseurl: https://copr-be.cloud.fedoraproject.org/results/abn/throttled/fedora-$releasever-$basearch/
-      priority: 10
     - repoid: copr:copr.fedorainfracloud.org:sneexy:python-validity
       baseurl: https://copr-be.cloud.fedoraproject.org/results/sneexy/python-validity/fedora-$releasever-$basearch/
       priority: 10
@@ -45,8 +42,11 @@ packages:
   - python3-validity
   - starship
   - tlp
+  # Provides the PowerProfiles D-Bus API and conflicts with
+  # power-profiles-daemon, which noctalia would otherwise pull in.
+  - tlp-pd
   - tlp-rdw
-  - throttled
+  # throttled is installed in build.sh from the upstream noarch RPM.
   - zcfan
   - fuse
   - fuse-libs

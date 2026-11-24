@@ -90,18 +90,36 @@ fi
 
 # The preload reaches login sessions only if greetd's PAM stack actually
 # invokes pam_env, either directly or through a substack/include chain.
+# Fedora 45 ships vendor PAM files in /usr/lib/pam.d, so search both
+# directories and prefer the administrator-controlled /etc/pam.d.
 echo 'Checking greetd PAM stack reaches pam_env...'
 PAM_ENV_WIRED=0
-if grep -Eq '^[[:space:]]*-?[[:space:]]*(auth|session)[[:space:]].*pam_env\.so' \
-	/etc/pam.d/greetd 2>/dev/null; then
+
+pam_stack_file() { # $1: stack name; print the first matching PAM file
+	local name="$1" dir
+	for dir in /etc/pam.d /usr/lib/pam.d; do
+		if [ -f "${dir}/${name}" ]; then
+			printf '%s\n' "${dir}/${name}"
+			return 0
+		fi
+	done
+	return 1
+}
+
+if ! GREETD_PAM=$(pam_stack_file greetd); then
+	fail 'greetd PAM stack not found in /etc/pam.d or /usr/lib/pam.d'
+elif grep -Eq '^[[:space:]]*-?[[:space:]]*(auth|session)[[:space:]].*pam_env\.so' \
+	"$GREETD_PAM"; then
 	PAM_ENV_WIRED=1
-	echo 'OK: greetd invokes pam_env directly'
+	echo "OK: greetd invokes pam_env directly (${GREETD_PAM})"
 else
-	for STACK in $(grep -Eo '(substack|include)[[:space:]]+[a-z0-9_-]+' /etc/pam.d/greetd |
+	for STACK in $(grep -Eo '(substack|include)[[:space:]]+[a-z0-9_-]+' "$GREETD_PAM" |
 		awk '{print $2}' | sort -u); do
-		if grep -q 'pam_env\.so' "/etc/pam.d/${STACK}" 2>/dev/null; then
+		STACK_FILE=$(pam_stack_file "$STACK") || continue
+		if grep -Eq '^[[:space:]]*-?[[:space:]]*(auth|session)[[:space:]].*pam_env\.so' \
+			"$STACK_FILE"; then
 			PAM_ENV_WIRED=1
-			echo "OK: greetd -> ${STACK} -> pam_env"
+			echo "OK: greetd -> ${STACK} -> pam_env (${STACK_FILE})"
 		fi
 	done
 fi
