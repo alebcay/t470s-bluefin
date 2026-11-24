@@ -4,7 +4,7 @@ COPY build_files /
 
 # Base Image
 # ghcr.io/ublue-os/bluefin:stable
-FROM ghcr.io/ublue-os/bluefin@sha256:cb2e0f54caffb681ca4405d34236591a378430102e1704c6b2c78e3ff969f8bf
+FROM ghcr.io/ublue-os/bluefin@sha256:57dce95ae29b968ad61732c8d63cc9d1996782191ee79a5d0eeceec5736201f0
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -38,6 +38,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     SOURCE_DATE_EPOCH=$BUILD_SOURCE_DATE_EPOCH /ctx/build.sh && \
-    rm -rf /run/dnf /run/selinux-policy /var/lib/dnf /var/lib/authselect /boot/* && \
+    rm -rf /run/dnf /run/selinux-policy /var/lib/dnf /var/lib/noctalia-greeter/* /var/lib/greetd/.config /var/lib/authselect /boot/* && \
     find /var/cache /var/log -mindepth 1 -delete && \
     bootc container lint --no-truncate --fatal-warnings

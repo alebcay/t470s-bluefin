@@ -42,6 +42,17 @@ with open('/ctx/rpms.in.yaml') as f:
 ")
 dnf5 install -y --nogpgcheck --repofrompath=rpmcache,packages.manifest/ --repo=rpmcache $PACKAGES
 
+# throttled: install the upstream noarch RPM. It requires python3 >= 3.10
+# instead of a specific python(abi), so Fedora Python updates do not break it.
+# The package is pinned by SHA256 and is not part of the RPM lockfile.
+THROTTLED_VERSION="0.13"
+THROTTLED_RPM="throttled-${THROTTLED_VERSION}-1.noarch.rpm"
+THROTTLED_SHA256="fe6e59fa790b2ae7fd9cd6998b54d0dd25ef828180ac110ec4ce2449cb10d626"
+curl -fsSL -o "/tmp/${THROTTLED_RPM}" \
+  "https://github.com/erpalma/throttled/releases/download/v${THROTTLED_VERSION}/${THROTTLED_RPM}"
+echo "${THROTTLED_SHA256}  /tmp/${THROTTLED_RPM}" | sha256sum -c -
+dnf5 install -y --nogpgcheck "/tmp/${THROTTLED_RPM}"
+
 # ---------------------------------------------------------------------------
 # GrapheneOS hardened_malloc (light variant), following secureblue's layered
 # activation model:
@@ -78,6 +89,7 @@ dracut -vf "/usr/lib/modules/${kver}/initramfs.img" "${kver}"
 systemctl enable setsebool-domain-kernel-load-modules.service
 
 systemctl enable tlp.service
+systemctl enable tlp-pd.service
 systemctl enable zcfan.service
 systemctl enable throttled.service
 systemctl enable virtqemud.service

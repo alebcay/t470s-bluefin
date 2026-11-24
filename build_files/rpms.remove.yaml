@@ -8,6 +8,9 @@ packages:
   - thermald
   - tuned
   - tuned-ppd
+  # noctalia recommends power-profiles-daemon, but it Conflicts=tlp.service.
+  # TLP's own tlp-pd provides the same PowerProfiles D-Bus API.
+  - power-profiles-daemon
 
   # Strip GNOME desktop to the minimum — we use niri + Noctalia + greetd/noctalia-greeter
   - gdm

@@ -5,6 +5,7 @@ set -euo pipefail
 ENABLED_SERVICES=(
 	greetd.service
 	tlp.service
+	tlp-pd.service
 	zcfan.service
 	throttled.service
 	cjk-fonts-flatpak.service
@@ -14,6 +15,7 @@ ENABLED_SERVICES=(
 ACTIVE_SERVICES=(
 	greetd.service
 	tlp.service
+	tlp-pd.service
 	throttled.service
 )
 
