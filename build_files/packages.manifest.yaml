@@ -617,11 +617,11 @@ data:
         size: 14012
         evr: 0.61.000-527.fc45
       - name: perl-libnet
-        repo_id: updates-archive
-        location: perl-libnet-3.16-1.fc45.noarch.rpm
-        checksum: sha256:54f3898654afa4b78f52b276bb0ac22528b6485e2eabf8d8c2b1fa28a0a546f9
-        size: 132793
-        evr: 3.16-1.fc45
+        repo_id: updates
+        location: Packages/p/perl-libnet-3.17-1.fc45.noarch.rpm
+        checksum: sha256:ffeeede0bb8b5c95ca167fa1da84b7958ec37e7edd8dc703c1a14306346ed164
+        size: 133037
+        evr: 3.17-1.fc45
       - name: perl-locale
         repo_id: fedora
         location: Packages/p/perl-locale-1.13-527.fc45.noarch.rpm
@@ -809,29 +809,29 @@ data:
         size: 13546
         evr: 102-3.fc45
       - name: seabios-bin
-        repo_id: fedora
-        location: Packages/s/seabios-bin-1.17.0-16.fc45.noarch.rpm
-        checksum: sha256:61e2949287b17b0ddfee95e226e26d0b5588a7db37e82ad6f9f776d85a3ac665
-        size: 138768
-        evr: 1.17.0-16.fc45
+        repo_id: updates
+        location: Packages/s/seabios-bin-1.17.0-17.fc45.noarch.rpm
+        checksum: sha256:9b7d56d635fce79cd6fe0a8878eaf451b3bb66d16566b0a452360cf1e88e9978
+        size: 138752
+        evr: 1.17.0-17.fc45
       - name: seavgabios-bin
-        repo_id: fedora
-        location: Packages/s/seavgabios-bin-1.17.0-16.fc45.noarch.rpm
-        checksum: sha256:426c5304bc49de0d72df1edb25e0112d24504b0d06fbb80b9ff096ed66a04350
-        size: 53609
-        evr: 1.17.0-16.fc45
+        repo_id: updates
+        location: Packages/s/seavgabios-bin-1.17.0-17.fc45.noarch.rpm
+        checksum: sha256:7d98e4bd4b1c007c712fbde3e3fad4f8bd5eae03f80165b40a4bd9b69a9a2948
+        size: 53636
+        evr: 1.17.0-17.fc45
       - name: selinux-policy
-        repo_id: updates-archive
-        location: selinux-policy-45.24-1.fc45.noarch.rpm
-        checksum: sha256:8f3eda8c7261bd73429cf8abd31d5c155d7674ee81ceee844145aaba8f3bba6b
-        size: 45437
-        evr: 45.24-1.fc45
+        repo_id: updates
+        location: Packages/s/selinux-policy-45.25-1.fc45.noarch.rpm
+        checksum: sha256:9731457311bba6a3575ff063084c128410fa1faa7a1e8e0106a2f6825fb29347
+        size: 45776
+        evr: 45.25-1.fc45
       - name: selinux-policy-targeted
-        repo_id: updates-archive
-        location: selinux-policy-targeted-45.24-1.fc45.noarch.rpm
-        checksum: sha256:5c293be469e50d4c07bbbc52613f9e81cbfbb97fa18a16f7a3c2b4e8162b27c8
-        size: 7160526
-        evr: 45.24-1.fc45
+        repo_id: updates
+        location: Packages/s/selinux-policy-targeted-45.25-1.fc45.noarch.rpm
+        checksum: sha256:07d649cfb02b05d38f94eb6a41237fdf7fe9178a160ef4f2440cf3218ef759b8
+        size: 7161085
+        evr: 45.25-1.fc45
       - name: setup
         repo_id: fedora
         location: Packages/s/setup-2.15.1-2.fc45.noarch.rpm
@@ -1050,23 +1050,23 @@ data:
         size: 41971
         evr: 1.0.3^20160216git5e9be27-6.fc45
       - name: at-spi2-atk
-        repo_id: updates-archive
-        location: at-spi2-atk-2.62.1-1.fc45.x86_64.rpm
-        checksum: sha256:aa4e59a6e26bd0ed648b5f57e94fbbd9dea82173584cad79cf74ca6b0d989ad7
-        size: 92025
-        evr: 2.62.1-1.fc45
+        repo_id: updates
+        location: Packages/a/at-spi2-atk-2.62.2-1.fc45.x86_64.rpm
+        checksum: sha256:450a455228f5ca340ee3e2eff9fa5b13e9ffc17aa3a3fa7a2ece9093f0da87ec
+        size: 92134
+        evr: 2.62.2-1.fc45
       - name: at-spi2-core
-        repo_id: updates-archive
-        location: at-spi2-core-2.62.1-1.fc45.x86_64.rpm
-        checksum: sha256:3c55cf4902dc43c7e122a0875fae806f8409d74006e48337bdd20289be3439d9
-        size: 410264
-        evr: 2.62.1-1.fc45
+        repo_id: updates
+        location: Packages/a/at-spi2-core-2.62.2-1.fc45.x86_64.rpm
+        checksum: sha256:5660978528875c2300befc61613ebb0ba78f7db8bc312c363d0e2354d5cb2f5c
+        size: 411452
+        evr: 2.62.2-1.fc45
       - name: atk
-        repo_id: updates-archive
-        location: atk-2.62.1-1.fc45.x86_64.rpm
-        checksum: sha256:b242900b57d565c1b68bbd666f62453ca4086e90e6120d5fe2193cc5e527dfd9
-        size: 85039
-        evr: 2.62.1-1.fc45
+        repo_id: updates
+        location: Packages/a/atk-2.62.2-1.fc45.x86_64.rpm
+        checksum: sha256:9bf24239c80d74dc9bc1f7ef0247adad71b5af06a4f7a59e7713a8f11f0ac121
+        size: 84977
+        evr: 2.62.2-1.fc45
       - name: atkmm
         repo_id: fedora
         location: Packages/a/atkmm-2.28.5-3.fc45.x86_64.rpm
@@ -1272,17 +1272,17 @@ data:
         size: 3824747
         evr: 2.10.3-2.fc45
       - name: cryptsetup
-        repo_id: fedora
-        location: Packages/c/cryptsetup-2.8.8-1.fc45.x86_64.rpm
-        checksum: sha256:fd61a9d8d2ce07c309e9f5689871c723cc68a79ae4e87eddbce685534e5cd750
-        size: 370028
-        evr: 2.8.8-1.fc45
+        repo_id: updates
+        location: Packages/c/cryptsetup-2.8.9-1.fc45.x86_64.rpm
+        checksum: sha256:75efd8a3fa11d4f1cf6a85a97517c99b7ab41bac90ff42a7a5b8b26e65e59c28
+        size: 375089
+        evr: 2.8.9-1.fc45
       - name: cryptsetup-libs
-        repo_id: fedora
-        location: Packages/c/cryptsetup-libs-2.8.8-1.fc45.x86_64.rpm
-        checksum: sha256:11d9d3a9c7285f1009c5b2d70e96f752b4448d433fc1464dc35974ddae2b7cbf
-        size: 644782
-        evr: 2.8.8-1.fc45
+        repo_id: updates
+        location: Packages/c/cryptsetup-libs-2.8.9-1.fc45.x86_64.rpm
+        checksum: sha256:0856802e60efccece1580c9423823087b68cd74870e520d0d72c036b2fd3ef2a
+        size: 663200
+        evr: 2.8.9-1.fc45
       - name: cups-libs
         repo_id: fedora
         location: Packages/c/cups-libs-2.4.19-4.fc45.x86_64.rpm
@@ -2082,11 +2082,11 @@ data:
         size: 6364926
         evr: 3.24.52-6.fc45
       - name: gtk4
-        repo_id: fedora
-        location: Packages/g/gtk4-4.24.1-1.fc45.x86_64.rpm
-        checksum: sha256:fb02ba7ae2efbb014d18d56207ced6f7f2c6be5ef2af7e797d4da0bdc738e943
-        size: 7244168
-        evr: 4.24.1-1.fc45
+        repo_id: updates
+        location: Packages/g/gtk4-4.24.2-1.fc45.x86_64.rpm
+        checksum: sha256:cd819ec96d39cf4ef9b30b083b4a4150217abefc2a63b859d3bce1fb1a6ed4a8
+        size: 7251878
+        evr: 4.24.2-1.fc45
       - name: gtk4-layer-shell
         repo_id: fedora
         location: Packages/g/gtk4-layer-shell-1.3.0-3.fc45.x86_64.rpm
@@ -2856,11 +2856,11 @@ data:
         size: 33656
         evr: 0.2.14-3.fc45
       - name: libdav1d
-        repo_id: fedora
-        location: Packages/l/libdav1d-1.5.4-1.fc45.x86_64.rpm
-        checksum: sha256:23af72944a38e2ca18ecd5356f7c2083f9c695f224fd45d3a868b0349e7cd3f8
-        size: 680542
-        evr: 1.5.4-1.fc45
+        repo_id: updates
+        location: Packages/l/libdav1d-1.5.5-1.fc45.x86_64.rpm
+        checksum: sha256:7824664fae26585069f48c7d9b79154649c0341354d74f88adbe391861642921
+        size: 681659
+        evr: 1.5.5-1.fc45
       - name: libdbusmenu
         repo_id: fedora
         location: Packages/l/libdbusmenu-16.04.0-32.fc45.x86_64.rpm
@@ -4602,17 +4602,17 @@ data:
         size: 228333
         evr: 6.9.10-5.fc45
       - name: oo7-daemon
-        repo_id: fedora
-        location: Packages/o/oo7-daemon-0.7.0~beta^1.e91b98a-1.fc45.x86_64.rpm
-        checksum: sha256:10386b4aa4218d7241e0a2ccbcf06aca150f5f77f3b863de7407d932a700643d
-        size: 2080823
-        evr: 0.7.0~beta^1.e91b98a-1.fc45
+        repo_id: updates
+        location: Packages/o/oo7-daemon-0.7.3-2.fc45.x86_64.rpm
+        checksum: sha256:a89328cd65bbe9ee15406b316bbe39d0f0db237b70e730003c7d184aba6a763a
+        size: 2068071
+        evr: 0.7.3-2.fc45
       - name: oo7-portal
-        repo_id: fedora
-        location: Packages/o/oo7-portal-0.7.0~beta^1.e91b98a-1.fc45.x86_64.rpm
-        checksum: sha256:bf7d01c78945a12a6d6392fca23beddaaf5c62e0349e2e0c5fc7c37d5cefe99f
-        size: 1461951
-        evr: 0.7.0~beta^1.e91b98a-1.fc45
+        repo_id: updates
+        location: Packages/o/oo7-portal-0.7.3-2.fc45.x86_64.rpm
+        checksum: sha256:adf35120b77536844935ac5b231f871cc733729b86be4f4b7f8b8f51f30e8e90
+        size: 1392382
+        evr: 0.7.3-2.fc45
       - name: openapv-libs
         repo_id: updates-archive
         location: openapv-libs-1.1.3.0-1.fc45.x86_64.rpm
